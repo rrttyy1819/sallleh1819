@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منصة التقنية المتقدمة | الأبحاث والنصائح التقنية</title>
+    <title>Saleh's Vision Labs | الأبحاث والنصائح التقنية</title>
+    <meta name="description" content="منصة عربية للأبحاث والأوراق التقنية والنصائح في الذكاء الاصطناعي وهندسة البرمجيات والأمن السيبراني.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230284c7'/%3E%3Ctext x='50' y='68' font-size='56' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3ESV%3C/text%3E%3C/svg%3E">
+
     <!-- Google Fonts: Tajawal -->
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS (للتجربة فقط: يُفضّل بناء Tailwind قبل النشر الفعلي) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -17,6 +20,7 @@
                             50: '#f0f9ff',
                             100: '#e0f2fe',
                             200: '#bae6fd',
+                            400: '#38bdf8',
                             500: '#0ea5e9',
                             600: '#0284c7',
                             700: '#0369a1',
@@ -36,6 +40,8 @@
             background-color: #f8fafc;
             color: #1e293b;
         }
+        html { scroll-behavior: smooth; }
+        section[id] { scroll-margin-top: 5rem; }
         .hero-gradient {
             background: linear-gradient(135deg, #e0f2fe 0%, #ffffff 50%, #bae6fd 100%);
         }
@@ -44,34 +50,49 @@
 <body class="bg-slate-50 min-h-screen flex flex-col justify-between">
 
     <!-- Header / Navbar -->
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-sky-100 shadow-sm">
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-sky-100 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center space-x-3 space-x-reverse">
+            <a href="#top" class="flex items-center gap-3">
                 <div class="bg-gradient-to-tr from-brand-600 to-sky-400 p-2.5 rounded-2xl text-white shadow-md shadow-brand-500/20">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                     </svg>
                 </div>
                 <div>
-                    <span class="text-xl font-black bg-gradient-to-r from-brand-700 to-sky-600 bg-clip-text text-transparent">منصة التقنية</span>
+                    <span class="text-xl font-black bg-gradient-to-r from-brand-700 to-sky-600 bg-clip-text text-transparent" dir="ltr">Saleh's Vision Labs</span>
                     <span class="block text-xs text-slate-500 font-medium">للأبحاث والاستشارات التقنية</span>
                 </div>
-            </div>
-            
-            <nav class="hidden md:flex items-center space-x-8 space-x-reverse text-sm font-semibold text-slate-600">
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
                 <a href="#about" class="hover:text-brand-600 transition-colors">عن المؤسس</a>
-                <a href="#research" class="hover:text-brand-600 transition-colors">الأبحاث والدراسات</a>
+                <a href="#research" class="hover:text-brand-600 transition-colors">الأبحاث والأوراق التقنية</a>
                 <a href="#tips" class="hover:text-brand-600 transition-colors">النصائح التقنية</a>
-                <a href="#database" class="hover:text-brand-600 transition-colors">قاعدة المعرفة التفاعلية</a>
+                <a href="#database" class="hover:text-brand-600 transition-colors">قاعدة المعرفة</a>
             </nav>
 
-            <div class="flex items-center space-x-3 space-x-reverse">
-                <a href="#database" class="bg-brand-600 hover:bg-brand-700 text-white font-bold px-5 py-2.5 rounded-xl shadow-lg shadow-brand-500/25 transition-all text-sm">
+            <div class="flex items-center gap-3">
+                <!-- زر الإضافة يظهر للمشرف فقط (افتح الصفحة بـ ?admin=1) -->
+                <a id="adminTopBtn" href="#database" class="hidden bg-brand-600 hover:bg-brand-700 text-white font-bold px-5 py-2.5 rounded-xl shadow-lg shadow-brand-500/25 transition-all text-sm">
                     إضافة محتوى جديد
                 </a>
+                <!-- زر قائمة الجوال -->
+                <button id="menuBtn" type="button" aria-label="القائمة" aria-expanded="false" class="md:hidden p-2 rounded-lg text-slate-700 hover:bg-sky-50">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
             </div>
         </div>
+
+        <!-- قائمة الجوال -->
+        <nav id="mobileMenu" class="hidden md:hidden border-t border-sky-100 bg-white px-4 py-3 space-y-1 text-sm font-semibold text-slate-700">
+            <a href="#about" class="mobile-link block px-3 py-2.5 rounded-lg hover:bg-sky-50">عن المؤسس</a>
+            <a href="#research" class="mobile-link block px-3 py-2.5 rounded-lg hover:bg-sky-50">الأبحاث والأوراق التقنية</a>
+            <a href="#tips" class="mobile-link block px-3 py-2.5 rounded-lg hover:bg-sky-50">النصائح التقنية</a>
+            <a href="#database" class="mobile-link block px-3 py-2.5 rounded-lg hover:bg-sky-50">قاعدة المعرفة</a>
+        </nav>
     </header>
+
+    <main id="top">
 
     <!-- Hero Section -->
     <section class="hero-gradient py-20 px-4 sm:px-6 lg:px-8 border-b border-sky-100 relative overflow-hidden">
@@ -80,32 +101,33 @@
             <div class="lg:col-span-7 space-y-6 text-center lg:text-right">
                 <span class="inline-flex items-center gap-1.5 py-1.5 px-4 rounded-full text-xs font-bold bg-brand-100 text-brand-700 border border-brand-200 shadow-sm">
                     <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
-                    منصة تقنية متطورة وموثوقة
+                    منصة تقنية متخصصة
                 </span>
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 leading-tight">
                     نصائح، أبحاث، ورؤى تقنية <span class="text-brand-600">تصنع المستقبل</span>
                 </h1>
                 <p class="text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 font-medium">
-                    وجهتك الأولى لاستكشاف أحدث الاتجاهات التقنية، وقراءة الأبحاث المتعمقة في مجالات الذكاء الاصطناعي وهندسة البرمجيات، بإشراف خبير تقني متخصص.
+                    وجهتك لاستكشاف أحدث الاتجاهات التقنية، وقراءة الأوراق التقنية المتعمقة في مجالات الذكاء الاصطناعي وهندسة البرمجيات والأمن السيبراني، بإشراف خبير تقني متخصص.
                 </p>
                 <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
                     <a href="#research" class="bg-brand-600 hover:bg-brand-700 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg shadow-brand-500/30 transition-all flex items-center gap-2">
                         <span>استكشف الأبحاث</span>
-                        <svg class="w-5 h-5 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        <svg class="w-5 h-5 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </a>
                     <a href="#about" class="bg-white hover:bg-sky-50 text-slate-800 font-bold px-8 py-3.5 rounded-xl border border-sky-200 shadow-sm transition-all">
                         تعرف على المؤسس
                     </a>
                 </div>
             </div>
-            
+
             <div class="lg:col-span-5 flex justify-center">
                 <div class="relative w-full max-w-sm">
                     <div class="absolute inset-0 bg-brand-400 rounded-3xl rotate-3 opacity-20 filter blur-xl"></div>
                     <div class="bg-white p-3 rounded-3xl shadow-2xl border border-sky-100 relative">
+                        <!-- تأكد أن اسم الملف saleh.png وأنه بجانب index.html -->
                         <img src="saleh.png.png"
-     alt="اختبار"
-     class="w-full h-96 object-cover object-top rounded-2xl shadow-md">
+                             alt="د. صالح العنزي"
+                             onerror="this.onerror=null;this.src='https://placehold.co/500x600/e0f2fe/0284c7?text=Expert';"
                              class="w-full h-96 object-cover object-top rounded-2xl shadow-md">
                         <div class="absolute bottom-6 right-6 left-6 bg-white/90 backdrop-blur-md p-4 rounded-xl border border-sky-100 shadow-lg">
                             <h3 class="font-bold text-slate-900 text-base">د. صالح العنزي</h3>
@@ -124,9 +146,9 @@
                 <div class="lg:col-span-5">
                     <div class="relative">
                         <div class="absolute -inset-4 bg-gradient-to-tr from-brand-100 to-sky-200 rounded-3xl -z-10 transform -rotate-2"></div>
-                        <img src="saleh.png.png" 
-                             alt="المؤسس" 
-                             onerror="this.src='https://placehold.co/500x600/e0f2fe/0284c7?text=Expert';"
+                        <img src="saleh.png.png"
+                             alt="د. صالح العنزي - المؤسس"
+                             onerror="this.onerror=null;this.src='https://placehold.co/500x600/e0f2fe/0284c7?text=Expert';"
                              class="w-full h-[450px] object-cover rounded-2xl shadow-xl">
                     </div>
                 </div>
@@ -134,7 +156,7 @@
                     <span class="text-brand-600 font-bold tracking-wider uppercase text-sm bg-brand-50 px-3 py-1 rounded-lg border border-brand-100">عن المؤسس والخبير</span>
                     <h2 class="text-3xl sm:text-4xl font-black text-slate-900">شغف بالابتكار التقني وقيادة التحول الرقمي</h2>
                     <p class="text-slate-600 leading-relaxed font-medium">
-                        أهلاً بكم في منصتي التقنية. بصفتي متخصصاً وباحثاً في مجالات تكنولوجيا المعلومات، البرمجيات المتقدمة، وأنظمة الذكاء الاصطناعي، أسست هذه المنصة لتوثيق الأبحاث وتقديم أحدث النصائح والرؤى التقنية المبنية على أسس علمية وتجارب عملية دقيقة.
+                        أهلاً بكم في منصتي التقنية. بصفتي متخصصاً وباحثاً في مجالات تكنولوجيا المعلومات، والبرمجيات المتقدمة، وأنظمة الذكاء الاصطناعي، أسست هذه المنصة لتوثيق الأبحاث وتقديم أحدث النصائح والرؤى التقنية المبنية على أسس علمية وتجارب عملية دقيقة.
                     </p>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                         <div class="bg-sky-50/60 p-4 rounded-xl border border-sky-100">
@@ -146,6 +168,7 @@
                             <p class="text-xs text-slate-600 leading-relaxed">تمكين المهندسين والمطورين ورواد الأعمال بأحدث الأبحاث والاستشارات الدقيقة.</p>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
     </section>
@@ -155,13 +178,13 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-brand-600 font-bold uppercase text-xs bg-brand-100 px-3 py-1 rounded-lg border border-brand-200">الأبحاث والأوراق التقنية</span>
-                <h2 class="text-3xl font-black text-slate-900 mt-3">أحدث الدراسات والأبحاث المحكمة</h2>
+                <h2 class="text-3xl font-black text-slate-900 mt-3">أحدث الدراسات والأوراق التقنية</h2>
                 <p class="text-slate-600 mt-2">استكشف أوراق العمل التقنية المتعمقة حول التقنيات الحديثة وتحليل البيانات والذكاء الاصطناعي.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Research Card 1 -->
-                <div class="bg-white rounded-2xl shadow-sm border border-sky-100 hover:shadow-xl hover:border-brand-300 transition-all duration-300 flex flex-col justify-between overflow-hidden group">
+                <article class="bg-white rounded-2xl shadow-sm border border-sky-100 hover:shadow-xl hover:border-brand-300 transition-all duration-300 flex flex-col justify-between overflow-hidden group">
                     <div class="p-6 space-y-4">
                         <div class="flex items-center justify-between text-xs font-bold text-brand-600">
                             <span class="bg-brand-50 px-3 py-1 rounded-md border border-brand-100">ذكاء اصطناعي</span>
@@ -172,15 +195,13 @@
                     </div>
                     <div class="px-6 py-4 bg-sky-50/50 border-t border-sky-50 flex items-center justify-between">
                         <span class="text-xs text-slate-500 font-medium">بقلم المؤسس</span>
-                        <button onclick="alertBox('تم تحميل ملخص البحث بنجاح.')" class="text-brand-600 hover:text-brand-700 font-bold text-xs flex items-center gap-1">
-                            تحميل البحث الكامل
-                            <svg class="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </button>
+                        <!-- عند جاهزية الملف: استبدل الزر بـ <a href="papers/paper1.pdf" download> -->
+                        <button type="button" disabled class="text-slate-400 cursor-not-allowed font-bold text-xs">قريباً</button>
                     </div>
-                </div>
+                </article>
 
                 <!-- Research Card 2 -->
-                <div class="bg-white rounded-2xl shadow-sm border border-sky-100 hover:shadow-xl hover:border-brand-300 transition-all duration-300 flex flex-col justify-between overflow-hidden group">
+                <article class="bg-white rounded-2xl shadow-sm border border-sky-100 hover:shadow-xl hover:border-brand-300 transition-all duration-300 flex flex-col justify-between overflow-hidden group">
                     <div class="p-6 space-y-4">
                         <div class="flex items-center justify-between text-xs font-bold text-brand-600">
                             <span class="bg-brand-50 px-3 py-1 rounded-md border border-brand-100">أمن سيبراني</span>
@@ -191,15 +212,12 @@
                     </div>
                     <div class="px-6 py-4 bg-sky-50/50 border-t border-sky-50 flex items-center justify-between">
                         <span class="text-xs text-slate-500 font-medium">بقلم المؤسس</span>
-                        <button onclick="alertBox('تم تحميل ملخص البحث بنجاح.')" class="text-brand-600 hover:text-brand-700 font-bold text-xs flex items-center gap-1">
-                            تحميل البحث الكامل
-                            <svg class="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </button>
+                        <button type="button" disabled class="text-slate-400 cursor-not-allowed font-bold text-xs">قريباً</button>
                     </div>
-                </div>
+                </article>
 
                 <!-- Research Card 3 -->
-                <div class="bg-white rounded-2xl shadow-sm border border-sky-100 hover:shadow-xl hover:border-brand-300 transition-all duration-300 flex flex-col justify-between overflow-hidden group">
+                <article class="bg-white rounded-2xl shadow-sm border border-sky-100 hover:shadow-xl hover:border-brand-300 transition-all duration-300 flex flex-col justify-between overflow-hidden group">
                     <div class="p-6 space-y-4">
                         <div class="flex items-center justify-between text-xs font-bold text-brand-600">
                             <span class="bg-brand-50 px-3 py-1 rounded-md border border-brand-100">هندسة البرمجيات</span>
@@ -210,12 +228,9 @@
                     </div>
                     <div class="px-6 py-4 bg-sky-50/50 border-t border-sky-50 flex items-center justify-between">
                         <span class="text-xs text-slate-500 font-medium">بقلم المؤسس</span>
-                        <button onclick="alertBox('تم تحميل ملخص البحث بنجاح.')" class="text-brand-600 hover:text-brand-700 font-bold text-xs flex items-center gap-1">
-                            تحميل البحث الكامل
-                            <svg class="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </button>
+                        <button type="button" disabled class="text-slate-400 cursor-not-allowed font-bold text-xs">قريباً</button>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
@@ -238,7 +253,7 @@
                 <div class="bg-sky-50/50 p-6 rounded-2xl border border-sky-100 space-y-3 hover:bg-sky-50 transition-all">
                     <div class="w-10 h-10 rounded-xl bg-brand-600 text-white flex items-center justify-center font-black">02</div>
                     <h3 class="font-bold text-slate-900 text-lg">إدارة الشيفرات البرمجية</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">التزم بمعايير Clean Code واستخدم اختبارات الوحدة Unit Tests لتقليل الأخطاء المستقبليّة.</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">التزم بمعايير Clean Code واستخدم اختبارات الوحدة Unit Tests لتقليل الأخطاء المستقبلية.</p>
                 </div>
                 <div class="bg-sky-50/50 p-6 rounded-2xl border border-sky-100 space-y-3 hover:bg-sky-50 transition-all">
                     <div class="w-10 h-10 rounded-xl bg-brand-600 text-white flex items-center justify-center font-black">03</div>
@@ -258,74 +273,78 @@
     <section id="database" class="py-20 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-brand-600 font-bold uppercase text-xs bg-brand-100 px-3 py-1 rounded-lg border border-brand-200">قاعدة المعرفة التفاعلية</span>
-                <h2 class="text-3xl font-black text-slate-900 mt-3">ابحث في قاعدة البيانات أو أضف محتوى جديداً</h2>
-                <p class="text-slate-600 mt-2">قاعدة بيانات تفاعلية تتيح لك استعراض المقالات والأبحاث، أو إضافة مشاركات جديدة فوراً.</p>
+                <span class="text-brand-600 font-bold uppercase text-xs bg-brand-100 px-3 py-1 rounded-lg border border-brand-200">قاعدة المعرفة</span>
+                <h2 class="text-3xl font-black text-slate-900 mt-3">ابحث في قاعدة المعرفة التقنية</h2>
+                <p class="text-slate-600 mt-2">استعرض المقالات والأبحاث والنصائح، وابحث عن أي موضوع تقني بسهولة.</p>
             </div>
 
             <!-- Search and Filter Bar -->
             <div class="bg-white p-4 sm:p-6 rounded-2xl shadow-sm border border-sky-100 mb-8 max-w-4xl mx-auto flex flex-col sm:flex-row gap-4 items-center justify-between">
-                <div class="relative w-full sm:w-2/3">
-                    <input type="text" id="searchInput" oninput="filterContent()" placeholder="ابحث عن مقال، نصيحة، أو بحث تقني..." 
+                <div class="relative w-full sm:flex-1">
+                    <label for="searchInput" class="sr-only">بحث</label>
+                    <input type="text" id="searchInput" placeholder="ابحث عن مقال، نصيحة، أو بحث تقني..."
                            class="w-full bg-slate-50 border border-sky-200 rounded-xl px-4 py-3 pr-11 text-sm focus:outline-none focus:border-brand-500 focus:bg-white transition-all">
                     <svg class="w-5 h-5 text-slate-400 absolute right-3.5 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                 </div>
-                <button onclick="openModal()" class="w-full sm:w-auto bg-brand-600 hover:bg-brand-700 text-white font-bold px-6 py-3 rounded-xl shadow-md transition-all text-sm whitespace-nowrap flex items-center justify-center gap-2">
+                <!-- يظهر للمشرف فقط (?admin=1) -->
+                <button id="adminAddBtn" type="button" class="hidden w-full sm:w-auto bg-brand-600 hover:bg-brand-700 text-white font-bold px-6 py-3 rounded-xl shadow-md transition-all text-sm whitespace-nowrap items-center justify-center gap-2">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
                     <span>إضافة مقال أو بحث جديد</span>
                 </button>
             </div>
 
             <!-- Dynamic Content Grid -->
-            <div id="contentGrid" class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
-                <!-- Populated dynamically via JS -->
-            </div>
+            <div id="contentGrid" class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto"></div>
         </div>
     </section>
 
+    </main>
+
     <!-- Add Content Modal -->
-    <div id="addModal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div id="addModal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <div class="bg-white rounded-3xl shadow-2xl max-w-lg w-full p-6 sm:p-8 border border-sky-100 relative">
-            <button onclick="closeModal()" class="absolute left-6 top-6 text-slate-400 hover:text-slate-700">
+            <button type="button" id="closeModalBtn" aria-label="إغلاق" class="absolute left-6 top-6 text-slate-400 hover:text-slate-700">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
-            <h3 class="text-2xl font-black text-slate-900 mb-2">إضافة محتوى تقني جديد</h3>
-            <p class="text-xs text-slate-500 mb-6">ساهم معنا بإضافة مقال، نصيحة، أو ورقة بحثية إلى قاعدة المعرفة.</p>
-            
-            <form id="contentForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+            <h3 id="modalTitle" class="text-2xl font-black text-slate-900 mb-2">إضافة محتوى تقني جديد</h3>
+            <p class="text-xs text-slate-500 mb-6">أضف مقالاً أو نصيحة أو ورقة بحثية إلى قاعدة المعرفة.</p>
+
+            <form id="contentForm" class="space-y-4">
                 <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">عنوان المحتوى</label>
-                    <input type="text" id="itemTitle" required placeholder="أدخل العنوان هنا..." 
+                    <label for="itemTitle" class="block text-xs font-bold text-slate-700 mb-1">عنوان المحتوى</label>
+                    <input type="text" id="itemTitle" required maxlength="150" placeholder="أدخل العنوان هنا..."
                            class="w-full bg-slate-50 border border-sky-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-brand-500">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">التصنيف</label>
+                    <label for="itemCategory" class="block text-xs font-bold text-slate-700 mb-1">التصنيف</label>
                     <select id="itemCategory" class="w-full bg-slate-50 border border-sky-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-brand-500">
                         <option value="بحث تقني">بحث تقني</option>
                         <option value="نصيحة برمجية">نصيحة برمجية</option>
                         <option value="ذكاء اصطناعي">ذكاء اصطناعي</option>
+                        <option value="أمن سيبراني">أمن سيبراني</option>
                         <option value="حوسبة سحابية">حوسبة سحابية</option>
                     </select>
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">الملخص أو المحتوى المختصر</label>
-                    <textarea id="itemDesc" rows="4" required placeholder="اكتب تفاصيل أو ملخص المحتوى هنا..." 
+                    <label for="itemDesc" class="block text-xs font-bold text-slate-700 mb-1">الملخص أو المحتوى المختصر</label>
+                    <textarea id="itemDesc" rows="4" required maxlength="1000" placeholder="اكتب تفاصيل أو ملخص المحتوى هنا..."
                               class="w-full bg-slate-50 border border-sky-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-brand-500"></textarea>
                 </div>
                 <div class="pt-2 flex items-center justify-end gap-3">
-                    <button type="button" onclick="closeModal()" class="px-5 py-2.5 bg-slate-100 text-slate-700 hover:bg-slate-200 rounded-xl text-sm font-bold transition-all">إلغاء</button>
+                    <button type="button" id="cancelModalBtn" class="px-5 py-2.5 bg-slate-100 text-slate-700 hover:bg-slate-200 rounded-xl text-sm font-bold transition-all">إلغاء</button>
                     <button type="submit" class="px-6 py-2.5 bg-brand-600 hover:bg-brand-700 text-white rounded-xl text-sm font-bold shadow-md transition-all">حفظ وإضافة</button>
                 </div>
             </form>
         </div>
     </div>
 
-    <!-- Custom Alert Box -->
-    <div id="customAlert" class="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-sm hidden items-center justify-center p-4">
-        <div class="bg-white rounded-2xl shadow-xl max-w-sm w-full p-6 text-center border border-sky-100">
-            <div class="w-12 h-12 bg-brand-100 text-brand-600 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-black">✓</div>
-            <h4 id="alertMessage" class="text-base font-bold text-slate-900 mb-4">رسالة النظام</h4>
-            <button onclick="closeAlert()" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-2.5 rounded-xl text-sm transition-all">حسناً</button>
+    <!-- Custom Alert / Details Box -->
+    <div id="customAlert" class="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-sm hidden items-center justify-center p-4" role="dialog" aria-modal="true">
+        <div class="bg-white rounded-2xl shadow-xl max-w-md w-full p-6 text-center border border-sky-100">
+            <div class="w-12 h-12 bg-brand-100 text-brand-600 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-black">i</div>
+            <h4 id="alertTitle" class="text-base font-bold text-slate-900 mb-2"></h4>
+            <p id="alertMessage" class="text-sm text-slate-600 leading-relaxed mb-5 whitespace-pre-line"></p>
+            <button type="button" id="closeAlertBtn" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-2.5 rounded-xl text-sm transition-all">حسناً</button>
         </div>
     </div>
 
@@ -333,10 +352,10 @@
     <footer class="bg-white border-t border-sky-100 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-right">
             <div>
-                <span class="text-lg font-black text-brand-700">منصة التقنية المتقدمة</span>
-                <p class="text-xs text-slate-500 mt-1">جميع الحقوق محفوظة للمؤسس © 2026</p>
+                <span class="text-lg font-black text-brand-700" dir="ltr">Saleh's Vision Labs</span>
+                <p class="text-xs text-slate-500 mt-1">جميع الحقوق محفوظة © 2026</p>
             </div>
-            <div class="flex items-center space-x-6 space-x-reverse text-sm font-medium text-slate-600">
+            <div class="flex items-center gap-6 text-sm font-medium text-slate-600">
                 <a href="#about" class="hover:text-brand-600">عن المؤسس</a>
                 <a href="#research" class="hover:text-brand-600">الأبحاث</a>
                 <a href="#tips" class="hover:text-brand-600">النصائح</a>
@@ -345,15 +364,24 @@
         </div>
     </footer>
 
-    <!-- JavaScript Application Logic -->
     <script>
-        // Initial Mock Database Items
-        let databaseItems = [
+        // ---------- أدوات مساعدة ----------
+        // تعقيم النصوص لمنع هجمات XSS
+        function esc(s) {
+            return String(s).replace(/[&<>"']/g, c => ({
+                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+            }[c]));
+        }
+
+        const STORAGE_KEY = 'svl_items_v1';
+
+        // ---------- البيانات ----------
+        const defaultItems = [
             {
                 id: 1,
                 title: 'تطبيقات الذكاء الاصطناعي التوليدي في هندسة البرمجيات الحديثة',
                 category: 'ذكاء اصطناعي',
-                desc: 'ورقة بحثية متعمقة تستعرض كيف تساهم أدوات المساعدة البرمجية في رفع جودة الأكواد بنسبة تصل إلى 40%.'
+                desc: 'ورقة تقنية تستعرض كيف تساهم أدوات المساعدة البرمجية في تسريع التطوير وتحسين جودة الأكواد.'
             },
             {
                 id: 2,
@@ -369,13 +397,27 @@
             }
         ];
 
-        // Render Database Items
+        function loadItems() {
+            try {
+                const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+                if (Array.isArray(saved)) return saved;
+            } catch (e) { /* التخزين غير متاح */ }
+            return defaultItems.slice();
+        }
+
+        function saveItems() {
+            try { localStorage.setItem(STORAGE_KEY, JSON.stringify(databaseItems)); } catch (e) {}
+        }
+
+        let databaseItems = loadItems();
+
+        // ---------- العرض ----------
         function renderDatabase(items) {
             const grid = document.getElementById('contentGrid');
             grid.innerHTML = '';
 
             if (items.length === 0) {
-                grid.innerHTML = `<div class="col-span-3 text-center py-12 text-slate-400 font-medium">لا توجد نتائج مطابقة لبحثك.</div>`;
+                grid.innerHTML = '<div class="col-span-full text-center py-12 text-slate-400 font-medium">لا توجد نتائج مطابقة لبحثك.</div>';
                 return;
             }
 
@@ -384,78 +426,117 @@
                 card.className = 'bg-white rounded-2xl p-6 shadow-sm border border-sky-100 hover:shadow-xl hover:border-brand-300 transition-all flex flex-col justify-between';
                 card.innerHTML = `
                     <div class="space-y-3">
-                        <span class="inline-block bg-brand-50 text-brand-700 text-xs font-bold px-3 py-1 rounded-md border border-brand-100">${item.category}</span>
-                        <h3 class="text-lg font-bold text-slate-900">${item.title}</h3>
-                        <p class="text-slate-600 text-xs leading-relaxed">${item.desc}</p>
+                        <span class="inline-block bg-brand-50 text-brand-700 text-xs font-bold px-3 py-1 rounded-md border border-brand-100">${esc(item.category)}</span>
+                        <h3 class="text-lg font-bold text-slate-900">${esc(item.title)}</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed">${esc(item.desc)}</p>
                     </div>
                     <div class="pt-4 mt-4 border-t border-sky-50 flex items-center justify-between">
                         <span class="text-[11px] text-slate-400">بواسطة المنصة</span>
-                        <button onclick="alertBox('تمت قراءة التفاصيل الخاصة بـ: ${item.title}')" class="text-brand-600 hover:text-brand-700 font-bold text-xs">عرض التفاصيل</button>
+                        <button type="button" class="details-btn text-brand-600 hover:text-brand-700 font-bold text-xs">عرض التفاصيل</button>
                     </div>
                 `;
+                card.querySelector('.details-btn').addEventListener('click', () => {
+                    showAlert(item.title, item.desc);
+                });
                 grid.appendChild(card);
             });
         }
 
-        // Filter Content based on Search Input
         function filterContent() {
-            const query = document.getElementById('searchInput').value.toLowerCase();
-            const filtered = databaseItems.filter(item => 
-                item.title.toLowerCase().includes(query) || 
-                item.desc.toLowerCase().includes(query) || 
+            const query = document.getElementById('searchInput').value.trim().toLowerCase();
+            const filtered = databaseItems.filter(item =>
+                item.title.toLowerCase().includes(query) ||
+                item.desc.toLowerCase().includes(query) ||
                 item.category.toLowerCase().includes(query)
             );
             renderDatabase(filtered);
         }
 
-        // Modal Controls
+        // ---------- النوافذ المنبثقة ----------
+        const addModal = document.getElementById('addModal');
+        const alertModal = document.getElementById('customAlert');
+
         function openModal() {
-            document.getElementById('addModal').classList.remove('hidden');
-            document.getElementById('addModal').classList.add('flex');
+            addModal.classList.remove('hidden');
+            addModal.classList.add('flex');
+            document.getElementById('itemTitle').focus();
         }
 
         function closeModal() {
-            document.getElementById('addModal').classList.remove('flex');
-            document.getElementById('addModal').classList.add('hidden');
+            addModal.classList.remove('flex');
+            addModal.classList.add('hidden');
             document.getElementById('contentForm').reset();
         }
 
-        // Handle Form Submit
-        function handleFormSubmit(e) {
-            e.preventDefault();
-            const title = document.getElementById('itemTitle').value;
-            const category = document.getElementById('itemCategory').value;
-            const desc = document.getElementById('itemDesc').value;
-
-            const newItem = {
-                id: Date.now(),
-                title,
-                category,
-                desc
-            };
-
-            databaseItems.unshift(newItem);
-            renderDatabase(databaseItems);
-            closeModal();
-            alertBox('تم إضافة المحتوى بنجاح إلى قاعدة البيانات التفاعلية!');
-        }
-
-        // Custom Alert Box Controls
-        function alertBox(msg) {
-            document.getElementById('alertMessage').innerText = msg;
-            document.getElementById('customAlert').classList.remove('hidden');
-            document.getElementById('customAlert').classList.add('flex');
+        function showAlert(title, msg) {
+            document.getElementById('alertTitle').textContent = title || '';
+            document.getElementById('alertMessage').textContent = msg || '';
+            alertModal.classList.remove('hidden');
+            alertModal.classList.add('flex');
         }
 
         function closeAlert() {
-            document.getElementById('customAlert').classList.remove('flex');
-            document.getElementById('customAlert').classList.add('hidden');
+            alertModal.classList.remove('flex');
+            alertModal.classList.add('hidden');
         }
 
-        // Initial load
-        window.onload = function() {
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const title = document.getElementById('itemTitle').value.trim();
+            const category = document.getElementById('itemCategory').value;
+            const desc = document.getElementById('itemDesc').value.trim();
+            if (!title || !desc) return;
+
+            databaseItems.unshift({ id: Date.now(), title, category, desc });
+            saveItems();
+            document.getElementById('searchInput').value = '';
             renderDatabase(databaseItems);
+            closeModal();
+            showAlert('تمت الإضافة', 'تمت إضافة المحتوى بنجاح إلى قاعدة المعرفة.');
         }
+
+        // ---------- ربط الأحداث ----------
+        document.getElementById('searchInput').addEventListener('input', filterContent);
+        document.getElementById('contentForm').addEventListener('submit', handleFormSubmit);
+        document.getElementById('closeModalBtn').addEventListener('click', closeModal);
+        document.getElementById('cancelModalBtn').addEventListener('click', closeModal);
+        document.getElementById('closeAlertBtn').addEventListener('click', closeAlert);
+        document.getElementById('adminAddBtn').addEventListener('click', openModal);
+
+        // إغلاق بالنقر خارج النافذة
+        addModal.addEventListener('click', e => { if (e.target === addModal) closeModal(); });
+        alertModal.addEventListener('click', e => { if (e.target === alertModal) closeAlert(); });
+
+        // إغلاق بزر Esc
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') { closeModal(); closeAlert(); }
+        });
+
+        // قائمة الجوال
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => {
+            const open = mobileMenu.classList.toggle('hidden') === false;
+            menuBtn.setAttribute('aria-expanded', String(open));
+        });
+        document.querySelectorAll('.mobile-link').forEach(a => a.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            menuBtn.setAttribute('aria-expanded', 'false');
+        }));
+
+        // وضع المشرف: افتح الصفحة بالشكل index.html?admin=1 لإظهار أزرار الإضافة.
+        // تنبيه: هذا ليس نظام حماية حقيقياً. المحتوى المضاف محفوظ في متصفحك أنت فقط.
+        // للنشر العام للجميع تحتاج قاعدة بيانات (Firebase / Supabase) مع تسجيل دخول.
+        if (new URLSearchParams(location.search).get('admin') === '1') {
+            document.getElementById('adminTopBtn').classList.remove('hidden');
+            document.getElementById('adminTopBtn').classList.add('md:inline-flex');
+            const addBtn = document.getElementById('adminAddBtn');
+            addBtn.classList.remove('hidden');
+            addBtn.classList.add('flex');
+        }
+
+        // التحميل الأولي
+        renderDatabase(databaseItems);
     </script>
 </body>
 </html>
