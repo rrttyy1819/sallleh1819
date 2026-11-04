@@ -380,7 +380,14 @@
     </footer>
 
     <script>
-        const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTKYD5Q9fQYhHZQYHXfdgSVLSuBEHwEYsFiIefpLeYVk--NkEYzUNyM0bEm3VqDbkx3NHglcQMxbCBL/pub?gid=1016148317&single=true&output=csv';
+        console.log("LoboTech Version: 3.0 - Anti-Mojibake Active");
+
+        // تم تغيير الرابط إلى صيغة gviz التي تُجبر جوجل على إرسال الترميز الصحيح
+        const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/1TKYD5Q9fQYhHZQYHXfdgSVLSuBEHwEYsFiIefpLeYVk/gviz/tq?tqx=out:csv&gid=1016148317';
+        
+        // في حال كان الرابط السابق خاصاً (Published)، نستخدم الرابط الأساسي البديل
+        const FALLBACK_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTKYD5Q9fQYhHZQYHXfdgSVLSuBEHwEYsFiIefpLeYVk--NkEYzUNyM0bEm3VqDbkx3NHglcQMxbCBL/pub?gid=1016148317&single=true&output=csv';
+
         const ALL = 'كل الأوراق';
 
         const STR = {
@@ -599,12 +606,32 @@
             return rows;
         }
 
+        // الدالة السحرية لحل مشكلة الرموز (Mojibake)
+        function fixMojibake(str) {
+            if (!str) return str;
+            // التحقق مما إذا كان النص يحتوي على رموز غريبة شائعة في هذه المشكلة
+            if (str.includes('Ø') || str.includes('Ù') || str.includes('©') || str.includes('­')) {
+                try {
+                    // إعادة تحويل النص إلى الترميز الصحيح
+                    return decodeURIComponent(escape(str));
+                } catch (e) {
+                    return str; // إذا فشل الإصلاح، نعيد النص كما هو
+                }
+            }
+            return str;
+        }
+
         function rowsToPapers(rows) {
             if (rows.length < 2) return [];
             const header = rows[0].map(h => h.trim().toLowerCase());
             return rows.slice(1).map(r => {
                 const o = {};
-                header.forEach((h, i) => { o[h] = (r[i] || '').trim(); });
+                header.forEach((h, i) => {
+                    // تطبيق الإصلاح على كل خلية يتم قراءتها من الجدول
+                    let val = (r[i] || '').trim();
+                    val = fixMojibake(val); 
+                    o[h] = val;
+                });
                 return o;
             }).filter(p => p.title);
         }
@@ -1186,12 +1213,20 @@
 
         async function loadPapers() {
             try {
-                // إضافة كاسر الكاش (t) وإجبار الترميز الصحيح
-                const res = await fetch(SHEET_CSV_URL + '&t=' + new Date().getTime(), { cache: 'no-store' });
+                // محاولة جلب البيانات من رابط gviz (الذي يفرض الترميز الصحيح)
+                let res = await fetch(SHEET_CSV_URL + '&t=' + new Date().getTime(), { cache: 'no-store' });
+                
+                // إذا فشل رابط gviz، نجرب الرابط الأساسي
+                if (!res.ok) {
+                    console.warn('gviz link failed, trying fallback link...');
+                    res = await fetch(FALLBACK_CSV_URL + '&t=' + new Date().getTime(), { cache: 'no-store' });
+                }
+                
                 if (!res.ok) throw new Error('HTTP ' + res.status);
                 
-                // استخدام res.text() بدلاً من arrayBuffer لحل مشكلة الرموز في الجوال
-                let text = await res.text();
+                const buffer = await res.arrayBuffer();
+                // إجبار المتصفح على قراءة النص بترميز UTF-8
+                const text = new TextDecoder('utf-8').decode(buffer);
                 
                 papers = rowsToPapers(parseCSV(text));
                 if (papers.length === 0) throw new Error('Sheet empty or headers invalid');
