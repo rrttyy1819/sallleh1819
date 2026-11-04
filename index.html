@@ -7,9 +7,7 @@
     <meta name="description" content="دليل عربي للأوراق العلمية في الذكاء الاصطناعي والتقنية، مع ملخصات عربية وروابط مباشرة إلى المصادر الأصلية.">
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230284c7'/%3E%3Ctext x='50' y='68' font-size='56' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3ESV%3C/text%3E%3C/svg%3E">
 
-    <!-- Google Fonts: Tajawal -->
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS (للتجربة فقط: يُفضّل بناء Tailwind قبل النشر الفعلي) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -17,45 +15,29 @@
                 extend: {
                     colors: {
                         brand: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            200: '#bae6fd',
-                            400: '#38bdf8',
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                            700: '#0369a1',
-                            900: '#0c4a6e',
+                            50: '#f0f9ff', 100: '#e0f2fe', 200: '#bae6fd',
+                            400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7',
+                            700: '#0369a1', 900: '#0c4a6e',
                         }
                     },
-                    fontFamily: {
-                        tajawal: ['Tajawal', 'sans-serif']
-                    }
+                    fontFamily: { tajawal: ['Tajawal', 'sans-serif'] }
                 }
             }
         }
     </script>
     <style>
-        body {
-            font-family: 'Tajawal', sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
-        }
+        body { font-family: 'Tajawal', sans-serif; background-color: #f8fafc; color: #1e293b; }
         html { scroll-behavior: smooth; }
         section[id] { scroll-margin-top: 5rem; }
-        .hero-gradient {
-            background: linear-gradient(135deg, #e0f2fe 0%, #ffffff 50%, #bae6fd 100%);
-        }
-        .line-clamp-5 {
-            display: -webkit-box;
-            -webkit-line-clamp: 5;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
+        .hero-gradient { background: linear-gradient(135deg, #e0f2fe 0%, #ffffff 50%, #bae6fd 100%); }
+        .line-clamp-5 { display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }
+        .service-card { transition: all 0.3s ease; }
+        .service-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.1), 0 8px 10px -6px rgba(2, 132, 199, 0.1); }
+        .clickable-card { cursor: pointer; }
     </style>
 </head>
 <body class="bg-slate-50 min-h-screen flex flex-col justify-between">
 
-    <!-- Header / Navbar -->
     <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-sky-100 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <a href="#top" class="flex items-center gap-3">
@@ -69,37 +51,21 @@
                     <span class="block text-xs text-slate-500 font-medium" data-i18n="tagline"></span>
                 </div>
             </a>
-
-            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
-                <a href="#about" class="hover:text-brand-600 transition-colors" data-i18n="navAbout"></a>
-                <a href="#research" class="hover:text-brand-600 transition-colors" data-i18n="navFields"></a>
-                <a href="#tips" class="hover:text-brand-600 transition-colors" data-i18n="navTips"></a>
-            </nav>
-
+            <nav id="navLinks" class="hidden lg:flex items-center gap-6 xl:gap-8 text-sm font-semibold text-slate-600"></nav>
             <div class="flex items-center gap-2">
-                <!-- زر تبديل اللغة -->
                 <button id="langBtn" type="button" class="px-3 py-1.5 rounded-lg border border-sky-200 text-xs font-bold text-brand-700 hover:bg-sky-50 transition-all"></button>
-
-                <button id="menuBtn" type="button" data-i18n-aria="menu" aria-expanded="false" class="md:hidden p-2 rounded-lg text-slate-700 hover:bg-sky-50">
+                <button id="menuBtn" type="button" data-i18n-aria="menu" aria-expanded="false" class="lg:hidden p-2 rounded-lg text-slate-700 hover:bg-sky-50">
                     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                 </button>
             </div>
         </div>
-
-        <!-- قائمة الجوال -->
-        <nav id="mobileMenu" class="hidden md:hidden border-t border-sky-100 bg-white px-4 py-3 space-y-1 text-sm font-semibold text-slate-700">
-            <a href="#about" class="mobile-link block px-3 py-2.5 rounded-lg hover:bg-sky-50" data-i18n="navAbout"></a>
-            <a href="#research" class="mobile-link block px-3 py-2.5 rounded-lg hover:bg-sky-50" data-i18n="navFields"></a>
-            <a href="#tips" class="mobile-link block px-3 py-2.5 rounded-lg hover:bg-sky-50" data-i18n="navTips"></a>
-        </nav>
+        <nav id="mobileMenu" class="hidden lg:hidden border-t border-sky-100 bg-white px-4 py-3 space-y-1 text-sm font-semibold text-slate-700"></nav>
     </header>
 
     <main id="top">
 
-    <!-- ================= الصفحة الرئيسية ================= -->
     <div id="homeView">
 
-    <!-- Hero Section -->
     <section class="hero-gradient py-20 px-4 sm:px-6 lg:px-8 border-b border-sky-100 relative overflow-hidden">
         <div class="absolute -top-24 -left-24 w-96 h-96 bg-brand-200 rounded-full blur-3xl opacity-40 pointer-events-none"></div>
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
@@ -118,7 +84,6 @@
                     <a href="#about" class="bg-white hover:bg-sky-50 text-slate-800 font-bold px-8 py-3.5 rounded-xl border border-sky-200 shadow-sm transition-all" data-i18n="ctaFounder"></a>
                 </div>
             </div>
-
             <div class="lg:col-span-5 flex justify-center">
                 <div class="relative w-full max-w-sm">
                     <div class="absolute inset-0 bg-brand-400 rounded-3xl rotate-3 opacity-20 filter blur-xl"></div>
@@ -127,8 +92,9 @@
                              data-srcs="saleh.png,saleh.jpg,saleh.jpeg,saleh.webp"
                              data-i18n-alt="heroAlt"
                              alt=""
+                             loading="lazy" decoding="async"
                              onerror="imgFallback(this)"
-                             class="w-full h-96 object-cover object-top rounded-2xl shadow-md">
+                             class="w-full h-80 object-cover object-top rounded-2xl shadow-md">
                         <div class="absolute bottom-6 right-6 left-6 bg-white/90 backdrop-blur-md p-4 rounded-xl border border-sky-100 shadow-lg">
                             <h3 class="font-bold text-slate-900 text-base" data-i18n="personName"></h3>
                             <p class="text-xs text-brand-600 font-semibold mt-0.5" data-i18n="personRole"></p>
@@ -139,7 +105,6 @@
         </div>
     </section>
 
-    <!-- Founder / About Me Section -->
     <section id="about" class="py-20 bg-white border-b border-sky-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -150,8 +115,9 @@
                              data-srcs="saleh.png,saleh.jpg,saleh.jpeg,saleh.webp"
                              data-i18n-alt="aboutAlt"
                              alt=""
+                             loading="lazy" decoding="async"
                              onerror="imgFallback(this)"
-                             class="w-full h-96 object-cover object-top rounded-2xl shadow-md">
+                             class="w-full h-80 object-cover object-top rounded-2xl shadow-md">
                     </div>
                 </div>
                 <div class="lg:col-span-7 space-y-6">
@@ -173,77 +139,183 @@
         </div>
     </section>
 
-    <!-- المجالات العلمية (أيقونات تفتح صفحة كل مجال) -->
-    <section id="research" class="py-20 bg-slate-50 border-b border-sky-50">
+    <section id="services" class="py-20 bg-slate-50 border-b border-sky-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-brand-600 font-bold uppercase text-xs bg-brand-100 px-3 py-1 rounded-lg border border-brand-200" data-i18n="servicesBadge"></span>
+                <h2 class="text-3xl font-black text-slate-900 mt-3" data-i18n="servicesTitle"></h2>
+                <p class="text-slate-600 mt-2" data-i18n="servicesDesc"></p>
+            </div>
+            <div id="servicesGrid" class="flex flex-wrap justify-center gap-5 max-w-6xl mx-auto"></div>
+        </div>
+    </section>
+
+    <section id="research" class="py-20 bg-white border-b border-sky-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12">
                 <span class="text-brand-600 font-bold uppercase text-xs bg-brand-100 px-3 py-1 rounded-lg border border-brand-200" data-i18n="fieldsBadge"></span>
                 <h2 class="text-3xl font-black text-slate-900 mt-3" data-i18n="fieldsTitle"></h2>
                 <p class="text-slate-600 mt-2" data-i18n="fieldsDesc"></p>
             </div>
-
             <div id="categoryGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
                 <div class="col-span-full text-center py-12 text-slate-400 font-medium" data-i18n="loadingFields"></div>
             </div>
         </div>
     </section>
 
-    <!-- Tech Tips Section -->
+    <section id="tools" class="py-20 bg-slate-50 border-b border-sky-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-brand-600 font-bold uppercase text-xs bg-brand-100 px-3 py-1 rounded-lg border border-brand-200" data-i18n="toolsBadge"></span>
+                <h2 class="text-3xl font-black text-slate-900 mt-3" data-i18n="toolsTitle"></h2>
+                <p class="text-slate-600 mt-2" data-i18n="toolsDesc"></p>
+            </div>
+            <div id="toolsGrid" class="flex flex-wrap justify-center gap-5 max-w-6xl mx-auto"></div>
+        </div>
+    </section>
+
     <section id="tips" class="py-20 bg-white border-b border-sky-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
+            <div class="text-center max-w-3xl mx-auto mb-12">
                 <span class="text-brand-600 font-bold uppercase text-xs bg-brand-100 px-3 py-1 rounded-lg border border-brand-200" data-i18n="tipsBadge"></span>
                 <h2 class="text-3xl font-black text-slate-900 mt-3" data-i18n="tipsTitle"></h2>
                 <p class="text-slate-600 mt-2" data-i18n="tipsDesc"></p>
             </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-sky-50/50 p-6 rounded-2xl border border-sky-100 space-y-3 hover:bg-sky-50 transition-all">
-                    <div class="w-10 h-10 rounded-xl bg-brand-600 text-white flex items-center justify-center font-black">01</div>
-                    <h3 class="font-bold text-slate-900 text-lg" data-i18n="tip1T"></h3>
-                    <p class="text-xs text-slate-600 leading-relaxed" data-i18n="tip1D"></p>
-                </div>
-                <div class="bg-sky-50/50 p-6 rounded-2xl border border-sky-100 space-y-3 hover:bg-sky-50 transition-all">
-                    <div class="w-10 h-10 rounded-xl bg-brand-600 text-white flex items-center justify-center font-black">02</div>
-                    <h3 class="font-bold text-slate-900 text-lg" data-i18n="tip2T"></h3>
-                    <p class="text-xs text-slate-600 leading-relaxed" data-i18n="tip2D"></p>
-                </div>
-                <div class="bg-sky-50/50 p-6 rounded-2xl border border-sky-100 space-y-3 hover:bg-sky-50 transition-all">
-                    <div class="w-10 h-10 rounded-xl bg-brand-600 text-white flex items-center justify-center font-black">03</div>
-                    <h3 class="font-bold text-slate-900 text-lg" data-i18n="tip3T"></h3>
-                    <p class="text-xs text-slate-600 leading-relaxed" data-i18n="tip3D"></p>
-                </div>
-                <div class="bg-sky-50/50 p-6 rounded-2xl border border-sky-100 space-y-3 hover:bg-sky-50 transition-all">
-                    <div class="w-10 h-10 rounded-xl bg-brand-600 text-white flex items-center justify-center font-black">04</div>
-                    <h3 class="font-bold text-slate-900 text-lg" data-i18n="tip4T"></h3>
-                    <p class="text-xs text-slate-600 leading-relaxed" data-i18n="tip4D"></p>
-                </div>
-            </div>
+            <div id="tipsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto"></div>
         </div>
     </section>
 
     </div>
-    <!-- ================= نهاية الصفحة الرئيسية ================= -->
 
-    <!-- ================= صفحة المجال ================= -->
+    <!-- Modal: Contact Info -->
+    <div id="contactModal" role="dialog" aria-modal="true" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-sky-100 transform transition-all relative">
+            <button onclick="toggleModal('contactModal', false)" class="absolute top-5 start-5 text-slate-400 hover:text-slate-700 p-2 rounded-xl bg-sky-50 transition-all">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <div class="text-center pt-4">
+                <div class="w-16 h-16 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                </div>
+                <h3 class="text-2xl font-black text-slate-900 mb-2" data-i18n="contactTitle"></h3>
+                <p class="text-sm text-slate-500 mb-6" data-i18n="contactDesc"></p>
+                
+                <div class="space-y-4">
+                    <a href="tel:+966565361639" class="flex items-center justify-between p-4 bg-slate-50 border border-sky-100 rounded-xl hover:border-brand-400 hover:bg-sky-50 transition-all group">
+                        <div class="flex items-center gap-3">
+                            <div class="text-brand-600"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg></div>
+                            <span class="font-bold text-slate-700" dir="ltr">+966 56 536 1639</span>
+                        </div>
+                        <span class="text-xs font-bold text-brand-600 group-hover:underline" data-i18n="callBtn">اتصال</span>
+                    </a>
+                    <a href="mailto:sallleh1819@gmail.com" class="flex items-center justify-between p-4 bg-slate-50 border border-sky-100 rounded-xl hover:border-brand-400 hover:bg-sky-50 transition-all group">
+                        <div class="flex items-center gap-3">
+                            <div class="text-brand-600"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></div>
+                            <span class="font-bold text-slate-700 text-sm" dir="ltr">sallleh1819@gmail.com</span>
+                        </div>
+                        <span class="text-xs font-bold text-brand-600 group-hover:underline" data-i18n="emailBtn">إرسال</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Courses -->
+    <div id="coursesModal" role="dialog" aria-modal="true" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-sky-100 transform transition-all relative max-h-[90vh] overflow-y-auto">
+            <button onclick="toggleModal('coursesModal', false)" class="absolute top-5 start-5 text-slate-400 hover:text-slate-700 p-2 rounded-xl bg-sky-50 transition-all z-10">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <div class="flex items-center gap-3 mb-6 border-b border-sky-100 pb-4">
+                <div class="w-12 h-12 rounded-2xl bg-brand-600 text-white flex items-center justify-center font-black text-lg shadow-md shadow-brand-500/20">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+                </div>
+                <h3 class="text-2xl font-black text-slate-900" data-i18n="coursesTitle"></h3>
+            </div>
+            
+            <div class="space-y-4">
+                <!-- Python Course -->
+                <a href="https://www.youtube.com/results?search_query=python+course" target="_blank" rel="noopener" class="flex items-start gap-4 p-4 rounded-2xl border border-sky-100 hover:border-red-300 hover:shadow-md transition-all group bg-slate-50">
+                    <div class="w-12 h-12 shrink-0 rounded-xl bg-red-100 text-red-600 flex items-center justify-center">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-lg group-hover:text-red-600 transition-colors" data-i18n="coursePython"></h4>
+                        <p class="text-sm text-slate-500 mt-1" data-i18n="coursePythonDesc"></p>
+                    </div>
+                </a>
+
+                <!-- Power BI Course -->
+                <a href="https://www.youtube.com/results?search_query=power+bi+course" target="_blank" rel="noopener" class="flex items-start gap-4 p-4 rounded-2xl border border-sky-100 hover:border-yellow-400 hover:shadow-md transition-all group bg-slate-50">
+                    <div class="w-12 h-12 shrink-0 rounded-xl bg-yellow-100 text-yellow-600 flex items-center justify-center">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-lg group-hover:text-yellow-600 transition-colors" data-i18n="coursePowerBI"></h4>
+                        <p class="text-sm text-slate-500 mt-1" data-i18n="coursePowerBIDesc"></p>
+                    </div>
+                </a>
+
+                <!-- Databases Course -->
+                <a href="https://www.youtube.com/results?search_query=database+course" target="_blank" rel="noopener" class="flex items-start gap-4 p-4 rounded-2xl border border-sky-100 hover:border-emerald-400 hover:shadow-md transition-all group bg-slate-50">
+                    <div class="w-12 h-12 shrink-0 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors" data-i18n="courseDB"></h4>
+                        <p class="text-sm text-slate-500 mt-1" data-i18n="courseDBDesc"></p>
+                    </div>
+                </a>
+            </div>
+            <div class="mt-8 text-center">
+                <p class="text-xs text-slate-400" data-i18n="courseNote"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Tips -->
+    <div id="tipModal" role="dialog" aria-modal="true" aria-labelledby="tipModalTitle" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl border border-sky-100 transform transition-all relative">
+            <button id="closeTipModal" class="absolute top-5 start-5 text-slate-400 hover:text-slate-700 p-2 rounded-xl bg-sky-50 transition-all">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <div class="flex items-center gap-3 mb-4">
+                <div id="tipModalNum" class="w-12 h-12 rounded-2xl bg-brand-600 text-white flex items-center justify-center font-black text-lg shadow-md shadow-brand-500/20"></div>
+                <h3 id="tipModalTitle" class="text-xl sm:text-2xl font-black text-slate-900 leading-snug"></h3>
+            </div>
+            <div class="space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed border-t border-sky-100 pt-4">
+                <div>
+                    <h4 class="font-bold text-brand-900 mb-1 text-xs uppercase tracking-wider" data-i18n="tipDetailLabel">التفاصيل والمنهجية:</h4>
+                    <p id="tipModalDesc"></p>
+                </div>
+                <div class="bg-sky-50/70 p-4 rounded-2xl border border-sky-100">
+                    <h4 class="font-bold text-brand-700 mb-1 text-xs uppercase tracking-wider flex items-center gap-1.5">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span data-i18n="tipExampleLabel">مثال عملي:</span>
+                    </h4>
+                    <p id="tipModalExample" class="text-xs sm:text-sm text-slate-700 font-medium"></p>
+                </div>
+            </div>
+            <div class="mt-6 flex justify-end">
+                <button id="closeTipModalBtn" class="bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs px-6 py-2.5 rounded-xl transition-all shadow-md shadow-brand-500/20" data-i18n="closeBtn"></button>
+            </div>
+        </div>
+    </div>
+
     <div id="catView" class="hidden">
         <section class="py-12 bg-slate-50 min-h-[70vh]">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
                 <a href="#research" class="inline-flex items-center gap-2 text-sm font-bold text-brand-700 hover:text-brand-900 mb-6">
                     <svg class="w-4 h-4 ltr:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                     <span data-i18n="back"></span>
                 </a>
-
                 <div class="flex items-center gap-4 mb-8">
-                    <div id="catIcon" class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-brand-600 to-sky-400 text-white flex items-center justify-center shadow-md shadow-brand-500/20"></div>
+                    <div id="catIcon" class="w-12 h-12 rounded-xl bg-gradient-to-tr from-brand-600 to-sky-400 text-white flex items-center justify-center shadow-md shadow-brand-500/20"></div>
                     <div>
                         <h1 id="catTitle" class="text-3xl font-black text-slate-900"></h1>
                         <p id="catSubtitle" class="text-sm text-slate-500 mt-1"></p>
                     </div>
                 </div>
-
-                <!-- البحث والترتيب -->
                 <div class="bg-white p-4 sm:p-6 rounded-2xl shadow-sm border border-sky-100 mb-6 space-y-3">
                     <div class="flex flex-col sm:flex-row gap-3">
                         <div class="relative w-full sm:flex-1">
@@ -261,33 +333,27 @@
                             </select>
                         </div>
                     </div>
-                    <p id="resultCount" class="text-xs text-slate-500"></p>
+                    <p id="resultCount" class="text-xs text-slate-500" aria-live="polite"></p>
                 </div>
-
                 <div id="papersGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
             </div>
         </section>
     </div>
-    <!-- ================= نهاية صفحة المجال ================= -->
 
-    <!-- ================= صفحة مصادر البيانات المفتوحة ================= -->
     <div id="dataView" class="hidden">
         <section class="py-12 bg-slate-50 min-h-[70vh]">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
                 <a href="#research" class="inline-flex items-center gap-2 text-sm font-bold text-emerald-700 hover:text-emerald-900 mb-6">
                     <svg class="w-4 h-4 ltr:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                     <span data-i18n="back"></span>
                 </a>
-
                 <div class="flex items-center gap-4 mb-8">
-                    <div id="dataIcon" class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-400 text-white flex items-center justify-center shadow-md shadow-emerald-500/20"></div>
+                    <div id="dataIcon" class="w-12 h-12 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-400 text-white flex items-center justify-center shadow-md shadow-emerald-500/20"></div>
                     <div>
                         <h1 class="text-3xl font-black text-slate-900" data-i18n="dataTitle"></h1>
                         <p id="dataSubtitle" class="text-sm text-slate-500 mt-1"></p>
                     </div>
                 </div>
-
                 <div class="bg-white p-4 sm:p-6 rounded-2xl shadow-sm border border-emerald-100 mb-6 space-y-4">
                     <div class="relative w-full">
                         <label for="dataSearch" class="sr-only" data-i18n="srSearch"></label>
@@ -296,18 +362,15 @@
                         <svg class="w-5 h-5 text-slate-400 absolute start-3.5 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                     </div>
                     <div id="dataChips" class="flex flex-wrap gap-2"></div>
-                    <p id="dataCount" class="text-xs text-slate-500"></p>
+                    <p id="dataCount" class="text-xs text-slate-500" aria-live="polite"></p>
                 </div>
-
                 <div id="dataGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
             </div>
         </section>
     </div>
-    <!-- ================= نهاية صفحة مصادر البيانات ================= -->
 
     </main>
 
-    <!-- Footer -->
     <footer class="bg-white border-t border-sky-100 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-start">
             <div>
@@ -315,183 +378,113 @@
                 <p class="text-xs text-slate-500 mt-1" data-i18n="footerRights"></p>
                 <p class="text-xs text-slate-400 mt-1" data-i18n="footerNote"></p>
             </div>
-            <div class="flex items-center gap-6 text-sm font-medium text-slate-600">
-                <a href="#about" class="hover:text-brand-600" data-i18n="navAbout"></a>
-                <a href="#research" class="hover:text-brand-600" data-i18n="footerFields"></a>
-                <a href="#tips" class="hover:text-brand-600" data-i18n="footerTips"></a>
-            </div>
+            <div id="footerLinks" class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-sm font-medium text-slate-600"></div>
         </div>
     </footer>
 
     <script>
-        // ========== الإعدادات ==========
-        // رابط الجدول المنشور (CSV). غيّره هنا فقط إذا أنشأت جدولاً جديداً.
         const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTKYD5Q9fQYhHZQYHXfdgSVLSuBEHwEYsFiIefpLeYVk--NkEYzUNyM0bEm3VqDbkx3NHglcQMxbCBL/pub?gid=1016148317&single=true&output=csv';
-
-        // اسم "كل الأوراق" في الرابط (مفتاح داخلي، لا يُعرض للزائر)
         const ALL = 'كل الأوراق';
 
-        // ========== النصوص بالعربية والإنجليزية ==========
-        // لتعديل أي نص: غيّر القيمة المقابلة هنا. الدوال (n) => ... تستقبل أرقاماً.
         const STR = {
             ar: {
-                langBtn: 'English',
-                tagline: 'للأبحاث والاستشارات التقنية',
-                navAbout: 'عن المؤسس',
-                navFields: 'المجالات العلمية',
-                navTips: 'النصائح التقنية',
-                menu: 'القائمة',
-                badge: 'منصة تقنية متخصصة',
+                langBtn: 'English', tagline: 'للأبحاث والاستشارات التقنية',
+                navAbout: 'عن المؤسس', navFields: 'المجالات العلمية', navTools: 'أدوات الباحث', navServices: 'الخدمات', navTips: 'نصائح بحثية',
+                servicesBadge: 'الخدمات', servicesTitle: 'كيف يمكنني مساعدتك', servicesDesc: 'خدمات استشارية وبحثية في الذكاء الاصطناعي والتقنية.',
+                tipsBadge: 'نصائح بحثية', tipsTitle: 'نصائح تساعدك على قراءة الأوراق العلمية', tipsDesc: 'خطوات عملية توفر وقتك وتحسّن فهمك عند التعامل مع الأبحاث. (انقر على أي نصيحة لعرض التفاصيل والأمثلة)',
+                tipDetailLabel: 'التفاصيل والشرح:', tipExampleLabel: 'مثال عملي وتطبيق:', closeBtn: 'إغلاق',
+                footerTools: 'الأدوات', toolsBadge: 'أدوات الباحث', toolsTitle: 'أدوات تدعم رحلتك البحثية', toolsDesc: 'مواقع وأدوات شائعة يعتمد عليها الباحثون في البحث عن الأوراق وإدارة المراجع وكتابة الأبحاث.', visitTool: 'زيارة الأداة',
+                menu: 'القائمة', badge: 'منصة تقنية متخصصة',
                 heroTitle: 'نصائح، أبحاث، ورؤى تقنية <span class="text-brand-600">تصنع المستقبل</span>',
                 heroDesc: 'دليل عربي لأهم الأوراق العلمية في الذكاء الاصطناعي والتقنية، بملخصات مبسطة وروابط مباشرة إلى المصادر الأصلية، بإشراف خبير تقني متخصص.',
-                ctaExplore: 'استكشف المجالات',
-                ctaFounder: 'تعرف على المؤسس',
-                personName: 'د. صالح العنزي',
-                personRole: 'خبير استشارات تقنية وأبحاث ذكاء اصطناعي',
-                heroAlt: 'د. صالح العنزي',
-                aboutAlt: 'د. صالح العنزي - المؤسس',
-                aboutBadge: 'عن المؤسس والخبير',
-                aboutTitle: 'شغف بالابتكار التقني وقيادة التحول الرقمي',
+                ctaExplore: 'استكشف المجالات', ctaFounder: 'تعرف على المؤسس',
+                personName: 'د. صالح العنزي', personRole: 'خبير استشارات تقنية وأبحاث ذكاء اصطناعي',
+                heroAlt: 'د. صالح العنزي', aboutAlt: 'د. صالح العنزي - المؤسس',
+                aboutBadge: 'عن المؤسس والخبير', aboutTitle: 'شغف بالابتكار التقني وقيادة التحول الرقمي',
                 aboutText: 'أهلاً بكم في منصتي التقنية. بصفتي متخصصاً وباحثاً في مجالات تكنولوجيا المعلومات، والبرمجيات المتقدمة، وأنظمة الذكاء الاصطناعي، أسست هذه المنصة لتوثيق الأبحاث وتقديم أحدث النصائح والرؤى التقنية المبنية على أسس علمية وتجارب عملية دقيقة.',
-                visionTitle: 'الرؤية',
-                visionText: 'بناء محتوى عربي تقني متقدم وعالي الجودة ينافس المعايير العالمية.',
-                missionTitle: 'الرسالة',
-                missionText: 'تمكين المهندسين والمطورين ورواد الأعمال بأحدث الأبحاث والاستشارات الدقيقة.',
-                fieldsBadge: 'دليل الأوراق العلمية',
-                fieldsTitle: 'تصفّح الأوراق حسب المجال',
-                fieldsDesc: 'اختر مجالاً لتصل إلى أوراقه العلمية، بملخصات عربية وروابط مباشرة إلى المصادر الأصلية.',
-                loadingFields: 'جارٍ تحميل المجالات...',
-                tipsBadge: 'نصائح وإرشادات',
-                tipsTitle: 'نصائح تقنية سريعة لرفع كفاءة عملك',
-                tipsDesc: 'أفضل الممارسات والأدوات المختارة بعناية للمطورين والمهنيين التقنيين.',
-                tip1T: 'تحسين أداء قواعد البيانات',
-                tip1D: 'استخدم الفهارس (Indexes) بحذر ولا تفرط فيها لتقليل زمن استعلامات SQL الكبيرة.',
-                tip2T: 'إدارة الشيفرات البرمجية',
-                tip2D: 'التزم بمعايير Clean Code واستخدم اختبارات الوحدة Unit Tests لتقليل الأخطاء المستقبلية.',
-                tip3T: 'الأمن أولاً في الـ APIs',
-                tip3D: 'احرص دائماً على تفعيل Rate Limiting وتشفير التوكنز لمنع هجمات الاختراق الشائعة.',
-                tip4T: 'التطوير المستمر للقدرات',
-                tip4D: 'خصص ساعة أسبوعياً لقراءة أحدث الأبحاث التقنية وتجربة أدوات الذكاء الاصطناعي الجديدة.',
-                back: 'العودة إلى المجالات',
-                srSearch: 'بحث',
-                srSort: 'الترتيب',
-                searchPh: 'ابحث بالعنوان أو المؤلف أو الموضوع...',
-                sortDefault: 'الترتيب الافتراضي',
-                sortNewest: 'الأحدث أولاً',
-                sortOldest: 'الأقدم أولاً',
-                dataTitle: 'مصادر البيانات المفتوحة',
-                dataSearchPh: 'ابحث عن موقع بيانات...',
-                footerRights: 'جميع الحقوق محفوظة © 2026',
-                footerNote: 'الأوراق المعروضة ملك لأصحابها ولناشريها، والروابط تقود إلى المصادر الأصلية.',
-                footerFields: 'المجالات',
-                footerTips: 'النصائح',
-                // نصوص ديناميكية
-                allPapers: 'كل الأوراق',
-                general: 'عام',
-                dataAll: 'الكل',
-                nPapers: n => n + ' ورقة',
-                nSites: n => n + ' موقع',
-                nInField: n => n + ' ورقة في هذا المجال',
+                visionTitle: 'الرؤية', visionText: 'بناء محتوى عربي تقني متقدم وعالي الجودة ينافس المعايير العالمية.',
+                missionTitle: 'الرسالة', missionText: 'تمكين المهندسين والمطورين ورواد الأعمال بأحدث الأبحاث والاستشارات الدقيقة.',
+                fieldsBadge: 'دليل الأوراق العلمية', fieldsTitle: 'تصفّح الأوراق حسب المجال', fieldsDesc: 'اختر مجالاً لتصل إلى أوراقه العلمية، بملخصات عربية وروابط مباشرة إلى المصادر الأصلية.',
+                loadingFields: 'جارٍ تحميل المجالات...', back: 'العودة إلى المجالات',
+                srSearch: 'بحث', srSort: 'الترتيب', searchPh: 'ابحث بالعنوان أو المؤلف أو الموضوع...',
+                sortDefault: 'الترتيب الافتراضي', sortNewest: 'الأحدث أولاً', sortOldest: 'الأقدم أولاً',
+                dataTitle: 'مصادر البيانات المفتوحة', dataSearchPh: 'ابحث عن موقع بيانات...',
+                footerRights: 'جميع الحقوق محفوظة © 2026', footerNote: 'الأوراق المعروضة ملك لأصحابها ولناشريها، والروابط تقود إلى المصادر الأصلية.',
+                footerFields: 'المجالات', allPapers: 'كل الأوراق', general: 'عام', dataAll: 'الكل',
+                nPapers: n => n + ' ورقة', nSites: n => n + ' موقع', nInField: n => n + ' ورقة في هذا المجال',
                 showing: (x, y) => 'عرض ' + x + ' من ' + y + ' ورقة',
                 showingSites: (x, y) => 'عرض ' + x + ' من ' + y + ' موقع',
                 dataSubtitle: n => n + ' موقع لمصادر البيانات المفتوحة',
-                loadingPapers: 'جارٍ تحميل الأوراق...',
-                noPapers: 'لا توجد أوراق في هذا المجال حالياً.',
-                noResults: 'لا توجد نتائج مطابقة لبحثك.',
-                viewPaper: 'عرض الورقة',
-                openPdf: 'فتح PDF',
-                noLink: 'الرابط غير متاح',
-                visitSite: 'زيارة الموقع',
+                loadingPapers: 'جارٍ تحميل الأوراق...', noPapers: 'لا توجد أوراق في هذا المجال حالياً.', noResults: 'لا توجد نتائج مطابقة لبحثك.',
+                viewPaper: 'عرض الورقة', openPdf: 'فتح PDF', noLink: 'الرابط غير متاح', visitSite: 'زيارة الموقع',
                 fallbackNote: ' — (نسخة احتياطية: تعذّر الاتصال بالجدول)',
                 titleHome: "Saleh's Vision Labs | دليل الأوراق العلمية والتقنية",
-                metaDesc: 'دليل عربي للأوراق العلمية في الذكاء الاصطناعي والتقنية، مع ملخصات عربية وروابط مباشرة إلى المصادر الأصلية.'
+                metaDesc: 'دليل عربي للأوراق العلمية في الذكاء الاصطناعي والتقنية، مع ملخصات عربية وروابط مباشرة إلى المصادر الأصلية.',
+                
+                // Services & Modals
+                contactTitle: 'تواصل معي للاستشارة', contactDesc: 'يسعدني مساعدتك في مشروعك أو استشارتك التقنية. تواصل معي مباشرة عبر:',
+                callBtn: 'اتصال', emailBtn: 'إرسال',
+                coursesTitle: 'الدورات التدريبية', 
+                coursePython: 'دورة بايثون (Python)', coursePythonDesc: 'تعلم البرمجة من الصفر وتحليل البيانات باستخدام بايثون.',
+                coursePowerBI: 'دورة باور بي آي (Power BI)', coursePowerBIDesc: 'احترف تحليل البيانات وبناء لوحات المعلومات التفاعلية.',
+                courseDB: 'دورة قواعد البيانات (Databases)', courseDBDesc: 'فهم تصميم قواعد البيانات ولغة SQL للتعامل مع البيانات.',
+                courseNote: 'انقر على أي دورة للانتقال إلى محتواها على قناة اليوتيوب.'
             },
             en: {
-                langBtn: 'العربية',
-                tagline: 'Research & Tech Consulting',
-                navAbout: 'About',
-                navFields: 'Research Fields',
-                navTips: 'Tech Tips',
-                menu: 'Menu',
-                badge: 'A specialized tech platform',
+                langBtn: 'العربية', tagline: 'Research & Tech Consulting',
+                navAbout: 'About', navFields: 'Research Fields', navTools: 'Researcher Tools', navServices: 'Services', navTips: 'Research Tips',
+                servicesBadge: 'Services', servicesTitle: 'How I can help', servicesDesc: 'Consulting and research services in AI and technology.',
+                tipsBadge: 'Research tips', tipsTitle: 'Tips for reading research papers', tipsDesc: 'Practical steps that save time and deepen your understanding when working with research.',
+                tipDetailLabel: 'Details & methodology:', tipExampleLabel: 'Practical example:', closeBtn: 'Close',
+                footerTools: 'Tools', toolsBadge: 'Researcher tools', toolsTitle: 'Tools to support your research journey', toolsDesc: 'Popular sites and tools researchers rely on for finding papers, managing references and writing up their work.', visitTool: 'Visit tool',
+                menu: 'Menu', badge: 'A specialized tech platform',
                 heroTitle: 'Tips, research and tech insights that <span class="text-brand-600">shape the future</span>',
                 heroDesc: 'A guide to the most important research papers in AI and technology, with simplified summaries and direct links to the original sources, curated by a specialist tech expert.',
-                ctaExplore: 'Explore fields',
-                ctaFounder: 'Meet the founder',
-                personName: 'Dr. Saleh Al-Enezi',
-                personRole: 'Tech consulting and AI research expert',
-                heroAlt: 'Dr. Saleh Al-Enezi',
-                aboutAlt: 'Dr. Saleh Al-Enezi - Founder',
-                aboutBadge: 'About the founder',
-                aboutTitle: 'Passionate about tech innovation and leading digital transformation',
+                ctaExplore: 'Explore fields', ctaFounder: 'Meet the founder',
+                personName: 'Dr. Saleh Al-Enezi', personRole: 'Tech consulting and AI research expert',
+                heroAlt: 'Dr. Saleh Al-Enezi', aboutAlt: 'Dr. Saleh Al-Enezi - Founder',
+                aboutBadge: 'About the founder', aboutTitle: 'Passionate about tech innovation and leading digital transformation',
                 aboutText: 'Welcome to my tech platform. As a specialist and researcher in information technology, advanced software and AI systems, I founded this platform to document research and share the latest tech tips and insights, grounded in science and careful hands-on experience.',
-                visionTitle: 'Vision',
-                visionText: 'Building advanced, high-quality Arabic tech content that competes with global standards.',
-                missionTitle: 'Mission',
-                missionText: 'Empowering engineers, developers and entrepreneurs with the latest research and accurate consulting.',
-                fieldsBadge: 'Research Papers Directory',
-                fieldsTitle: 'Browse papers by field',
-                fieldsDesc: 'Pick a field to reach its research papers, with concise summaries and direct links to the original sources.',
-                loadingFields: 'Loading fields...',
-                tipsBadge: 'Tips & guidance',
-                tipsTitle: 'Quick tech tips to boost your work',
-                tipsDesc: 'Best practices and carefully chosen tools for developers and tech professionals.',
-                tip1T: 'Optimize database performance',
-                tip1D: 'Use indexes carefully and do not overdo them, to cut the run time of large SQL queries.',
-                tip2T: 'Manage your codebase',
-                tip2D: 'Follow Clean Code principles and use unit tests to reduce future bugs.',
-                tip3T: 'Security first in APIs',
-                tip3D: 'Always enable rate limiting and encrypt tokens to prevent common attacks.',
-                tip4T: 'Keep growing your skills',
-                tip4D: 'Set aside an hour a week to read the latest tech research and try new AI tools.',
-                back: 'Back to fields',
-                srSearch: 'Search',
-                srSort: 'Sort',
-                searchPh: 'Search by title, author or topic...',
-                sortDefault: 'Default order',
-                sortNewest: 'Newest first',
-                sortOldest: 'Oldest first',
-                dataTitle: 'Open Data Sources',
-                dataSearchPh: 'Search for a data site...',
-                footerRights: 'All rights reserved © 2026',
-                footerNote: 'Papers shown belong to their authors and publishers; links lead to the original sources.',
-                footerFields: 'Fields',
-                footerTips: 'Tips',
-                allPapers: 'All papers',
-                general: 'General',
-                dataAll: 'All',
+                visionTitle: 'Vision', visionText: 'Building advanced, high-quality Arabic tech content that competes with global standards.',
+                missionTitle: 'Mission', missionText: 'Empowering engineers, developers and entrepreneurs with the latest research and accurate consulting.',
+                fieldsBadge: 'Research Papers Directory', fieldsTitle: 'Browse papers by field', fieldsDesc: 'Pick a field to reach its research papers, with concise summaries and direct links to the original sources.',
+                loadingFields: 'Loading fields...', back: 'Back to fields',
+                srSearch: 'Search', srSort: 'Sort', searchPh: 'Search by title, author or topic...',
+                sortDefault: 'Default order', sortNewest: 'Newest first', sortOldest: 'Oldest first',
+                dataTitle: 'Open Data Sources', dataSearchPh: 'Search for a data site...',
+                footerRights: 'All rights reserved © 2026', footerNote: 'Papers shown belong to their authors and publishers; links lead to the original sources.',
+                footerFields: 'Fields', allPapers: 'All papers', general: 'General', dataAll: 'All',
                 nPapers: n => n + (n === 1 ? ' paper' : ' papers'),
                 nSites: n => n + (n === 1 ? ' site' : ' sites'),
                 nInField: n => n + (n === 1 ? ' paper in this field' : ' papers in this field'),
                 showing: (x, y) => 'Showing ' + x + ' of ' + y + ' papers',
                 showingSites: (x, y) => 'Showing ' + x + ' of ' + y + ' sites',
                 dataSubtitle: n => n + ' open data sources',
-                loadingPapers: 'Loading papers...',
-                noPapers: 'There are no papers in this field yet.',
-                noResults: 'No results match your search.',
-                viewPaper: 'View paper',
-                openPdf: 'Open PDF',
-                noLink: 'Link unavailable',
-                visitSite: 'Visit site',
+                loadingPapers: 'Loading papers...', noPapers: 'There are no papers in this field yet.', noResults: 'No results match your search.',
+                viewPaper: 'View paper', openPdf: 'Open PDF', noLink: 'Link unavailable', visitSite: 'Visit site',
                 fallbackNote: ' — (backup copy: could not reach the spreadsheet)',
                 titleHome: "Saleh's Vision Labs | Research Papers & Tech Directory",
-                metaDesc: 'A directory of research papers in AI and technology, with simplified summaries and direct links to the original sources.'
+                metaDesc: 'A directory of research papers in AI and technology, with simplified summaries and direct links to the original sources.',
+                
+                // Services & Modals
+                contactTitle: 'Contact Me for Consulting', contactDesc: 'I would be happy to help with your project or technical consultation. Reach out directly via:',
+                callBtn: 'Call', emailBtn: 'Email',
+                coursesTitle: 'Training Courses',
+                coursePython: 'Python Course', coursePythonDesc: 'Learn programming from scratch and analyze data using Python.',
+                coursePowerBI: 'Power BI Course', coursePowerBIDesc: 'Master data analysis and build interactive dashboards.',
+                courseDB: 'Databases Course', courseDBDesc: 'Understand database design and SQL to handle data effectively.',
+                courseNote: 'Click any course to go to its content on the YouTube channel.'
             }
         };
 
         let lang = 'ar';
-        try {
-            const saved = localStorage.getItem('svl_lang');
-            if (saved === 'ar' || saved === 'en') lang = saved;
-        } catch (e) {}
+        try { const s = localStorage.getItem('svl_lang'); if (s === 'ar' || s === 'en') lang = s; } catch (e) {}
 
         function t(key, a, b) {
             const v = STR[lang][key];
             return typeof v === 'function' ? v(a, b) : v;
         }
 
-        // أسماء المجالات بالإنجليزية: الأفضل كتابتها في الجدول (عمود category_en).
-        // هذه ترجمات احتياطية للمجالات الحالية.
         const CAT_EN_BUILTIN = {
             'نماذج اللغة': 'Language Models',
             'رؤية حاسوبية': 'Computer Vision',
@@ -499,14 +492,21 @@
             'عام': 'General'
         };
         let catEnFromSheet = {};
+        const warnedCats = new Set();
 
         function label(cat) {
             if (cat === ALL) return t('allPapers');
-            if (lang === 'en') return catEnFromSheet[cat] || CAT_EN_BUILTIN[cat] || cat;
+            if (lang === 'en') {
+                const en = catEnFromSheet[cat] || CAT_EN_BUILTIN[cat];
+                if (!en && !warnedCats.has(cat)) {
+                    warnedCats.add(cat);
+                    console.warn('[i18n] No English label for category:', cat);
+                }
+                return en || cat;
+            }
             return cat;
         }
 
-        // نسخة احتياطية: تظهر فقط إذا تعذّر الاتصال بالجدول أو كان فارغاً
         const FALLBACK_PAPERS = [
             { title: 'Attention Is All You Need', authors: 'Ashish Vaswani et al.', year: '2017', category: 'نماذج اللغة', category_en: 'Language Models', summary: 'تقدّم معمارية Transformer التي تعتمد على آلية الانتباه وحدها بدل الشبكات المتكررة، وأصبحت الأساس لمعظم نماذج اللغة الحديثة.', summary_en: 'Introduces the Transformer architecture, which relies solely on attention instead of recurrent networks and became the foundation of most modern language models.', page_url: 'https://arxiv.org/abs/1706.03762', pdf_url: 'https://arxiv.org/pdf/1706.03762' },
             { title: 'BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding', authors: 'Jacob Devlin et al.', year: '2018', category: 'نماذج اللغة', category_en: 'Language Models', summary: 'يقدّم BERT كنموذج يتدرب مسبقاً على فهم السياق من الاتجاهين، ثم يُضبط لمهام لغوية متعددة محققاً نتائج متقدمة وقت صدوره.', summary_en: 'Presents BERT, a model pre-trained to understand context from both directions, then fine-tuned for many language tasks with state-of-the-art results at the time.', page_url: 'https://arxiv.org/abs/1810.04805', pdf_url: 'https://arxiv.org/pdf/1810.04805' },
@@ -521,10 +521,9 @@
         ];
         let usingFallback = false;
 
-        // ========== أيقونات المجالات ==========
-        // تُختار الأيقونة حسب كلمة في اسم المجال (العربي). أضف مجالاً جديداً بإضافة سطر هنا.
         const ICONS = {
             chat: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/>',
+            phone: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>',
             eye: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>',
             chip: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>',
             shield: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>',
@@ -532,7 +531,13 @@
             code: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>',
             doc: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>',
             grid: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>',
-            database: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/>'
+            database: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/>',
+            cap: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>',
+            search: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>',
+            archive: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/>',
+            book: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>',
+            network: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>',
+            pencil: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>'
         };
 
         function iconKey(cat) {
@@ -551,8 +556,6 @@
             return '<svg class="' + size + '" fill="none" stroke="currentColor" viewBox="0 0 24 24">' + ICONS[iconKey(cat)] + '</svg>';
         }
 
-        // ========== أدوات مساعدة ==========
-        // يجرّب عدة أسماء/صيغ للصورة، وإن فشلت كلها يعرض صورة بديلة
         function imgFallback(img) {
             const list = (img.dataset.srcs || '').split(',').filter(Boolean);
             const i = parseInt(img.dataset.try || '0', 10);
@@ -565,7 +568,6 @@
             }
         }
 
-        // يقبل روابط http/https فقط (حماية من روابط javascript:)
         function safeUrl(u) {
             try {
                 const url = new URL(String(u || '').trim());
@@ -573,7 +575,6 @@
             } catch (e) { return ''; }
         }
 
-        // قارئ CSV يدعم الفواصل والأسطر داخل علامات الاقتباس
         function parseCSV(text) {
             text = text.replace(/^\uFEFF/, '');
             const rows = [];
@@ -613,7 +614,14 @@
             return (lang === 'en' && p.summary_en) ? p.summary_en : (p.summary || '');
         }
 
-        // ========== الحالة ==========
+        function debounce(fn, ms) {
+            let t;
+            return function (...args) {
+                clearTimeout(t);
+                t = setTimeout(() => fn.apply(this, args), ms);
+            };
+        }
+
         let papers = [];
         let loaded = false;
         let currentCat = null;
@@ -630,11 +638,27 @@
 
         function catHref(cat) { return '#/c/' + encodeURIComponent(cat); }
 
-        // ========== تطبيق اللغة ==========
         function updateTitle() {
             if (view === 'cat') document.title = label(currentCat) + " | Saleh's Vision Labs";
             else if (view === 'data') document.title = t('dataTitle') + " | Saleh's Vision Labs";
             else document.title = t('titleHome');
+        }
+
+        function updateCategoryHeader() {
+            if (!currentCat) return;
+            const titleEl = document.getElementById('catTitle');
+            if (titleEl) titleEl.textContent = label(currentCat);
+            const subEl = document.getElementById('catSubtitle');
+            if (subEl) {
+                if (loaded) {
+                    const base = papers.filter(p =>
+                        currentCat === ALL || (p.category || 'عام') === currentCat
+                    );
+                    subEl.textContent = t('nInField', base.length);
+                } else {
+                    subEl.textContent = '';
+                }
+            }
         }
 
         function applyLang() {
@@ -651,13 +675,19 @@
             const meta = document.querySelector('meta[name="description"]');
             if (meta) meta.setAttribute('content', t('metaDesc'));
             document.getElementById('langBtn').textContent = t('langBtn');
+
+            updateCategoryHeader();
             updateTitle();
         }
 
         function refreshView() {
+            renderNav();
+            renderServices();
+            renderTips();
+            renderTools();
             if (loaded) renderCategoryTiles();
             if (view === 'cat') {
-                document.getElementById('catTitle').textContent = label(currentCat);
+                updateCategoryHeader();
                 if (loaded) renderCategoryPapers();
                 else {
                     grid.innerHTML = '<div class="col-span-full text-center py-12 text-slate-400 font-medium">' + t('loadingPapers') + '</div>';
@@ -668,10 +698,8 @@
             updateTitle();
         }
 
-        // ========== الصفحة الرئيسية: أيقونات المجالات ==========
         function renderCategoryTiles() {
             categoryGrid.innerHTML = '';
-
             const counts = {};
             papers.forEach(p => {
                 const c = p.category || 'عام';
@@ -681,67 +709,53 @@
 
             cats.forEach(cat => {
                 const n = cat === ALL ? papers.length : counts[cat];
-
                 const a = document.createElement('a');
                 a.href = catHref(cat);
-                a.className = 'group bg-white rounded-2xl p-6 shadow-sm border border-sky-100 hover:shadow-xl hover:border-brand-300 hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-4';
-
+                a.className = 'group bg-white rounded-2xl p-4 shadow-sm border border-sky-100 hover:shadow-xl hover:border-brand-300 hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-4';
                 const ico = document.createElement('div');
-                ico.className = 'w-14 h-14 shrink-0 rounded-2xl bg-gradient-to-tr from-brand-600 to-sky-400 text-white flex items-center justify-center shadow-md shadow-brand-500/20';
-                ico.innerHTML = iconSvg(cat, 'w-7 h-7');
-
+                ico.className = 'w-12 h-12 shrink-0 rounded-xl bg-gradient-to-tr from-brand-600 to-sky-400 text-white flex items-center justify-center shadow-md shadow-brand-500/20';
+                ico.innerHTML = iconSvg(cat, 'w-6 h-6');
                 const info = document.createElement('div');
                 info.className = 'flex-1 min-w-0';
                 const name = document.createElement('h3');
-                name.className = 'font-bold text-slate-900 text-lg group-hover:text-brand-600 transition-colors';
+                name.className = 'font-bold text-slate-900 text-base group-hover:text-brand-600 transition-colors';
                 name.textContent = label(cat);
                 const cnt = document.createElement('p');
                 cnt.className = 'text-xs text-slate-500 mt-0.5';
                 cnt.textContent = t('nPapers', n);
                 info.append(name, cnt);
-
                 const arrow = document.createElement('span');
                 arrow.className = 'text-slate-300 group-hover:text-brand-600 transition-colors';
                 arrow.innerHTML = '<svg class="w-5 h-5 ltr:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>';
-
                 a.append(ico, info, arrow);
                 categoryGrid.appendChild(a);
             });
 
-            // أيقونة مستقلة لمصادر البيانات المفتوحة (بلون مختلف)
             const d = document.createElement('a');
             d.href = '#/data';
-            d.className = 'group bg-white rounded-2xl p-6 shadow-sm border border-emerald-100 hover:shadow-xl hover:border-emerald-300 hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-4';
-
+            d.className = 'group bg-white rounded-2xl p-4 shadow-sm border border-emerald-100 hover:shadow-xl hover:border-emerald-300 hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-4';
             const dIco = document.createElement('div');
-            dIco.className = 'w-14 h-14 shrink-0 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-400 text-white flex items-center justify-center shadow-md shadow-emerald-500/20';
-            dIco.innerHTML = '<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">' + ICONS.database + '</svg>';
-
+            dIco.className = 'w-12 h-12 shrink-0 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-400 text-white flex items-center justify-center shadow-md shadow-emerald-500/20';
+            dIco.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">' + ICONS.database + '</svg>';
             const dInfo = document.createElement('div');
             dInfo.className = 'flex-1 min-w-0';
             const dName = document.createElement('h3');
-            dName.className = 'font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors';
+            dName.className = 'font-bold text-slate-900 text-base group-hover:text-emerald-600 transition-colors';
             dName.textContent = t('dataTitle');
             const dCnt = document.createElement('p');
             dCnt.className = 'text-xs text-slate-500 mt-0.5';
             dCnt.textContent = t('nSites', DATA_SITES.length);
             dInfo.append(dName, dCnt);
-
             const dArrow = document.createElement('span');
             dArrow.className = 'text-slate-300 group-hover:text-emerald-600 transition-colors';
             dArrow.innerHTML = '<svg class="w-5 h-5 ltr:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>';
-
             d.append(dIco, dInfo, dArrow);
             categoryGrid.appendChild(d);
         }
 
-        // ========== صفحة المجال: بطاقات الأوراق ==========
         function makeLink(href, text, primary) {
             const a = document.createElement('a');
-            a.href = href;
-            a.target = '_blank';
-            a.rel = 'noopener noreferrer';
-            a.textContent = text;
+            a.href = href; a.target = '_blank'; a.rel = 'noopener noreferrer'; a.textContent = text;
             a.className = primary
                 ? 'bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs px-4 py-2 rounded-lg transition-all'
                 : 'bg-white hover:bg-sky-50 text-brand-700 font-bold text-xs px-4 py-2 rounded-lg border border-sky-200 transition-all';
@@ -754,12 +768,11 @@
             let list = base.filter(p =>
                 !q || [p.title, p.authors, p.category, p.category_en, p.summary, p.summary_en, p.year].join(' ').toLowerCase().includes(q)
             );
-
             const sort = sortSelect.value;
             if (sort === 'newest') list = list.slice().sort((a, b) => (parseInt(b.year) || 0) - (parseInt(a.year) || 0));
             if (sort === 'oldest') list = list.slice().sort((a, b) => (parseInt(a.year) || 9999) - (parseInt(b.year) || 9999));
 
-            document.getElementById('catSubtitle').textContent = t('nInField', base.length);
+            updateCategoryHeader();
             countEl.textContent = t('showing', list.length, base.length) + (usingFallback ? t('fallbackNote') : '');
             grid.innerHTML = '';
 
@@ -774,10 +787,8 @@
             list.forEach(p => {
                 const card = document.createElement('article');
                 card.className = 'bg-white rounded-2xl shadow-sm border border-sky-100 hover:shadow-xl hover:border-brand-300 transition-all duration-300 flex flex-col justify-between overflow-hidden';
-
                 const body = document.createElement('div');
                 body.className = 'p-6 space-y-3';
-
                 const meta = document.createElement('div');
                 meta.className = 'flex items-center justify-between text-xs font-bold text-brand-600';
                 const cat = document.createElement('span');
@@ -786,27 +797,19 @@
                 const yr = document.createElement('span');
                 yr.textContent = p.year || '';
                 meta.append(cat, yr);
-
                 const h3 = document.createElement('h3');
                 h3.className = 'text-lg font-bold text-slate-900 leading-snug text-start';
-                h3.dir = 'auto';
-                h3.textContent = p.title;
-
+                h3.dir = 'auto'; h3.textContent = p.title;
                 const au = document.createElement('p');
                 au.className = 'text-xs text-slate-500 font-medium text-start';
-                au.dir = 'auto';
-                au.textContent = p.authors || '';
-
+                au.dir = 'auto'; au.textContent = p.authors || '';
                 const sm = document.createElement('p');
                 sm.className = 'text-slate-600 text-sm leading-relaxed line-clamp-5';
                 sm.textContent = paperSummary(p);
-
                 body.append(meta, h3, au, sm);
-
                 const footer = document.createElement('div');
                 footer.className = 'px-6 py-4 bg-sky-50/50 border-t border-sky-50 flex flex-wrap items-center gap-2';
-                const page = safeUrl(p.page_url);
-                const pdf = safeUrl(p.pdf_url);
+                const page = safeUrl(p.page_url), pdf = safeUrl(p.pdf_url);
                 if (page) footer.appendChild(makeLink(page, t('viewPaper'), true));
                 if (pdf) footer.appendChild(makeLink(pdf, t('openPdf'), false));
                 if (!page && !pdf) {
@@ -815,14 +818,11 @@
                     s.textContent = t('noLink');
                     footer.appendChild(s);
                 }
-
                 card.append(body, footer);
                 grid.appendChild(card);
             });
         }
 
-        // ========== مصادر البيانات المفتوحة ==========
-        // لإضافة موقع جديد: أضف سطراً بالشكل نفسه. type: ml أو repo أو gov.
         const DATA_TYPES = {
             ml:   { ar: 'تعلم آلة', en: 'Machine Learning' },
             repo: { ar: 'أبحاث ومستودعات', en: 'Research & Repositories' },
@@ -886,46 +886,251 @@
             }
 
             list.forEach(s => {
-                const card = document.createElement('article');
+                const href = safeUrl(s.url);
+                const card = document.createElement(href ? 'a' : 'article');
+                if (href) { card.href = href; card.target = '_blank'; card.rel = 'noopener noreferrer'; }
                 card.className = 'bg-white rounded-2xl shadow-sm border border-emerald-100 hover:shadow-xl hover:border-emerald-300 transition-all duration-300 flex flex-col justify-between overflow-hidden';
-
                 const body = document.createElement('div');
                 body.className = 'p-6 space-y-3';
-
                 const tag = document.createElement('span');
                 tag.className = 'inline-block bg-emerald-50 text-emerald-700 text-xs font-bold px-3 py-1 rounded-md border border-emerald-100';
                 tag.textContent = typeLabel(s.type);
-
                 const h3 = document.createElement('h3');
                 h3.className = 'text-lg font-bold text-slate-900 leading-snug text-start';
                 h3.dir = 'auto';
                 h3.textContent = (lang === 'en' && s.name_en) ? s.name_en : s.name;
-
                 const p = document.createElement('p');
                 p.className = 'text-slate-600 text-sm leading-relaxed';
                 p.textContent = (lang === 'en' && s.desc_en) ? s.desc_en : s.desc;
-
                 body.append(tag, h3, p);
-
                 const footer = document.createElement('div');
                 footer.className = 'px-6 py-4 bg-emerald-50/50 border-t border-emerald-50';
-                const href = safeUrl(s.url);
                 if (href) {
-                    const a = document.createElement('a');
-                    a.href = href;
-                    a.target = '_blank';
-                    a.rel = 'noopener noreferrer';
+                    const a = document.createElement('span');
                     a.textContent = t('visitSite');
-                    a.className = 'inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs px-4 py-2 rounded-lg transition-all';
+                    a.className = 'inline-block bg-emerald-600 text-white font-bold text-xs px-4 py-2 rounded-lg';
                     footer.appendChild(a);
                 }
-
                 card.append(body, footer);
                 dataGrid.appendChild(card);
             });
         }
 
-        // ========== التنقل بين الصفحات ==========
+        const NAV = [
+            { id: 'about',    key: 'navAbout' },
+            { id: 'services', key: 'navServices' },
+            { id: 'research', key: 'navFields' },
+            { id: 'tools',    key: 'navTools' },
+            { id: 'tips',     key: 'navTips' }
+        ];
+
+        function renderNav() {
+            const boxes = [
+                [document.getElementById('navLinks'), 'hover:text-brand-600 transition-colors'],
+                [document.getElementById('mobileMenu'), 'mobile-link block px-3 py-2.5 rounded-lg hover:bg-sky-50'],
+                [document.getElementById('footerLinks'), 'hover:text-brand-600']
+            ];
+            boxes.forEach(([box, cls]) => {
+                box.innerHTML = '';
+                NAV.forEach(n => {
+                    const a = document.createElement('a');
+                    a.href = '#' + n.id;
+                    a.className = cls;
+                    a.dataset.i18n = n.key;
+                    a.textContent = t(n.key);
+                    box.appendChild(a);
+                });
+            });
+        }
+
+        // ===== الدوال المساعدة للنوافذ المنبثقة =====
+        function toggleModal(id, show) {
+            const m = document.getElementById(id);
+            if (show) {
+                m.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            } else {
+                m.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // ===== قسم الخدمات المحدث =====
+        const SERVICES = [
+            { 
+                icon: 'phone', 
+                t: 'الاستشارة', 
+                t_en: 'Consulting', 
+                d: 'تواصل معي مباشرة للاستشارات التقنية والأكاديمية عبر الهاتف أو البريد.', 
+                d_en: 'Contact me directly for technical and academic consulting via phone or email.', 
+                action: 'contact' // يفتح نافذة التواصل
+            },
+            { 
+                icon: 'pencil', 
+                t: 'المقالات', 
+                t_en: 'Articles', 
+                d: 'مقالات وأوراق علمية في الذكاء الاصطناعي والتقنية.', 
+                d_en: 'Articles and scientific papers in AI and technology.', 
+                action: 'none' 
+            },
+            { 
+                icon: 'cap', 
+                t: 'الدورات', 
+                t_en: 'Courses', 
+                d: 'دورات تدريبية في بايثون، باور بي آي، وقواعد البيانات.', 
+                d_en: 'Training courses in Python, Power BI, and Databases.', 
+                action: 'courses' // يفتح نافذة الدورات
+            },
+            { 
+                icon: 'code', 
+                t: 'تحليل البيانات والبرمجة', 
+                t_en: 'Data Analysis & Programming', 
+                d: 'تحليل البيانات وبناء الحلول البرمجية المخصصة.', 
+                d_en: 'Data analysis and building custom programming solutions.', 
+                action: 'none' 
+            }
+        ];
+
+        const servicesGrid = document.getElementById('servicesGrid');
+
+        function renderServices() {
+            servicesGrid.innerHTML = '';
+            SERVICES.forEach(sv => {
+                const isClickable = sv.action !== 'none';
+                const card = document.createElement('div');
+                card.className = `service-card w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(25%-0.95rem)] bg-white rounded-2xl border border-sky-100 p-6 space-y-4 ${isClickable ? 'clickable-card hover:border-brand-400' : 'hover:border-sky-200'}`;
+                
+                const ico = document.createElement('div');
+                ico.className = 'w-14 h-14 rounded-2xl bg-gradient-to-tr from-brand-600 to-sky-400 text-white flex items-center justify-center shadow-md shadow-brand-500/20';
+                ico.innerHTML = '<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">' + ICONS[sv.icon] + '</svg>';
+                
+                const h3 = document.createElement('h3');
+                h3.className = 'font-black text-slate-900 text-lg';
+                h3.textContent = (lang === 'en' && sv.t_en) ? sv.t_en : sv.t;
+                
+                const p = document.createElement('p');
+                p.className = 'text-sm text-slate-600 leading-relaxed';
+                p.textContent = (lang === 'en' && sv.d_en) ? sv.d_en : sv.d;
+                
+                card.append(ico, h3, p);
+
+                // إضافة حدث النقر إذا كان العنصر تفاعلياً
+                if (sv.action === 'contact') {
+                    card.addEventListener('click', () => toggleModal('contactModal', true));
+                } else if (sv.action === 'courses') {
+                    card.addEventListener('click', () => toggleModal('coursesModal', true));
+                }
+
+                servicesGrid.appendChild(card);
+            });
+        }
+
+        const TIPS = [
+            { t: 'ابدأ بالملخص والخاتمة', t_en: 'Start with the abstract and conclusion', d: 'اقرأهما أولاً لتقرر هل تستحق الورقة قراءتها كاملة قبل أن تستثمر وقتك فيها.', d_en: 'Read them first to decide whether the paper deserves a full read before you invest time in it.', detail: 'الملخص يعطيك لمحة سريعة عن المشكلة والحل والنتائج، بينما الخاتمة تلخص المساهمات الفعلية وما حققه الباحثون. قراءتهما تمكنك من تكوين صورة عامة وفلترة الأبحاث غير المرتبطة بموضوعك بدقة.', detail_en: 'The abstract gives a quick overview of the problem, solution, and results, while the conclusion summarizes actual contributions and achievements. Reading both helps you form a general picture and filter out irrelevant papers accurately.', example: 'مثال: في ورقة BERT، الملخص يوضح فوراً أنها تقدم فهماً ثنائياً للسياق وتتفوق في 11 مهمة لغوية دون الحاجة لقراءة كل المعادلات الرياضية في البداية.', example_en: 'Example: In the BERT paper, the abstract immediately shows it provides bidirectional context understanding and outperforms on 11 NLP tasks without reading all equations first.' },
+            { t: 'ابدأ بورقة مراجعة (Survey)', t_en: 'Begin with a survey paper', d: 'أوراق المراجعة ترسم لك خريطة المجال وأهم الأعمال فيه، فتفهم أين تقف كل ورقة.', d_en: 'Survey papers map out a field and its key works, so you can see where each paper fits.', detail: 'عند الدخول في مجال بحثي جديد تماماً (مثل LLMs أو رؤية الحاسب)، ابحث دائماً عن ورقة تحمل عنوان "A Survey on..." لأنها تجمع مئات الأبحاث السابقة وتصنفها ترتيبياً وتاريخياً.', detail_en: 'When entering a brand new research field (such as LLMs or Computer Vision), always look for a paper titled "A Survey on..." as it aggregates hundreds of prior works and classifies them.', example: 'مثال: بدلاً من قراءة 50 ورقة عشوائية عن توليد الصور، اقرأ ورقة مراجعة واحدة شاملة عن تاريخ وتقنيات الـ Diffusion Models.', example_en: 'Example: Instead of reading 50 random papers on image generation, read one comprehensive survey paper on the history and techniques of Diffusion Models.' },
+            { t: 'تتبّع الاستشهادات', t_en: 'Follow the citations', d: 'من صفحة الورقة في Google Scholar افتح "Cited by" لتصل إلى الأعمال الأحدث التي بُنيت عليها.', d_en: 'From the paper page on Google Scholar, open "Cited by" to reach newer work built on it.', detail: 'الاستشهادات تدلك على كيفية تطور الفكرة؛ الاستشهادات السابقة توضح الجذور التاريخية، والاستشهادات اللاحقة (Cited by) توضح الانتقادات والتحسينات الحديثة التي أضيفت على الورقة الأساسية.', detail_en: 'Citations show how an idea evolved; past citations show historical roots, while subsequent citations (Cited by) show modern critiques and improvements built upon the core paper.', example: 'مثال: عند قراءة ورقة ResNet لعام 2015، النقر على "Cited by" يظهر لك آلاف الأبحاث الحديثة التي استخدمت ResNet أو عدّلت عليها.', example_en: 'Example: When reading the 2015 ResNet paper, clicking "Cited by" shows thousands of recent papers that used or modified ResNet.' },
+            { t: 'تحقق من حالة النشر', t_en: 'Check the publication status', d: 'ميّز بين ورقة منشورة بعد تحكيم وورقة قبل النشر (preprint) لم تُراجع من محكّمين بعد.', d_en: 'Tell a peer-reviewed paper apart from a preprint that has not yet been reviewed by referees.', detail: 'الأوراق الموجودة على منصات مثل arXiv غالباً تكون مسودات أولية (Preprints) سريعة النشر ولم تخضع بعد لمراجعة الأقران الأكاديمية الصارمة، بينما الأوراق المنشورة في مؤجلات محكّمة (مثل NeurIPS أو ICML) تكون موثوقة علمياً بشكل أكبر.', detail_en: 'Papers on platforms like arXiv are often preprints that have not undergone rigorous peer review, whereas papers published in refereed venues (like NeurIPS or ICML) carry higher academic reliability.', example: 'مثال: انتبه عند اعتماد أرقام أداء من ورقة على arXiv لم تُقبل بعد في مؤتمر معتمد، فقد تتغير النتائج لاحقاً.', example_en: 'Example: Be cautious when relying on performance numbers from an unrefereed arXiv preprint, as results may change later.' },
+            { t: 'دوّن مراجعك من البداية', t_en: 'Record references from the start', d: 'استخدم أداة إدارة المراجع مثل Zotero منذ أول ورقة تقرؤها حتى لا تضيع المصادر.', d_en: 'Use a reference manager such as Zotero from the first paper you read so sources are not lost.', detail: 'جمع الأوراق دون تنظيم يؤدي إلى ضياع وقت كبير لاحقاً في البحث عن رابط أو مؤلف. أدوات مثل Zotero أو Mendeley تحفظ المقال مع ملف الـ PDF وتولد الاستشهاد بالمؤلف بضغطة زر واحدة.', detail_en: 'Collecting papers without organization wastes massive time later. Tools like Zotero or Mendeley save articles with PDFs and generate citations instantly.', example: 'مثال: حفظ ورقة Transformer مع تصنيفها في مجلد "نماذج اللغة" في Zotero مع إضافة وسم "مهم جداً" يسهل استرجاعها أثناء كتابة بحثك.', example_en: 'Example: Saving the Transformer paper in a "Language Models" folder in Zotero with a "Must Read" tag makes retrieval effortless.' },
+            { t: 'ابحث عن البيانات والشيفرة', t_en: 'Look for the data and code', d: 'إن أتاح المؤلفون بياناتهم وشيفرتهم فجرّب إعادة النتائج بنفسك، فهذا أفضل اختبار لفهمك.', d_en: 'If the authors share their data and code, try reproducing the results yourself; it is the best test of your understanding.', detail: 'القراءة وحدها لا تكفي لاكتساب المهارة التقنية. الأوراق التي ترفق روابط مستودعات GitHub أو Google Colab تتيح لك تشغيل النماذج وتغيير المعاملات (Hyperparameters) لملاحظة التأثير المباشر.', detail_en: 'Reading alone is not enough. Papers providing GitHub or Colab links let you run models and tweak hyperparameters to observe direct impact.', example: 'مثال: فتح رابط جيت هاب لورقة LoRA وتجربة تشغيل الكود المصغر على عينة بيانات بسيطة لتفهم كيف يقلل استهلاك الذاكرة.', example_en: 'Example: Opening the GitHub link for LoRA and running the code on a small dataset to understand how it reduces memory usage.' }
+        ];
+        const tipsGrid = document.getElementById('tipsGrid');
+
+        function renderTips() {
+            tipsGrid.innerHTML = '';
+            TIPS.forEach((tp, i) => {
+                const card = document.createElement('div');
+                card.className = 'bg-slate-50/70 rounded-2xl border border-sky-100 p-5 flex items-start gap-4 cursor-pointer hover:border-brand-300 hover:shadow-lg transition-all duration-300 group';
+                const num = document.createElement('div');
+                num.className = 'w-10 h-10 shrink-0 rounded-xl bg-brand-600 text-white flex items-center justify-center font-black text-sm group-hover:scale-105 transition-transform';
+                num.textContent = String(i + 1).padStart(2, '0');
+                const info = document.createElement('div');
+                info.className = 'flex-1 min-w-0';
+                const h3 = document.createElement('h3');
+                h3.className = 'font-bold text-slate-900 text-base group-hover:text-brand-600 transition-colors';
+                h3.textContent = (lang === 'en' && tp.t_en) ? tp.t_en : tp.t;
+                const p = document.createElement('p');
+                p.className = 'text-sm text-slate-600 leading-relaxed mt-1 line-clamp-2';
+                p.textContent = (lang === 'en' && tp.d_en) ? tp.d_en : tp.d;
+                const more = document.createElement('span');
+                more.className = 'inline-flex items-center gap-1 text-xs font-bold text-brand-600 mt-2';
+                more.innerHTML = (lang === 'ar' ? 'عرض التفاصيل والمثال' : 'View details & example') + ' <svg class="w-3.5 h-3.5 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>';
+                info.append(h3, p, more);
+                card.append(num, info);
+                card.addEventListener('click', () => openTipModal(i));
+                tipsGrid.appendChild(card);
+            });
+        }
+
+        const tipModal = document.getElementById('tipModal');
+        const closeTipModal = document.getElementById('closeTipModal');
+        const closeTipModalBtn = document.getElementById('closeTipModalBtn');
+        let lastFocusedEl = null;
+
+        function openTipModal(index) {
+            lastFocusedEl = document.activeElement;
+            const tp = TIPS[index];
+            document.getElementById('tipModalNum').textContent = String(index + 1).padStart(2, '0');
+            document.getElementById('tipModalTitle').textContent = (lang === 'en' && tp.t_en) ? tp.t_en : tp.t;
+            document.getElementById('tipModalDesc').textContent = (lang === 'en' && tp.detail_en) ? tp.detail_en : tp.detail;
+            document.getElementById('tipModalExample').textContent = (lang === 'en' && tp.example_en) ? tp.example_en : tp.example;
+            toggleModal('tipModal', true);
+            closeTipModalBtn.focus();
+        }
+
+        function closeTipModalFunc() {
+            toggleModal('tipModal', false);
+            if (lastFocusedEl && typeof lastFocusedEl.focus === 'function') lastFocusedEl.focus();
+            lastFocusedEl = null;
+        }
+
+        closeTipModal.addEventListener('click', closeTipModalFunc);
+        closeTipModalBtn.addEventListener('click', closeTipModalFunc);
+        tipModal.addEventListener('click', (e) => { if (e.target === tipModal) closeTipModalFunc(); });
+        
+        // إغلاق أي نافذة منبثقة عند الضغط على Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                if (!tipModal.classList.contains('hidden')) closeTipModalFunc();
+                if (!document.getElementById('contactModal').classList.contains('hidden')) toggleModal('contactModal', false);
+                if (!document.getElementById('coursesModal').classList.contains('hidden')) toggleModal('coursesModal', false);
+            }
+        });
+
+        const TOOLS = [
+            { name: 'Google Scholar', icon: 'cap', url: 'https://scholar.google.com', desc: 'محرك بحث في الأوراق العلمية والرسائل والكتب، مع عدد الاستشهادات والأوراق المرتبطة.', desc_en: 'A search engine for scholarly papers, theses and books, showing citation counts and related work.' },
+            { name: 'Semantic Scholar', icon: 'search', url: 'https://www.semanticscholar.org', desc: 'بحث أكاديمي يعتمد على الذكاء الاصطناعي، يعرض ملخصات قصيرة وأهم الأوراق المؤثرة.', desc_en: 'AI-powered academic search that shows short summaries and the most influential papers.' },
+            { name: 'arXiv', icon: 'archive', url: 'https://arxiv.org', desc: 'أرشيف مفتوح للأوراق قبل النشر في الحاسب والفيزياء والرياضيات وغيرها، ومنه تأتي أغلب أوراق الذكاء الاصطناعي.', desc_en: 'An open archive of preprints in computer science, physics, mathematics and more, where most AI papers first appear.' },
+            { name: 'Zotero', icon: 'book', url: 'https://www.zotero.org', desc: 'برنامج لإدارة المراجع: يجمع المصادر وينظمها ويولّد الاستشهادات والقوائم المرجعية.', desc_en: 'A reference manager that collects and organizes sources and generates citations and bibliographies.' },
+            { name: 'Connected Papers', icon: 'network', url: 'https://www.connectedpapers.com', desc: 'يرسم خريطة بصرية للأوراق المرتبطة بورقة معينة، لتكتشف أعمالاً قريبة من موضوعك.', desc_en: 'Draws a visual map of papers related to a given paper, helping you discover work close to your topic.' },
+            { name: 'Overleaf', icon: 'pencil', url: 'https://www.overleaf.com', desc: 'محرر LaTeX عبر المتصفح لكتابة الأوراق العلمية والتعاون عليها دون تثبيت برامج.', desc_en: 'A browser-based LaTeX editor for writing and collaborating on scientific papers without installing software.' }
+        ];
+
+        const toolsGrid = document.getElementById('toolsGrid');
+
+        function renderTools() {
+            toolsGrid.innerHTML = '';
+            TOOLS.forEach(tl => {
+                const href = safeUrl(tl.url);
+                const card = document.createElement(href ? 'a' : 'div');
+                if (href) { card.href = href; card.target = '_blank'; card.rel = 'noopener noreferrer'; }
+                card.className = 'group w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.85rem)] bg-white rounded-2xl border border-sky-100 hover:border-brand-300 hover:shadow-lg transition-all duration-300 p-4 flex items-start gap-4';
+                const ico = document.createElement('div');
+                ico.className = 'w-12 h-12 shrink-0 rounded-xl bg-brand-600 text-white flex items-center justify-center';
+                ico.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">' + ICONS[tl.icon] + '</svg>';
+                const info = document.createElement('div');
+                info.className = 'min-w-0';
+                const h3 = document.createElement('h3');
+                h3.className = 'font-bold text-slate-900 text-base group-hover:text-brand-600 transition-colors';
+                h3.textContent = tl.name;
+                const p = document.createElement('p');
+                p.className = 'text-xs sm:text-sm text-slate-600 leading-relaxed mt-1';
+                p.textContent = (lang === 'en' && tl.desc_en) ? tl.desc_en : tl.desc;
+                info.append(h3, p);
+                card.append(ico, info);
+                toolsGrid.appendChild(card);
+            });
+        }
+
         function showHome() {
             view = 'home';
             catView.classList.add('hidden');
@@ -940,10 +1145,10 @@
             homeView.classList.add('hidden');
             dataView.classList.add('hidden');
             catView.classList.remove('hidden');
-            document.getElementById('catTitle').textContent = label(cat);
-            document.getElementById('catIcon').innerHTML = iconSvg(cat, 'w-7 h-7');
+            document.getElementById('catIcon').innerHTML = iconSvg(cat, 'w-6 h-6');
             searchInput.value = '';
             sortSelect.value = 'sheet';
+            updateCategoryHeader();
             if (loaded) renderCategoryPapers();
             else {
                 grid.innerHTML = '<div class="col-span-full text-center py-12 text-slate-400 font-medium">' + t('loadingPapers') + '</div>';
@@ -958,7 +1163,7 @@
             homeView.classList.add('hidden');
             catView.classList.add('hidden');
             dataView.classList.remove('hidden');
-            document.getElementById('dataIcon').innerHTML = '<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">' + ICONS.database + '</svg>';
+            document.getElementById('dataIcon').innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">' + ICONS.database + '</svg>';
             dataSearch.value = '';
             dataType = 'all';
             renderDataChips();
@@ -967,8 +1172,8 @@
             window.scrollTo(0, 0);
         }
 
-        function route() {
-            const h = location.hash;
+        function route(hashArg) {
+            const h = (typeof hashArg === 'string') ? hashArg : location.hash;
             if (h === '#/data') {
                 showData();
             } else if (h.indexOf('#/c/') === 0) {
@@ -984,14 +1189,14 @@
             }
         }
 
-        // ========== تحميل البيانات ==========
         async function loadPapers() {
             try {
                 const res = await fetch(SHEET_CSV_URL, { cache: 'no-store' });
                 if (!res.ok) throw new Error('HTTP ' + res.status);
-                const text = await res.text();
+                const buffer = await res.arrayBuffer();
+                const text = new TextDecoder('utf-8').decode(buffer);
                 papers = rowsToPapers(parseCSV(text));
-                if (papers.length === 0) throw new Error('الجدول فارغ أو عناوين الأعمدة غير صحيحة');
+                if (papers.length === 0) throw new Error('Sheet empty or headers invalid');
                 usingFallback = false;
             } catch (e) {
                 console.error('Sheet load failed:', e);
@@ -1003,17 +1208,36 @@
             loaded = true;
             renderCategoryTiles();
             if (view === 'cat') {
-                document.getElementById('catTitle').textContent = label(currentCat);
+                updateCategoryHeader();
                 renderCategoryPapers();
                 updateTitle();
             }
         }
 
-        // ========== ربط الأحداث ==========
-        searchInput.addEventListener('input', () => { if (loaded) renderCategoryPapers(); });
+        const debouncedRenderPapers = debounce(() => { if (loaded) renderCategoryPapers(); }, 150);
+        const debouncedRenderData   = debounce(() => renderDataSites(), 150);
+
+        searchInput.addEventListener('input', debouncedRenderPapers);
         sortSelect.addEventListener('change', () => { if (loaded) renderCategoryPapers(); });
-        dataSearch.addEventListener('input', renderDataSites);
-        window.addEventListener('hashchange', route);
+        dataSearch.addEventListener('input', debouncedRenderData);
+
+        window.addEventListener('hashchange', () => route());
+        window.addEventListener('popstate', () => route());
+
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        document.addEventListener('click', e => {
+            const a = e.target.closest && e.target.closest('a[href^="#"]');
+            if (!a) return;
+            const h = a.getAttribute('href');
+            if (!h || h === '#') return;
+            e.preventDefault();
+            try { history.pushState(null, '', h); } catch (err) {}
+            route(h);
+            mobileMenu.classList.add('hidden');
+            menuBtn.setAttribute('aria-expanded', 'false');
+        });
 
         document.getElementById('langBtn').addEventListener('click', () => {
             lang = lang === 'ar' ? 'en' : 'ar';
@@ -1022,18 +1246,16 @@
             refreshView();
         });
 
-        const menuBtn = document.getElementById('menuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
         menuBtn.addEventListener('click', () => {
             const open = mobileMenu.classList.toggle('hidden') === false;
             menuBtn.setAttribute('aria-expanded', String(open));
         });
-        document.querySelectorAll('.mobile-link').forEach(a => a.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-            menuBtn.setAttribute('aria-expanded', 'false');
-        }));
 
+        renderNav();
         applyLang();
+        renderServices();
+        renderTips();
+        renderTools();
         route();
         loadPapers();
     </script>
