@@ -380,13 +380,7 @@
     </footer>
 
     <script>
-        console.log("LoboTech Version: 3.0 - Anti-Mojibake Active");
-
-        // تم تغيير الرابط إلى صيغة gviz التي تُجبر جوجل على إرسال الترميز الصحيح
-        const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/1TKYD5Q9fQYhHZQYHXfdgSVLSuBEHwEYsFiIefpLeYVk/gviz/tq?tqx=out:csv&gid=1016148317';
-        
-        // في حال كان الرابط السابق خاصاً (Published)، نستخدم الرابط الأساسي البديل
-        const FALLBACK_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTKYD5Q9fQYhHZQYHXfdgSVLSuBEHwEYsFiIefpLeYVk--NkEYzUNyM0bEm3VqDbkx3NHglcQMxbCBL/pub?gid=1016148317&single=true&output=csv';
+        console.log("LoboTech Version: Final - Hardcoded Data");
 
         const ALL = 'كل الأوراق';
 
@@ -423,7 +417,6 @@
                 dataSubtitle: n => n + ' موقع لمصادر البيانات المفتوحة',
                 loadingPapers: 'جارٍ تحميل الأوراق...', noPapers: 'لا توجد أوراق في هذا المجال حالياً.', noResults: 'لا توجد نتائج مطابقة لبحثك.',
                 viewPaper: 'عرض الورقة', openPdf: 'فتح PDF', noLink: 'الرابط غير متاح', visitSite: 'زيارة الموقع',
-                fallbackNote: ' — (نسخة احتياطية: تعذّر الاتصال بالجدول)',
                 titleHome: "لوبو تيك | LoboTech | دليل الأوراق العلمية والتقنية",
                 metaDesc: 'منصة لوبو تيك (LoboTech) - دليل عربي للأوراق العلمية في الذكاء الاصطناعي والتقنية، مع ملخصات عربية وروابط مباشرة إلى المصادر الأصلية.',
                 
@@ -469,7 +462,6 @@
                 dataSubtitle: n => n + ' open data sources',
                 loadingPapers: 'Loading papers...', noPapers: 'There are no papers in this field yet.', noResults: 'No results match your search.',
                 viewPaper: 'View paper', openPdf: 'Open PDF', noLink: 'Link unavailable', visitSite: 'Visit site',
-                fallbackNote: ' — (backup copy: could not reach the spreadsheet)',
                 titleHome: "LoboTech | Research Papers & Tech Directory",
                 metaDesc: 'LoboTech - A directory of research papers in AI and technology, with simplified summaries and direct links to the original sources.',
                 
@@ -513,19 +505,122 @@
             return cat;
         }
 
-        const FALLBACK_PAPERS = [
-            { title: 'Attention Is All You Need', authors: 'Ashish Vaswani et al.', year: '2017', category: 'نماذج اللغة', category_en: 'Language Models', summary: 'تقدّم معمارية Transformer التي تعتمد على آلية الانتباه وحدها بدل الشبكات المتكررة، وأصبحت الأساس لمعظم نماذج اللغة الحديثة.', summary_en: 'Introduces the Transformer architecture, which relies solely on attention instead of recurrent networks and became the foundation of most modern language models.', page_url: 'https://arxiv.org/abs/1706.03762', pdf_url: 'https://arxiv.org/pdf/1706.03762' },
-            { title: 'BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding', authors: 'Jacob Devlin et al.', year: '2018', category: 'نماذج اللغة', category_en: 'Language Models', summary: 'يقدّم BERT كنموذج يتدرب مسبقاً على فهم السياق من الاتجاهين، ثم يُضبط لمهام لغوية متعددة محققاً نتائج متقدمة وقت صدوره.', summary_en: 'Presents BERT, a model pre-trained to understand context from both directions, then fine-tuned for many language tasks with state-of-the-art results at the time.', page_url: 'https://arxiv.org/abs/1810.04805', pdf_url: 'https://arxiv.org/pdf/1810.04805' },
-            { title: 'Language Models are Few-Shot Learners', authors: 'Tom B. Brown et al.', year: '2020', category: 'نماذج اللغة', category_en: 'Language Models', summary: 'تُظهر أن تكبير النموذج اللغوي (GPT-3) يمكّنه من أداء مهام جديدة بعدد قليل من الأمثلة داخل الطلب دون إعادة تدريب.', summary_en: 'Shows that scaling up a language model (GPT-3) lets it perform new tasks from just a few examples in the prompt, without retraining.', page_url: 'https://arxiv.org/abs/2005.14165', pdf_url: 'https://arxiv.org/pdf/2005.14165' },
-            { title: 'Deep Residual Learning for Image Recognition', authors: 'Kaiming He et al.', year: '2015', category: 'رؤية حاسوبية', category_en: 'Computer Vision', summary: 'تقترح الشبكات المتبقية (ResNet) التي تسمح بتدريب شبكات عميقة جداً عبر وصلات تخطٍّ تسهّل انتقال المعلومات.', summary_en: 'Proposes residual networks (ResNet), which make it possible to train very deep networks using skip connections that ease information flow.', page_url: 'https://arxiv.org/abs/1512.03385', pdf_url: 'https://arxiv.org/pdf/1512.03385' },
-            { title: 'Generative Adversarial Networks', authors: 'Ian J. Goodfellow et al.', year: '2014', category: 'التعلم العميق', category_en: 'Deep Learning', summary: 'تقدّم فكرة الشبكات التوليدية التنافسية: نموذجان يتنافسان، أحدهما يولّد بيانات والآخر يميّز الحقيقي من المزيف.', summary_en: 'Introduces generative adversarial networks: two models compete, one generating data and the other telling real from fake.', page_url: 'https://arxiv.org/abs/1406.2661', pdf_url: 'https://arxiv.org/pdf/1406.2661' },
-            { title: 'Chain-of-Thought Prompting Elicits Reasoning in Large Language Models', authors: 'Jason Wei et al.', year: '2022', category: 'نماذج اللغة', category_en: 'Language Models', summary: 'تبيّن أن دفع النموذج إلى عرض خطوات تفكيره قبل الجواب يحسّن أداءه في مسائل الاستدلال والحساب.', summary_en: 'Shows that prompting a model to lay out its reasoning steps before answering improves performance on reasoning and arithmetic problems.', page_url: 'https://arxiv.org/abs/2201.11903', pdf_url: 'https://arxiv.org/pdf/2201.11903' },
-            { title: 'LoRA: Low-Rank Adaptation of Large Language Models', authors: 'Edward J. Hu et al.', year: '2021', category: 'نماذج اللغة', category_en: 'Language Models', summary: 'تقترح طريقة لضبط النماذج الكبيرة بتدريب عدد صغير جداً من المعاملات الإضافية بدل تعديل كل المعاملات، مما يوفر الذاكرة والتكلفة.', summary_en: 'Proposes fine-tuning large models by training only a very small number of added parameters instead of all of them, saving memory and cost.', page_url: 'https://arxiv.org/abs/2106.09685', pdf_url: 'https://arxiv.org/pdf/2106.09685' },
-            { title: 'Scaling Laws for Neural Language Models', authors: 'Jared Kaplan et al.', year: '2020', category: 'نماذج اللغة', category_en: 'Language Models', summary: 'تدرس كيف يتحسن أداء نماذج اللغة مع زيادة حجم النموذج والبيانات والحوسبة، وتصف علاقات تقريبية بينها.', summary_en: 'Studies how language model performance improves with more model size, data and compute, and describes approximate relationships between them.', page_url: 'https://arxiv.org/abs/2001.08361', pdf_url: 'https://arxiv.org/pdf/2001.08361' },
-            { title: 'Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks', authors: 'Patrick Lewis et al.', year: '2020', category: 'نماذج اللغة', category_en: 'Language Models', summary: 'تجمع بين نموذج لغوي ومكوّن استرجاع من مصادر خارجية، لتحسين دقة الإجابات في المهام المعرفية.', summary_en: 'Combines a language model with a retrieval component that pulls from external sources, improving accuracy on knowledge-intensive tasks.', page_url: 'https://arxiv.org/abs/2005.11401', pdf_url: 'https://arxiv.org/pdf/2005.11401' },
-            { title: 'An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale', authors: 'Alexey Dosovitskiy et al.', year: '2020', category: 'رؤية حاسوبية', category_en: 'Computer Vision', summary: 'تطبّق بنية Transformer على الصور بتقسيمها إلى رقع صغيرة (ViT)، وتنافس الشبكات الالتفافية عند التدريب على بيانات كبيرة.', summary_en: 'Applies the Transformer architecture to images by splitting them into small patches (ViT), rivaling convolutional networks when trained on large datasets.', page_url: 'https://arxiv.org/abs/2010.11929', pdf_url: 'https://arxiv.org/pdf/2010.11929' }
+        // =========================================================
+        // هنا يتم وضع الأوراق العلمية الخاصة بك مباشرة (Hardcoded)
+        // =========================================================
+        const MY_PAPERS = [
+            { 
+                title: 'Attention Is All You Need', 
+                authors: 'Ashish Vaswani et al.', 
+                year: '2017', 
+                category: 'نماذج اللغة', 
+                category_en: 'Language Models', 
+                summary: 'تقدّم معمارية Transformer التي تعتمد على آلية الانتباه وحدها بدل الشبكات المتكررة، وأصبحت الأساس لمعظم نماذج اللغة الحديثة.', 
+                summary_en: 'Introduces the Transformer architecture, which relies solely on attention instead of recurrent networks and became the foundation of most modern language models.', 
+                page_url: 'https://arxiv.org/abs/1706.03762', 
+                pdf_url: 'https://arxiv.org/pdf/1706.03762' 
+            },
+            { 
+                title: 'BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding', 
+                authors: 'Jacob Devlin et al.', 
+                year: '2018', 
+                category: 'نماذج اللغة', 
+                category_en: 'Language Models', 
+                summary: 'يقدّم BERT كنموذج يتدرب مسبقاً على فهم السياق من الاتجاهين، ثم يُضبط لمهام لغوية متعددة محققاً نتائج متقدمة وقت صدوره.', 
+                summary_en: 'Presents BERT, a model pre-trained to understand context from both directions, then fine-tuned for many language tasks with state-of-the-art results at the time.', 
+                page_url: 'https://arxiv.org/abs/1810.04805', 
+                pdf_url: 'https://arxiv.org/pdf/1810.04805' 
+            },
+            { 
+                title: 'Language Models are Few-Shot Learners', 
+                authors: 'Tom B. Brown et al.', 
+                year: '2020', 
+                category: 'نماذج اللغة', 
+                category_en: 'Language Models', 
+                summary: 'تُظهر أن تكبير النموذج اللغوي (GPT-3) يمكّنه من أداء مهام جديدة بعدد قليل من الأمثلة داخل الطلب دون إعادة تدريب.', 
+                summary_en: 'Shows that scaling up a language model (GPT-3) lets it perform new tasks from just a few examples in the prompt, without retraining.', 
+                page_url: 'https://arxiv.org/abs/2005.14165', 
+                pdf_url: 'https://arxiv.org/pdf/2005.14165' 
+            },
+            { 
+                title: 'Deep Residual Learning for Image Recognition', 
+                authors: 'Kaiming He et al.', 
+                year: '2015', 
+                category: 'رؤية حاسوبية', 
+                category_en: 'Computer Vision', 
+                summary: 'تقترح الشبكات المتبقية (ResNet) التي تسمح بتدريب شبكات عميقة جداً عبر وصلات تخطٍّ تسهّل انتقال المعلومات.', 
+                summary_en: 'Proposes residual networks (ResNet), which make it possible to train very deep networks using skip connections that ease information flow.', 
+                page_url: 'https://arxiv.org/abs/1512.03385', 
+                pdf_url: 'https://arxiv.org/pdf/1512.03385' 
+            },
+            { 
+                title: 'Generative Adversarial Networks', 
+                authors: 'Ian J. Goodfellow et al.', 
+                year: '2014', 
+                category: 'التعلم العميق', 
+                category_en: 'Deep Learning', 
+                summary: 'تقدّم فكرة الشبكات التوليدية التنافسية: نموذجان يتنافسان، أحدهما يولّد بيانات والآخر يميّز الحقيقي من المزيف.', 
+                summary_en: 'Introduces generative adversarial networks: two models compete, one generating data and the other telling real from fake.', 
+                page_url: 'https://arxiv.org/abs/1406.2661', 
+                pdf_url: 'https://arxiv.org/pdf/1406.2661' 
+            },
+            { 
+                title: 'Chain-of-Thought Prompting Elicits Reasoning in Large Language Models', 
+                authors: 'Jason Wei et al.', 
+                year: '2022', 
+                category: 'نماذج اللغة', 
+                category_en: 'Language Models', 
+                summary: 'تبيّن أن دفع النموذج إلى عرض خطوات تفكيره قبل الجواب يحسّن أداءه في مسائل الاستدلال والحساب.', 
+                summary_en: 'Shows that prompting a model to lay out its reasoning steps before answering improves performance on reasoning and arithmetic problems.', 
+                page_url: 'https://arxiv.org/abs/2201.11903', 
+                pdf_url: 'https://arxiv.org/pdf/2201.11903' 
+            },
+            { 
+                title: 'LoRA: Low-Rank Adaptation of Large Language Models', 
+                authors: 'Edward J. Hu et al.', 
+                year: '2021', 
+                category: 'نماذج اللغة', 
+                category_en: 'Language Models', 
+                summary: 'تقترح طريقة لضبط النماذج الكبيرة بتدريب عدد صغير جداً من المعاملات الإضافية بدل تعديل كل المعاملات، مما يوفر الذاكرة والتكلفة.', 
+                summary_en: 'Proposes fine-tuning large models by training only a very small number of added parameters instead of all of them, saving memory and cost.', 
+                page_url: 'https://arxiv.org/abs/2106.09685', 
+                pdf_url: 'https://arxiv.org/pdf/2106.09685' 
+            },
+            { 
+                title: 'Scaling Laws for Neural Language Models', 
+                authors: 'Jared Kaplan et al.', 
+                year: '2020', 
+                category: 'نماذج اللغة', 
+                category_en: 'Language Models', 
+                summary: 'تدرس كيف يتحسن أداء نماذج اللغة مع زيادة حجم النموذج والبيانات والحوسبة، وتصف علاقات تقريبية بينها.', 
+                summary_en: 'Studies how language model performance improves with more model size, data and compute, and describes approximate relationships between them.', 
+                page_url: 'https://arxiv.org/abs/2001.08361', 
+                pdf_url: 'https://arxiv.org/pdf/2001.08361' 
+            },
+            { 
+                title: 'Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks', 
+                authors: 'Patrick Lewis et al.', 
+                year: '2020', 
+                category: 'نماذج اللغة', 
+                category_en: 'Language Models', 
+                summary: 'تجمع بين نموذج لغوي ومكوّن استرجاع من مصادر خارجية، لتحسين دقة الإجابات في المهام المعرفية.', 
+                summary_en: 'Combines a language model with a retrieval component that pulls from external sources, improving accuracy on knowledge-intensive tasks.', 
+                page_url: 'https://arxiv.org/abs/2005.11401', 
+                pdf_url: 'https://arxiv.org/pdf/2005.11401' 
+            },
+            { 
+                title: 'An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale', 
+                authors: 'Alexey Dosovitskiy et al.', 
+                year: '2020', 
+                category: 'رؤية حاسوبية', 
+                category_en: 'Computer Vision', 
+                summary: 'تطبّق بنية Transformer على الصور بتقسيمها إلى رقع صغيرة (ViT)، وتنافس الشبكات الالتفافية عند التدريب على بيانات كبيرة.', 
+                summary_en: 'Applies the Transformer architecture to images by splitting them into small patches (ViT), rivaling convolutional networks when trained on large datasets.', 
+                page_url: 'https://arxiv.org/abs/2010.11929', 
+                pdf_url: 'https://arxiv.org/pdf/2010.11929' 
+            }
+            // أضف المزيد من الأوراق هنا...
         ];
-        let usingFallback = false;
 
         const ICONS = {
             chat: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/>',
@@ -579,61 +674,6 @@
                 const url = new URL(String(u || '').trim());
                 return (url.protocol === 'https:' || url.protocol === 'http:') ? url.href : '';
             } catch (e) { return ''; }
-        }
-
-        function parseCSV(text) {
-            text = text.replace(/^\uFEFF/, '');
-            const rows = [];
-            let row = [], field = '', inQuotes = false;
-            for (let i = 0; i < text.length; i++) {
-                const c = text[i];
-                if (inQuotes) {
-                    if (c === '"') {
-                        if (text[i + 1] === '"') { field += '"'; i++; }
-                        else inQuotes = false;
-                    } else field += c;
-                } else if (c === '"') {
-                    inQuotes = true;
-                } else if (c === ',') {
-                    row.push(field); field = '';
-                } else if (c === '\n' || c === '\r') {
-                    if (c === '\r' && text[i + 1] === '\n') i++;
-                    row.push(field); field = '';
-                    rows.push(row); row = [];
-                } else field += c;
-            }
-            if (field !== '' || row.length) { row.push(field); rows.push(row); }
-            return rows;
-        }
-
-        // الدالة السحرية لحل مشكلة الرموز (Mojibake)
-        function fixMojibake(str) {
-            if (!str) return str;
-            // التحقق مما إذا كان النص يحتوي على رموز غريبة شائعة في هذه المشكلة
-            if (str.includes('Ø') || str.includes('Ù') || str.includes('©') || str.includes('­')) {
-                try {
-                    // إعادة تحويل النص إلى الترميز الصحيح
-                    return decodeURIComponent(escape(str));
-                } catch (e) {
-                    return str; // إذا فشل الإصلاح، نعيد النص كما هو
-                }
-            }
-            return str;
-        }
-
-        function rowsToPapers(rows) {
-            if (rows.length < 2) return [];
-            const header = rows[0].map(h => h.trim().toLowerCase());
-            return rows.slice(1).map(r => {
-                const o = {};
-                header.forEach((h, i) => {
-                    // تطبيق الإصلاح على كل خلية يتم قراءتها من الجدول
-                    let val = (r[i] || '').trim();
-                    val = fixMojibake(val); 
-                    o[h] = val;
-                });
-                return o;
-            }).filter(p => p.title);
         }
 
         function paperSummary(p) {
@@ -799,7 +839,7 @@
             if (sort === 'oldest') list = list.slice().sort((a, b) => (parseInt(a.year) || 9999) - (parseInt(b.year) || 9999));
 
             updateCategoryHeader();
-            countEl.textContent = t('showing', list.length, base.length) + (usingFallback ? t('fallbackNote') : '');
+            countEl.textContent = t('showing', list.length, base.length);
             grid.innerHTML = '';
 
             if (list.length === 0) {
@@ -1211,34 +1251,14 @@
             }
         }
 
-        async function loadPapers() {
-            try {
-                // محاولة جلب البيانات من رابط gviz (الذي يفرض الترميز الصحيح)
-                let res = await fetch(SHEET_CSV_URL + '&t=' + new Date().getTime(), { cache: 'no-store' });
-                
-                // إذا فشل رابط gviz، نجرب الرابط الأساسي
-                if (!res.ok) {
-                    console.warn('gviz link failed, trying fallback link...');
-                    res = await fetch(FALLBACK_CSV_URL + '&t=' + new Date().getTime(), { cache: 'no-store' });
-                }
-                
-                if (!res.ok) throw new Error('HTTP ' + res.status);
-                
-                const buffer = await res.arrayBuffer();
-                // إجبار المتصفح على قراءة النص بترميز UTF-8
-                const text = new TextDecoder('utf-8').decode(buffer);
-                
-                papers = rowsToPapers(parseCSV(text));
-                if (papers.length === 0) throw new Error('Sheet empty or headers invalid');
-                usingFallback = false;
-            } catch (e) {
-                console.error('Sheet load failed:', e);
-                papers = FALLBACK_PAPERS;
-                usingFallback = true;
-            }
+        // الدالة الجديدة التي تعتمد على البيانات المضمنة بدلاً من الاتصال بالإنترنت
+        function loadPapers() {
+            papers = MY_PAPERS;
+            
             catEnFromSheet = {};
             papers.forEach(p => { if (p.category && p.category_en) catEnFromSheet[p.category] = p.category_en; });
             loaded = true;
+            
             renderCategoryTiles();
             if (view === 'cat') {
                 updateCategoryHeader();
