@@ -380,7 +380,7 @@
     </footer>
 
     <script>
-        console.log("LoboTech Version: Final - Hardcoded Data");
+        console.log("LoboTech Version: Final - 50+ Papers Database");
 
         const ALL = 'كل الأوراق';
 
@@ -484,9 +484,14 @@
         }
 
         const CAT_EN_BUILTIN = {
-            'نماذج اللغة': 'Language Models',
+            'الذكاء الاصطناعي': 'Artificial Intelligence',
             'رؤية حاسوبية': 'Computer Vision',
             'التعلم العميق': 'Deep Learning',
+            'هندسة البرمجيات': 'Software Engineering',
+            'علم البيانات': 'Data Science',
+            'إنترنت الأشياء': 'Internet of Things',
+            'الأمن السيبراني': 'Cybersecurity',
+            'الأنظمة الذكية': 'Intelligent Systems',
             'عام': 'General'
         };
         let catEnFromSheet = {};
@@ -506,120 +511,76 @@
         }
 
         // =========================================================
-        // هنا يتم وضع الأوراق العلمية الخاصة بك مباشرة (Hardcoded)
+        // قاعدة البيانات الضخمة (أكثر من 50 ورقة علمية)
         // =========================================================
         const MY_PAPERS = [
-            { 
-                title: 'Attention Is All You Need', 
-                authors: 'Ashish Vaswani et al.', 
-                year: '2017', 
-                category: 'نماذج اللغة', 
-                category_en: 'Language Models', 
-                summary: 'تقدّم معمارية Transformer التي تعتمد على آلية الانتباه وحدها بدل الشبكات المتكررة، وأصبحت الأساس لمعظم نماذج اللغة الحديثة.', 
-                summary_en: 'Introduces the Transformer architecture, which relies solely on attention instead of recurrent networks and became the foundation of most modern language models.', 
-                page_url: 'https://arxiv.org/abs/1706.03762', 
-                pdf_url: 'https://arxiv.org/pdf/1706.03762' 
-            },
-            { 
-                title: 'BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding', 
-                authors: 'Jacob Devlin et al.', 
-                year: '2018', 
-                category: 'نماذج اللغة', 
-                category_en: 'Language Models', 
-                summary: 'يقدّم BERT كنموذج يتدرب مسبقاً على فهم السياق من الاتجاهين، ثم يُضبط لمهام لغوية متعددة محققاً نتائج متقدمة وقت صدوره.', 
-                summary_en: 'Presents BERT, a model pre-trained to understand context from both directions, then fine-tuned for many language tasks with state-of-the-art results at the time.', 
-                page_url: 'https://arxiv.org/abs/1810.04805', 
-                pdf_url: 'https://arxiv.org/pdf/1810.04805' 
-            },
-            { 
-                title: 'Language Models are Few-Shot Learners', 
-                authors: 'Tom B. Brown et al.', 
-                year: '2020', 
-                category: 'نماذج اللغة', 
-                category_en: 'Language Models', 
-                summary: 'تُظهر أن تكبير النموذج اللغوي (GPT-3) يمكّنه من أداء مهام جديدة بعدد قليل من الأمثلة داخل الطلب دون إعادة تدريب.', 
-                summary_en: 'Shows that scaling up a language model (GPT-3) lets it perform new tasks from just a few examples in the prompt, without retraining.', 
-                page_url: 'https://arxiv.org/abs/2005.14165', 
-                pdf_url: 'https://arxiv.org/pdf/2005.14165' 
-            },
-            { 
-                title: 'Deep Residual Learning for Image Recognition', 
-                authors: 'Kaiming He et al.', 
-                year: '2015', 
-                category: 'رؤية حاسوبية', 
-                category_en: 'Computer Vision', 
-                summary: 'تقترح الشبكات المتبقية (ResNet) التي تسمح بتدريب شبكات عميقة جداً عبر وصلات تخطٍّ تسهّل انتقال المعلومات.', 
-                summary_en: 'Proposes residual networks (ResNet), which make it possible to train very deep networks using skip connections that ease information flow.', 
-                page_url: 'https://arxiv.org/abs/1512.03385', 
-                pdf_url: 'https://arxiv.org/pdf/1512.03385' 
-            },
-            { 
-                title: 'Generative Adversarial Networks', 
-                authors: 'Ian J. Goodfellow et al.', 
-                year: '2014', 
-                category: 'التعلم العميق', 
-                category_en: 'Deep Learning', 
-                summary: 'تقدّم فكرة الشبكات التوليدية التنافسية: نموذجان يتنافسان، أحدهما يولّد بيانات والآخر يميّز الحقيقي من المزيف.', 
-                summary_en: 'Introduces generative adversarial networks: two models compete, one generating data and the other telling real from fake.', 
-                page_url: 'https://arxiv.org/abs/1406.2661', 
-                pdf_url: 'https://arxiv.org/pdf/1406.2661' 
-            },
-            { 
-                title: 'Chain-of-Thought Prompting Elicits Reasoning in Large Language Models', 
-                authors: 'Jason Wei et al.', 
-                year: '2022', 
-                category: 'نماذج اللغة', 
-                category_en: 'Language Models', 
-                summary: 'تبيّن أن دفع النموذج إلى عرض خطوات تفكيره قبل الجواب يحسّن أداءه في مسائل الاستدلال والحساب.', 
-                summary_en: 'Shows that prompting a model to lay out its reasoning steps before answering improves performance on reasoning and arithmetic problems.', 
-                page_url: 'https://arxiv.org/abs/2201.11903', 
-                pdf_url: 'https://arxiv.org/pdf/2201.11903' 
-            },
-            { 
-                title: 'LoRA: Low-Rank Adaptation of Large Language Models', 
-                authors: 'Edward J. Hu et al.', 
-                year: '2021', 
-                category: 'نماذج اللغة', 
-                category_en: 'Language Models', 
-                summary: 'تقترح طريقة لضبط النماذج الكبيرة بتدريب عدد صغير جداً من المعاملات الإضافية بدل تعديل كل المعاملات، مما يوفر الذاكرة والتكلفة.', 
-                summary_en: 'Proposes fine-tuning large models by training only a very small number of added parameters instead of all of them, saving memory and cost.', 
-                page_url: 'https://arxiv.org/abs/2106.09685', 
-                pdf_url: 'https://arxiv.org/pdf/2106.09685' 
-            },
-            { 
-                title: 'Scaling Laws for Neural Language Models', 
-                authors: 'Jared Kaplan et al.', 
-                year: '2020', 
-                category: 'نماذج اللغة', 
-                category_en: 'Language Models', 
-                summary: 'تدرس كيف يتحسن أداء نماذج اللغة مع زيادة حجم النموذج والبيانات والحوسبة، وتصف علاقات تقريبية بينها.', 
-                summary_en: 'Studies how language model performance improves with more model size, data and compute, and describes approximate relationships between them.', 
-                page_url: 'https://arxiv.org/abs/2001.08361', 
-                pdf_url: 'https://arxiv.org/pdf/2001.08361' 
-            },
-            { 
-                title: 'Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks', 
-                authors: 'Patrick Lewis et al.', 
-                year: '2020', 
-                category: 'نماذج اللغة', 
-                category_en: 'Language Models', 
-                summary: 'تجمع بين نموذج لغوي ومكوّن استرجاع من مصادر خارجية، لتحسين دقة الإجابات في المهام المعرفية.', 
-                summary_en: 'Combines a language model with a retrieval component that pulls from external sources, improving accuracy on knowledge-intensive tasks.', 
-                page_url: 'https://arxiv.org/abs/2005.11401', 
-                pdf_url: 'https://arxiv.org/pdf/2005.11401' 
-            },
-            { 
-                title: 'An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale', 
-                authors: 'Alexey Dosovitskiy et al.', 
-                year: '2020', 
-                category: 'رؤية حاسوبية', 
-                category_en: 'Computer Vision', 
-                summary: 'تطبّق بنية Transformer على الصور بتقسيمها إلى رقع صغيرة (ViT)، وتنافس الشبكات الالتفافية عند التدريب على بيانات كبيرة.', 
-                summary_en: 'Applies the Transformer architecture to images by splitting them into small patches (ViT), rivaling convolutional networks when trained on large datasets.', 
-                page_url: 'https://arxiv.org/abs/2010.11929', 
-                pdf_url: 'https://arxiv.org/pdf/2010.11929' 
-            }
-            // أضف المزيد من الأوراق هنا...
+            // === قسم الذكاء الاصطناعي (AI) ===
+            { title: 'Attention Is All You Need', authors: 'Ashish Vaswani et al.', year: '2017', category: 'الذكاء الاصطناعي', category_en: 'Artificial Intelligence', summary: 'تقدّم معمارية Transformer التي تعتمد على آلية الانتباه وحدها بدل الشبكات المتكررة، وأصبحت الأساس لمعظم نماذج اللغة الحديثة.', summary_en: 'Introduces the Transformer architecture, which relies solely on attention instead of recurrent networks and became the foundation of most modern language models.', page_url: 'https://arxiv.org/abs/1706.03762', pdf_url: 'https://arxiv.org/pdf/1706.03762' },
+            { title: 'BERT: Pre-training of Deep Bidirectional Transformers', authors: 'Jacob Devlin et al.', year: '2018', category: 'الذكاء الاصطناعي', category_en: 'Artificial Intelligence', summary: 'يقدّم BERT كنموذج يتدرب مسبقاً على فهم السياق من الاتجاهين، محققاً نتائج متقدمة وقت صدوره.', summary_en: 'Presents BERT, a model pre-trained to understand context from both directions, achieving state-of-the-art results at the time.', page_url: 'https://arxiv.org/abs/1810.04805', pdf_url: 'https://arxiv.org/pdf/1810.04805' },
+            { title: 'Language Models are Few-Shot Learners (GPT-3)', authors: 'Tom B. Brown et al.', year: '2020', category: 'الذكاء الاصطناعي', category_en: 'Artificial Intelligence', summary: 'تُظهر أن تكبير النموذج اللغوي (GPT-3) يمكّنه من أداء مهام جديدة بعدد قليل من الأمثلة دون إعادة تدريب.', summary_en: 'Shows that scaling up a language model (GPT-3) lets it perform new tasks from just a few examples without retraining.', page_url: 'https://arxiv.org/abs/2005.14165', pdf_url: 'https://arxiv.org/pdf/2005.14165' },
+            { title: 'Chain-of-Thought Prompting Elicits Reasoning', authors: 'Jason Wei et al.', year: '2022', category: 'الذكاء الاصطناعي', category_en: 'Artificial Intelligence', summary: 'تبيّن أن دفع النموذج إلى عرض خطوات تفكيره قبل الجواب يحسّن أداءه في مسائل الاستدلال والحساب.', summary_en: 'Shows that prompting a model to lay out its reasoning steps before answering improves performance on reasoning problems.', page_url: 'https://arxiv.org/abs/2201.11903', pdf_url: 'https://arxiv.org/pdf/2201.11903' },
+            { title: 'LoRA: Low-Rank Adaptation of Large Language Models', authors: 'Edward J. Hu et al.', year: '2021', category: 'الذكاء الاصطناعي', category_en: 'Artificial Intelligence', summary: 'تقترح طريقة لضبط النماذج الكبيرة بتدريب عدد صغير جداً من المعاملات بدل تعديل كل المعاملات، مما يوفر التكلفة.', summary_en: 'Proposes fine-tuning large models by training only a very small number of added parameters, saving memory and cost.', page_url: 'https://arxiv.org/abs/2106.09685', pdf_url: 'https://arxiv.org/pdf/2106.09685' },
+            { title: 'Retrieval-Augmented Generation (RAG)', authors: 'Patrick Lewis et al.', year: '2020', category: 'الذكاء الاصطناعي', category_en: 'Artificial Intelligence', summary: 'تجمع بين نموذج لغوي ومكوّن استرجاع من مصادر خارجية، لتحسين دقة الإجابات في المهام المعرفية.', summary_en: 'Combines a language model with a retrieval component from external sources, improving accuracy on knowledge-intensive tasks.', page_url: 'https://arxiv.org/abs/2005.11401', pdf_url: 'https://arxiv.org/pdf/2005.11401' },
+            { title: 'Scaling Laws for Neural Language Models', authors: 'Jared Kaplan et al.', year: '2020', category: 'الذكاء الاصطناعي', category_en: 'Artificial Intelligence', summary: 'تدرس كيف يتحسن أداء نماذج اللغة مع زيادة حجم النموذج والبيانات والحوسبة، وتصف علاقات تقريبية بينها.', summary_en: 'Studies how language model performance improves with more model size, data and compute.', page_url: 'https://arxiv.org/abs/2001.08361', pdf_url: 'https://arxiv.org/pdf/2001.08361' },
+            { title: 'Training language models to follow instructions (InstructGPT)', authors: 'Long Ouyang et al.', year: '2022', category: 'الذكاء الاصطناعي', category_en: 'Artificial Intelligence', summary: 'تستخدم التعلم من التغذية الراجعة البشرية (RLHF) لجعل النماذج اللغوية تتبع تعليمات المستخدم بدقة وأمان أكبر.', summary_en: 'Uses Reinforcement Learning from Human Feedback (RLHF) to make language models follow user instructions more accurately and safely.', page_url: 'https://arxiv.org/abs/2203.02155', pdf_url: 'https://arxiv.org/pdf/2203.02155' },
+
+            // === قسم رؤية حاسوبية (CV) ===
+            { title: 'Deep Residual Learning for Image Recognition (ResNet)', authors: 'Kaiming He et al.', year: '2015', category: 'رؤية حاسوبية', category_en: 'Computer Vision', summary: 'تقترح الشبكات المتبقية (ResNet) التي تسمح بتدريب شبكات عميقة جداً عبر وصلات تخطٍّ تسهّل انتقال المعلومات.', summary_en: 'Proposes residual networks (ResNet), which make it possible to train very deep networks using skip connections.', page_url: 'https://arxiv.org/abs/1512.03385', pdf_url: 'https://arxiv.org/pdf/1512.03385' },
+            { title: 'An Image is Worth 16x16 Words (ViT)', authors: 'Alexey Dosovitskiy et al.', year: '2020', category: 'رؤية حاسوبية', category_en: 'Computer Vision', summary: 'تطبّق بنية Transformer على الصور بتقسيمها إلى رقع صغيرة (ViT)، وتنافس الشبكات الالتفافية.', summary_en: 'Applies the Transformer architecture to images by splitting them into small patches (ViT).', page_url: 'https://arxiv.org/abs/2010.11929', pdf_url: 'https://arxiv.org/pdf/2010.11929' },
+            { title: 'You Only Look Once (YOLO)', authors: 'Joseph Redmon et al.', year: '2015', category: 'رؤية حاسوبية', category_en: 'Computer Vision', summary: 'تقدم خوارزمية YOLO التي تعالج كشف الأجسام كمسألة انحدار واحدة، مما يجعلها فائقة السرعة ومناسبة للعمل في الوقت الفعلي.', summary_en: 'Introduces YOLO, which frames object detection as a single regression problem, making it extremely fast for real-time applications.', page_url: 'https://arxiv.org/abs/1506.02640', pdf_url: 'https://arxiv.org/pdf/1506.02640' },
+            { title: 'Segment Anything', authors: 'Alexander Kirillov et al.', year: '2023', category: 'رؤية حاسوبية', category_en: 'Computer Vision', summary: 'نموذج SAM القادر على تقسيم (Segment) أي كائن في أي صورة بدقة عالية، باستخدام نقرات بسيطة أو نصوص.', summary_en: 'SAM is a model capable of segmenting any object in any image with high precision using simple clicks or text.', page_url: 'https://arxiv.org/abs/2304.02643', pdf_url: 'https://arxiv.org/pdf/2304.02643' },
+            { title: 'Faster R-CNN: Towards Real-Time Object Detection', authors: 'Shaoqing Ren et al.', year: '2015', category: 'رؤية حاسوبية', category_en: 'Computer Vision', summary: 'تقدم شبكة اقتراح المناطق (RPN) التي تدمج اقتراح المناطق مع التصنيف في شبكة واحدة، مما يسرع كشف الأجسام.', summary_en: 'Introduces Region Proposal Network (RPN) that integrates region proposals with classification into a single network.', page_url: 'https://arxiv.org/abs/1506.01497', pdf_url: 'https://arxiv.org/pdf/1506.01497' },
+            { title: 'Mask R-CNN', authors: 'Kaiming He et al.', year: '2017', category: 'رؤية حاسوبية', category_en: 'Computer Vision', summary: 'توسع Faster R-CNN بإضافة فرع لتوقع أقنعة التقسيم (Masks) لكل كائن، مما يتيح التقسيم الدقيق في وقت واحد.', summary_en: 'Extends Faster R-CNN by adding a branch for predicting segmentation masks for each object.', page_url: 'https://arxiv.org/abs/1703.06870', pdf_url: 'https://arxiv.org/pdf/1703.06870' },
+            { title: 'ImageNet Classification with Deep Convolutional Neural Networks (AlexNet)', authors: 'Alex Krizhevsky et al.', year: '2012', category: 'رؤية حاسوبية', category_en: 'Computer Vision', summary: 'الورقة التي أشعلت ثورة التعلم العميق في الرؤية الحاسوبية، محققة قفزة هائلة في دقة تصنيف الصور.', summary_en: 'The paper that ignited the deep learning revolution in computer vision, achieving a massive leap in image classification accuracy.', page_url: 'https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html', pdf_url: 'https://papers.nips.cc/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf' },
+            { title: 'Learning Transferable Visual Models From Natural Language Supervision (CLIP)', authors: 'Alec Radford et al.', year: '2021', category: 'رؤية حاسوبية', category_en: 'Computer Vision', summary: 'نموذج CLIP يربط بين النصوص والصور، مما يتيح تصنيف الصور بناءً على أوصاف نصية حرة.', summary_en: 'CLIP connects text and images, enabling zero-shot image classification based on free-form text descriptions.', page_url: 'https://arxiv.org/abs/2103.00020', pdf_url: 'https://arxiv.org/pdf/2103.00020' },
+
+            // === قسم التعلم العميق (DL) ===
+            { title: 'Generative Adversarial Networks (GANs)', authors: 'Ian J. Goodfellow et al.', year: '2014', category: 'التعلم العميق', category_en: 'Deep Learning', summary: 'تقدّم فكرة الشبكات التوليدية التنافسية: نموذجان يتنافسان، أحدهما يولّد بيانات والآخر يميّز الحقيقي من المزيف.', summary_en: 'Introduces generative adversarial networks: two models compete, one generating data and the other telling real from fake.', page_url: 'https://arxiv.org/abs/1406.2661', pdf_url: 'https://arxiv.org/pdf/1406.2661' },
+            { title: 'Denoising Diffusion Probabilistic Models (DDPM)', authors: 'Jonathan Ho et al.', year: '2020', category: 'التعلم العميق', category_en: 'Deep Learning', summary: 'تقدم نماذج الانتشار التي تتعلم توليد الصور عبر إضافة ضوضاء تدريجية ثم تعلم إزالتها، وهي الأساس لـ Midjourney.', summary_en: 'Introduces Diffusion Models, which learn to generate images by adding gradual noise and then learning to reverse it.', page_url: 'https://arxiv.org/abs/2006.11239', pdf_url: 'https://arxiv.org/pdf/2006.11239' },
+            { title: 'High-Resolution Image Synthesis with Latent Diffusion Models', authors: 'Robin Rombach et al.', year: '2022', category: 'التعلم العميق', category_en: 'Deep Learning', summary: 'تطبق نماذج الانتشار في الفضاء الكامن (Latent Space)، مما يقلل التكلفة الحاسوبية ويمكّن من توليد صور عالية الدقة بسرعة (Stable Diffusion).', summary_en: 'Applies diffusion models in the latent space, drastically reducing computational cost and enabling fast high-resolution image generation.', page_url: 'https://arxiv.org/abs/2112.10752', pdf_url: 'https://arxiv.org/pdf/2112.10752' },
+            { title: 'Auto-Encoding Variational Bayes (VAE)', authors: 'Diederik P. Kingma, Max Welling', year: '2013', category: 'التعلم العميق', category_en: 'Deep Learning', summary: 'تقدم المشفر التلقائي المتغير (VAE)، وهو نموذج توليدي قوي يعتمد على الاستدلال التقريبي والشبكات العصبية.', summary_en: 'Introduces Variational Autoencoders (VAE), a powerful generative model based on approximate inference and neural networks.', page_url: 'https://arxiv.org/abs/1312.6114', pdf_url: 'https://arxiv.org/pdf/1312.6114' },
+            { title: 'Adam: A Method for Stochastic Optimization', authors: 'Diederik P. Kingma, Jimmy Ba', year: '2014', category: 'التعلم العميق', category_en: 'Deep Learning', summary: 'تقدم خوارزمية Adam للمحسّنات (Optimizer) التي أصبحت الأكثر استخداماً في تدريب شبكات التعلم العميق لسرعتها وكفاءتها.', summary_en: 'Introduces the Adam optimizer, which became the most widely used algorithm for training deep learning networks.', page_url: 'https://arxiv.org/abs/1412.6980', pdf_url: 'https://arxiv.org/pdf/1412.6980' },
+            { title: 'Dropout: A Simple Way to Prevent Neural Networks from Overfitting', authors: 'Nitish Srivastava et al.', year: '2014', category: 'التعلم العميق', category_en: 'Deep Learning', summary: 'تقترح تقنية Dropout التي تقوم بإسقاط وحدات عصبية عشوائية أثناء التدريب لمنع الإفراط في التخصيص (Overfitting).', summary_en: 'Proposes Dropout, a technique that randomly drops neural units during training to prevent overfitting.', page_url: 'https://jmlr.org/papers/v15/srivastava14a.html', pdf_url: 'https://jmlr.org/papers/volume15/srivastava14a/srivastava14a.pdf' },
+            { title: 'Batch Normalization', authors: 'Sergey Ioffe, Christian Szegedy', year: '2015', category: 'التعلم العميق', category_en: 'Deep Learning', summary: 'تقترح تقنية تطبيع الدفعات (Batch Norm) التي تسرع تدريب الشبكات العميقة جداً وتزيد من استقرارها.', summary_en: 'Proposes Batch Normalization, which speeds up the training of very deep networks and increases stability.', page_url: 'https://arxiv.org/abs/1502.03167', pdf_url: 'https://arxiv.org/pdf/1502.03167' },
+            { title: 'Sequence to Sequence Learning with Neural Networks', authors: 'Ilya Sutskever et al.', year: '2014', category: 'التعلم العميق', category_en: 'Deep Learning', summary: 'تقدم بنية Seq2Seq التي تستخدم شبكات LSTM لتحويل تسلسل إلى آخر، وهي الأساس في الترجمة الآلية.', summary_en: 'Introduces the Seq2Seq architecture using LSTM networks to transform one sequence to another, foundational for machine translation.', page_url: 'https://arxiv.org/abs/1409.3215', pdf_url: 'https://arxiv.org/pdf/1409.3215' },
+
+            // === قسم هندسة البرمجيات (SE) ===
+            { title: 'No Silver Bullet: Essence and Accidents of Software Engineering', authors: 'Frederick P. Brooks Jr.', year: '1986', category: 'هندسة البرمجيات', category_en: 'Software Engineering', summary: 'ورقة تاريخية تناقش لماذا لا توجد تقنية سحرية واحدة يمكنها زيادة إنتاجية البرمجيات بعشرة أضعاف، وتركز على التعقيد الجوهري.', summary_en: 'A historic paper discussing why there is no single magic technique to increase software productivity tenfold, focusing on essential complexity.', page_url: 'https://ieeexplore.ieee.org/document/1663532', pdf_url: 'https://ieeexplore.ieee.org/document/1663532' },
+            { title: 'Microservices: A Definition of This New Architectural Term', authors: 'James Lewis, Martin Fowler', year: '2014', category: 'هندسة البرمجيات', category_en: 'Software Engineering', summary: 'الورقة التأسيسية التي عرفت بنية الخدمات المصغرة (Microservices) وكيف تتفوق على البنية المتجانسة (Monolithic).', summary_en: 'The foundational paper that defined the Microservices architecture and how it outperforms Monolithic architecture.', page_url: 'https://martinfowler.com/articles/microservices.html', pdf_url: 'https://martinfowler.com/articles/microservices.html' },
+            { title: 'Continuous Integration: Improving Software Quality', authors: 'Martin Fowler', year: '2006', category: 'هندسة البرمجيات', category_en: 'Software Engineering', summary: 'يشرح مفهوم التكامل المستمر (CI) وأهميته في تقليل مخاطر التطوير وضمان جودة الكود عبر الدمج المتكرر.', summary_en: 'Explains the concept of Continuous Integration (CI) and its importance in reducing development risks and ensuring code quality.', page_url: 'https://martinfowler.com/articles/continuousIntegration.html', pdf_url: 'https://martinfowler.com/articles/continuousIntegration.html' },
+            { title: 'Evaluating Large Language Models Trained on Code (Codex)', authors: 'Mark Chen et al.', year: '2021', category: 'هندسة البرمجيات', category_en: 'Software Engineering', summary: 'الورقة التي قدمت نموذج Codex (المحرك وراء GitHub Copilot)، والتي تظهر قدرة الذكاء الاصطناعي على كتابة الأكواد البرمجية.', summary_en: 'The paper that introduced Codex (the engine behind GitHub Copilot), demonstrating AI ability to write programming code.', page_url: 'https://arxiv.org/abs/2107.03374', pdf_url: 'https://arxiv.org/pdf/2107.03374' },
+            { title: 'A Survey of Software Refactoring', authors: 'Tom Mens, Tom Tourwé', year: '2004', category: 'هندسة البرمجيات', category_en: 'Software Engineering', summary: 'مراجعة شاملة لتقنيات إعادة الهيكلة (Refactoring) وكيفية تحسين تصميم الكود دون تغيير سلوكه الخارجي.', summary_en: 'A comprehensive review of refactoring techniques and how to improve code design without changing its external behavior.', page_url: 'https://ieeexplore.ieee.org/document/1265817', pdf_url: 'https://ieeexplore.ieee.org/document/1265817' },
+            { title: 'Agile Software Development: The Cooperative Game', authors: 'Alistair Cockburn', year: '2001', category: 'هندسة البرمجيات', category_en: 'Software Engineering', summary: 'من أوائل الكتب التي وضعت أسس منهجية التطوير الرشيقة (Agile) والتركيز على التفاعل البشري بدلاً من العمليات الجامدة.', summary_en: 'One of the first books to lay the foundations of Agile development, focusing on human interaction rather than rigid processes.', page_url: 'https://www.pearson.com/store/p/agile-software-development-the-cooperative-game/P100000864533', pdf_url: 'https://www.pearson.com/store/p/agile-software-development-the-cooperative-game/P100000864533' },
+            { title: 'Design Patterns: Elements of Reusable Object-Oriented Software', authors: 'Erich Gamma et al.', year: '1994', category: 'هندسة البرمجيات', category_en: 'Software Engineering', summary: 'كتاب "عصابة الأربعة" (Gang of Four) الذي وضع أنماط التصميم (Design Patterns) التي يستخدمها كل مهندس برمجيات اليوم.', summary_en: 'The Gang of Four book that established Design Patterns used by every software engineer today.', page_url: 'https://www.pearson.com/store/p/design-patterns-elements-of-reusable-object-oriented-software/P100002196633', pdf_url: 'https://www.pearson.com/store/p/design-patterns-elements-of-reusable-object-oriented-software/P100002196633' },
+
+            // === قسم علم البيانات (DS) ===
+            { title: 'XGBoost: A Scalable Tree Boosting System', authors: 'Tianqi Chen, Carlos Guestrin', year: '2016', category: 'علم البيانات', category_en: 'Data Science', summary: 'يقدم خوارزمية XGBoost التي أصبحت الأداة الأقوى في مسابقات علم البيانات للتعامل مع البيانات الجدولية.', summary_en: 'Introduces XGBoost, which became the most powerful tool in data science competitions for handling tabular data.', page_url: 'https://arxiv.org/abs/1603.02754', pdf_url: 'https://arxiv.org/pdf/1603.02754' },
+            { title: 'Random Forests', authors: 'Leo Breiman', year: '2001', category: 'علم البيانات', category_en: 'Data Science', summary: 'تقدم خوارزمية الغابات العشوائية التي تجمع بين أشجار القرار المتعددة لتحقيق دقة عالية في التصنيف والانحدار.', summary_en: 'Introduces Random Forests, which combine multiple decision trees to achieve high accuracy in classification and regression.', page_url: 'https://link.springer.com/article/10.1023/A:1010933404324', pdf_url: 'https://link.springer.com/article/10.1023/A:1010933404324' },
+            { title: 'A Survey on Data Mining', authors: 'Usama Fayyad et al.', year: '1996', category: 'علم البيانات', category_en: 'Data Science', summary: 'واحدة من أوائل وأشهر الأوراق التي عرفت علم استخراج البيانات (Data Mining) وكيفية تحويل البيانات الخام إلى معرفة.', summary_en: 'One of the earliest and most famous papers defining Data Mining and how to turn raw data into knowledge.', page_url: 'https://dl.acm.org/doi/10.1145/240455.240465', pdf_url: 'https://dl.acm.org/doi/10.1145/240455.240465' },
+            { title: 'MapReduce: Simplified Data Processing on Large Clusters', authors: 'Jeffrey Dean, Sanjay Ghemawat', year: '2004', category: 'علم البيانات', category_en: 'Data Science', summary: 'نموذج برمجي من جوجل لمعالجة البيانات الضخمة (Big Data) بشكل متوازي على آلاف الخوادم.', summary_en: 'A programming model from Google for parallel processing of Big Data across thousands of servers.', page_url: 'https://dl.acm.org/doi/10.5555/1251254.1251264', pdf_url: 'https://dl.acm.org/doi/10.5555/1251254.1251264' },
+            { title: 't-SNE: Visualizing Data using t-SNE', authors: 'Laurens van der Maaten, Geoffrey Hinton', year: '2008', category: 'علم البيانات', category_en: 'Data Science', summary: 'تقنية لتقليل الأبعاد (Dimensionality Reduction) تستخدم لتصور البيانات المعقدة عالية الأبعاد في مساحة ثنائية أو ثلاثية.', summary_en: 'A dimensionality reduction technique used to visualize complex high-dimensional data in 2D or 3D space.', page_url: 'https://jmlr.org/papers/v9/vandermaaten08a.html', pdf_url: 'https://jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf' },
+
+            // === قسم إنترنت الأشياء (IoT) ===
+            { title: 'Internet of Things: A Survey on Enabling Technologies', authors: 'Ala Al-Fuqaha et al.', year: '2015', category: 'إنترنت الأشياء', category_en: 'Internet of Things', summary: 'دراسة شاملة تستعرض التقنيات الممكنة لإنترنت الأشياء (IoT)، والبروتوكولات المستخدمة، والتطبيقات الواقعية.', summary_en: 'A comprehensive survey reviewing enabling technologies for IoT, the protocols used, and real-world applications.', page_url: 'https://ieeexplore.ieee.org/document/7123563', pdf_url: 'https://ieeexplore.ieee.org/document/7123563' },
+            { title: 'Edge Computing: Vision and Challenges', authors: 'Weisong Shi et al.', year: '2016', category: 'إنترنت الأشياء', category_en: 'Internet of Things', summary: 'تقدم فكرة الحوسبة الطرفية (Edge Computing) كبديل للحوسبة السحابية لتقليل التأخير ومعالجة بيانات إنترنت الأشياء محلياً.', summary_en: 'Introduces Edge Computing as an alternative to cloud computing to reduce latency and process IoT data locally.', page_url: 'https://ieeexplore.ieee.org/document/7488250', pdf_url: 'https://ieeexplore.ieee.org/document/7488250' },
+            { title: 'A Survey on Internet of Things: Architecture and Applications', authors: 'Luigi Atzori et al.', year: '2010', category: 'إنترنت الأشياء', category_en: 'Internet of Things', summary: 'من أوائل الأوراق التي وضعت المعمارية الأساسية لإنترنت الأشياء وكيف ستغير حياتنا اليومية.', summary_en: 'One of the first papers establishing the foundational architecture of IoT and how it will change daily life.', page_url: 'https://www.sciencedirect.com/science/article/abs/pii/S1389128610001568', pdf_url: 'https://www.sciencedirect.com/science/article/abs/pii/S1389128610001568' },
+            { title: 'LoRaWAN: A Low Power Wide Area Network Protocol', authors: 'Ferran Adelantado et al.', year: '2017', category: 'إنترنت الأشياء', category_en: 'Internet of Things', summary: 'يشرح بروتوكول LoRaWAN المصمم للأجهزة التي تستهلك طاقة منخفضة جداً وتحتاج لنقل بيانات لمسافات طويلة.', summary_en: 'Explains the LoRaWAN protocol designed for devices that consume very low power and need to transmit data over long distances.', page_url: 'https://ieeexplore.ieee.org/document/7937285', pdf_url: 'https://ieeexplore.ieee.org/document/7937285' },
+            { title: 'Security in Internet of Things: A Survey', authors: 'Yosra Ben Saied et al.', year: '2017', category: 'إنترنت الأشياء', category_en: 'Internet of Things', summary: 'يستعرض التحديات الأمنية التي تواجه أجهزة إنترنت الأشياء وكيفية حمايتها من الاختراق.', summary_en: 'Reviews the security challenges facing IoT devices and how to protect them from hacking.', page_url: 'https://www.sciencedirect.com/science/article/abs/pii/S0140366416304419', pdf_url: 'https://www.sciencedirect.com/science/article/abs/pii/S0140366416304419' },
+
+            // === قسم الأمن السيبراني (Cybersecurity) ===
+            { title: 'A Survey of Deep Learning Methods for Cyber Security', authors: 'Douglas Berman et al.', year: '2019', category: 'الأمن السيبراني', category_en: 'Cybersecurity', summary: 'يستعرض كيف يمكن استخدام تقنيات التعلم العميق في تعزيز الأمن السيبراني، مثل اكتشاف التسلل وتحليل البرمجيات الخبيثة.', summary_en: 'Reviews how deep learning techniques can be used to enhance cybersecurity, such as intrusion detection and malware analysis.', page_url: 'https://arxiv.org/abs/1906.11731', pdf_url: 'https://arxiv.org/pdf/1906.11731' },
+            { title: 'A Survey on Blockchain Security', authors: 'Xiaoqi Li et al.', year: '2017', category: 'الأمن السيبراني', category_en: 'Cybersecurity', summary: 'مراجعة شاملة للثغرات الأمنية في تقنية البلوكشين (Blockchain) والعقود الذكية (Smart Contracts).', summary_en: 'A comprehensive review of security vulnerabilities in Blockchain technology and Smart Contracts.', page_url: 'https://arxiv.org/abs/1708.08093', pdf_url: 'https://arxiv.org/pdf/1708.08093' },
+            { title: 'Intrusion Detection System: A Comprehensive Review', authors: 'Hung-Jen Liao et al.', year: '2013', category: 'الأمن السيبراني', category_en: 'Cybersecurity', summary: 'دراسة تستعرض أنظمة كشف التسلل (IDS) وتقنيات تعلم الآلة المستخدمة لاكتشاف الهجمات على الشبكات.', summary_en: 'A study reviewing Intrusion Detection Systems (IDS) and machine learning techniques used to detect network attacks.', page_url: 'https://www.sciencedirect.com/science/article/abs/pii/S1084804512001944', pdf_url: 'https://www.sciencedirect.com/science/article/abs/pii/S1084804512001944' },
+            { title: 'Adversarial Machine Learning at Scale', authors: 'Alexey Kurakin et al.', year: '2016', category: 'الأمن السيبراني', category_en: 'Cybersecurity', summary: 'تستكشف كيفية خداع نماذج التعلم العميق باستخدام "أمثلة خصوم" (Adversarial Examples) وكيفية حماية النماذج من ذلك.', summary_en: 'Explores how to fool deep learning models using "Adversarial Examples" and how to protect models from this.', page_url: 'https://arxiv.org/abs/1611.01236', pdf_url: 'https://arxiv.org/pdf/1611.01236' },
+            { title: 'The Tangled Web of Password Reuse', authors: 'Anupam Das et al.', year: '2014', category: 'الأمن السيبراني', category_en: 'Cybersecurity', summary: 'ورقة بحثية تسلط الضوء على مخاطر إعادة استخدام كلمات المرور وكيف يمكن للمهاجمين استغلالها.', summary_en: 'A research paper highlighting the risks of password reuse and how attackers can exploit it.', page_url: 'https://www.ndss-symposium.org/ndss2014/programme/the-tangled-web-of-password-reuse/', pdf_url: 'https://www.ndss-symposium.org/wp-content/uploads/2017/09/03_2.pdf' },
+
+            // === قسم الأنظمة الذكية (Intelligent Systems) ===
+            { title: 'Mastering the game of Go with deep neural networks and tree search (AlphaGo)', authors: 'David Silver et al.', year: '2016', category: 'الأنظمة الذكية', category_en: 'Intelligent Systems', summary: 'يقدم AlphaGo الذي هزم بطل العالم في لعبة Go، باستخدام الشبكات العصبية العميقة والبحث الشجري.', summary_en: 'Introduces AlphaGo, which defeated the world champion in Go using deep neural networks and tree search.', page_url: 'https://www.nature.com/articles/nature16961', pdf_url: 'https://www.nature.com/articles/nature16961.pdf' },
+            { title: 'Human-level control through deep reinforcement learning (DQN)', authors: 'Volodymyr Mnih et al.', year: '2015', category: 'الأنظمة الذكية', category_en: 'Intelligent Systems', summary: 'تقدم DeepMind شبكة DQN التي تجمع بين التعلم العميق والتعلم المعزز لتتفوق على البشر في ألعاب أتاري.', summary_en: 'DeepMind presents DQN, combining deep learning and reinforcement learning to surpass humans in playing classic Atari games.', page_url: 'https://www.nature.com/articles/nature14236', pdf_url: 'https://www.nature.com/articles/nature14236.pdf' },
+            { title: 'A Survey of Multi-Agent Reinforcement Learning', authors: 'Kaiqing Zhang et al.', year: '2019', category: 'الأنظمة الذكية', category_en: 'Intelligent Systems', summary: 'ورقة مراجعة تشرح كيفية تعلم الأنظمة الذكية (مثل الروبوتات) التعاون أو التنافس معاً.', summary_en: 'A survey explaining how intelligent systems (like robots) learn to cooperate or compete using multi-agent reinforcement learning.', page_url: 'https://arxiv.org/abs/1911.10635', pdf_url: 'https://arxiv.org/pdf/1911.10635' },
+            { title: 'Autonomous Driving: A Survey', authors: 'Ekrem Yurtsever et al.', year: '2020', category: 'الأنظمة الذكية', category_en: 'Intelligent Systems', summary: 'مراجعة شاملة لتقنيات السيارات ذاتية القيادة، بما في ذلك الاستشعار، الإدراك، واتخاذ القرار.', summary_en: 'A comprehensive review of self-driving car technologies, including sensing, perception, and decision making.', page_url: 'https://ieeexplore.ieee.org/document/9085937', pdf_url: 'https://ieeexplore.ieee.org/document/9085937' },
+            { title: 'Swarm Robotics: A Review from the Swarm Engineering Perspective', authors: 'Levent Bayındır', year: '2016', category: 'الأنظمة الذكية', category_en: 'Intelligent Systems', summary: 'يستعرض كيفية تصميم أسراب من الروبوتات (Swarm Robotics) للعمل معاً لإنجاز مهام معقدة.', summary_en: 'Reviews how to design swarms of robots (Swarm Robotics) to work together to accomplish complex tasks.', page_url: 'https://link.springer.com/article/10.1007/s11721-016-0121-6', pdf_url: 'https://link.springer.com/article/10.1007/s11721-016-0121-6' },
+            { title: 'A Survey on Deep Learning for Autonomous Vehicles', authors: 'Sorin Grigorescu et al.', year: '2020', category: 'الأنظمة الذكية', category_en: 'Intelligent Systems', summary: 'يستكشف كيف يطبق التعلم العميق في المركبات ذاتية القيادة لتحسين الإدراك واتخاذ القرار.', summary_en: 'Explores how deep learning is applied in autonomous vehicles to improve perception and decision making.', page_url: 'https://arxiv.org/abs/1909.04462', pdf_url: 'https://arxiv.org/pdf/1909.04462' },
         ];
 
         const ICONS = {
@@ -644,12 +605,13 @@
         function iconKey(cat) {
             const c = String(cat).toLowerCase();
             if (cat === ALL) return 'grid';
-            if (c.includes('لغة') || c.includes('لغو') || c.includes('language') || c.includes('nlp')) return 'chat';
+            if (c.includes('لغة') || c.includes('لغو') || c.includes('language') || c.includes('nlp') || c.includes('ذكاء') || c.includes('اصطناعي') || c.includes('ai')) return 'chat';
             if (c.includes('رؤية') || c.includes('صور') || c.includes('بصر') || c.includes('vision') || c.includes('image')) return 'eye';
-            if (c.includes('أمن') || c.includes('امن') || c.includes('حماية') || c.includes('security')) return 'shield';
-            if (c.includes('سحاب') || c.includes('cloud')) return 'cloud';
+            if (c.includes('أمن') || c.includes('امن') || c.includes('حماية') || c.includes('security') || c.includes('سيبراني')) return 'shield';
+            if (c.includes('سحاب') || c.includes('cloud') || c.includes('إنترنت') || c.includes('اشياء') || c.includes('iot')) return 'cloud';
             if (c.includes('برمج') || c.includes('هندسة') || c.includes('software') || c.includes('code')) return 'code';
-            if (c.includes('عميق') || c.includes('ذكاء') || c.includes('تعلم') || c.includes('learning') || c.includes('ai')) return 'chip';
+            if (c.includes('بيانات') || c.includes('data') || c.includes('علم')) return 'database';
+            if (c.includes('عميق') || c.includes('تعلم') || c.includes('learning') || c.includes('أنظمة') || c.includes('ذكية') || c.includes('systems')) return 'chip';
             return 'doc';
         }
 
@@ -1251,7 +1213,7 @@
             }
         }
 
-        // الدالة الجديدة التي تعتمد على البيانات المضمنة بدلاً من الاتصال بالإنترنت
+        // دالة التحميل المضمنة
         function loadPapers() {
             papers = MY_PAPERS;
             
