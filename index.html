@@ -3,26 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>لوبو تيك | LoboTech</title>
-    <meta name="description" content="منصة لوبو تيك (LoboTech) - دليل عربي للأوراق العلمية في الذكاء الاصطناعي والتقنية، مع ملخصات عربية وروابط مباشرة إلى المصادر الأصلية.">
+    <title>لوبو تيك | LoboTech — ملخصات أوراق الذكاء الاصطناعي بالعربي</title>
+    <meta name="description" content="دليل عربي لأهم الأوراق العلمية في الذكاء الاصطناعي والتقنية، بملخصات مبسطة وروابط مباشرة إلى المصادر الأصلية، بإشراف د. صالح العنزي.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#0284c7">
+    <link rel="canonical" href="https://sallleh1819.vercel.app/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="لوبو تيك | LoboTech">
+    <meta property="og:title" content="لوبو تيك | LoboTech — ملخصات أوراق الذكاء الاصطناعي بالعربي">
+    <meta property="og:description" content="دليل عربي لأهم الأوراق العلمية في الذكاء الاصطناعي والتقنية، بملخصات مبسطة وروابط مباشرة إلى المصادر الأصلية.">
+    <meta property="og:url" content="https://sallleh1819.vercel.app/">
+    <meta property="og:image" content="https://sallleh1819.vercel.app/og-image.png">
+    <meta property="og:locale" content="ar_SA">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="لوبو تيك | LoboTech">
+    <meta name="twitter:description" content="ملخصات عربية لأهم أوراق الذكاء الاصطناعي والتقنية.">
+    <meta name="twitter:image" content="https://sallleh1819.vercel.app/og-image.png">
+
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230284c7'/%3E%3Ctext x='50' y='68' font-size='56' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3ELT%3C/text%3E%3C/svg%3E">
+
+    <!-- JSON-LD ثابت -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://sallleh1819.vercel.app/#organization",
+          "name": "لوبو تيك | LoboTech",
+          "url": "https://sallleh1819.vercel.app/",
+          "logo": "https://sallleh1819.vercel.app/og-image.png",
+          "founder": { "@type": "Person", "name": "د. صالح العنزي" }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://sallleh1819.vercel.app/#website",
+          "url": "https://sallleh1819.vercel.app/",
+          "name": "لوبو تيك | LoboTech",
+          "inLanguage": "ar"
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json" id="jsonld-view">{}</script>
 
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            50: '#f0f9ff', 100: '#e0f2fe', 200: '#bae6fd',
-                            400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7',
-                            700: '#0369a1', 900: '#0c4a6e',
-                        }
-                    },
-                    fontFamily: { tajawal: ['Tajawal', 'sans-serif'] }
-                }
-            }
+            theme: { extend: {
+                colors: { brand: { 50:'#f0f9ff',100:'#e0f2fe',200:'#bae6fd',400:'#38bdf8',500:'#0ea5e9',600:'#0284c7',700:'#0369a1',900:'#0c4a6e' } },
+                fontFamily: { tajawal: ['Tajawal','sans-serif'] }
+            } }
         }
     </script>
     <style>
@@ -32,7 +68,7 @@
         .hero-gradient { background: linear-gradient(135deg, #e0f2fe 0%, #ffffff 50%, #bae6fd 100%); }
         .line-clamp-5 { display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }
         .service-card { transition: all 0.3s ease; }
-        .service-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.1), 0 8px 10px -6px rgba(2, 132, 199, 0.1); }
+        .service-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px -5px rgba(2,132,199,0.1),0 8px 10px -6px rgba(2,132,199,0.1); }
         .clickable-card { cursor: pointer; }
     </style>
 </head>
@@ -40,21 +76,19 @@
 
     <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-sky-100 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#top" class="flex items-center gap-3">
-                <div class="bg-gradient-to-tr from-brand-600 to-sky-400 p-2.5 rounded-2xl text-white shadow-md shadow-brand-500/20">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                    </svg>
+            <a href="/" class="flex items-center gap-3">
+                <div class="bg-gradient-to-tr from-brand-600 to-sky-400 p-2.5 rounded-2xl text-white shadow-md">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                 </div>
                 <div>
-                    <span class="text-xl font-black bg-gradient-to-r from-brand-700 to-sky-600 bg-clip-text text-transparent" dir="auto" data-i18n="siteName"></span>
+                    <span class="text-xl font-black bg-gradient-to-r from-brand-700 to-sky-600 bg-clip-text text-transparent" data-i18n="siteName"></span>
                     <span class="block text-xs text-slate-500 font-medium" data-i18n="tagline"></span>
                 </div>
             </a>
             <nav id="navLinks" class="hidden lg:flex items-center gap-6 xl:gap-8 text-sm font-semibold text-slate-600"></nav>
             <div class="flex items-center gap-2">
                 <button id="langBtn" type="button" class="px-3 py-1.5 rounded-lg border border-sky-200 text-xs font-bold text-brand-700 hover:bg-sky-50 transition-all"></button>
-                <button id="menuBtn" type="button" data-i18n-aria="menu" aria-expanded="false" class="lg:hidden p-2 rounded-lg text-slate-700 hover:bg-sky-50">
+                <button id="menuBtn" type="button" aria-expanded="false" class="lg:hidden p-2 rounded-lg text-slate-700 hover:bg-sky-50">
                     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                 </button>
             </div>
@@ -63,246 +97,117 @@
     </header>
 
     <main id="top">
-
     <div id="homeView">
-
-    <section class="hero-gradient py-20 px-4 sm:px-6 lg:px-8 border-b border-sky-100 relative overflow-hidden">
-        <div class="absolute -top-24 -left-24 w-96 h-96 bg-brand-200 rounded-full blur-3xl opacity-40 pointer-events-none"></div>
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-            <div class="lg:col-span-7 space-y-6 text-center lg:text-start">
-                <span class="inline-flex items-center gap-1.5 py-1.5 px-4 rounded-full text-xs font-bold bg-brand-100 text-brand-700 border border-brand-200 shadow-sm">
-                    <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
-                    <span data-i18n="badge"></span>
-                </span>
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 leading-tight" data-i18n-html="heroTitle"></h1>
-                <p class="text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 font-medium" data-i18n="heroDesc"></p>
-                <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
-                    <a href="#research" class="bg-brand-600 hover:bg-brand-700 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg shadow-brand-500/30 transition-all flex items-center gap-2">
-                        <span data-i18n="ctaExplore"></span>
-                        <svg class="w-5 h-5 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </a>
-                    <a href="#about" class="bg-white hover:bg-sky-50 text-slate-800 font-bold px-8 py-3.5 rounded-xl border border-sky-200 shadow-sm transition-all" data-i18n="ctaFounder"></a>
+        <section class="hero-gradient py-20 px-4 sm:px-6 lg:px-8 border-b border-sky-100 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-start">
+                    <span class="inline-flex items-center gap-1.5 py-1.5 px-4 rounded-full text-xs font-bold bg-brand-100 text-brand-700 border border-brand-200 shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+                        <span data-i18n="badge"></span>
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 leading-tight" data-i18n-html="heroTitle"></h1>
+                    <p class="text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 font-medium" data-i18n="heroDesc"></p>
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#research" class="bg-brand-600 hover:bg-brand-700 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg transition-all flex items-center gap-2">
+                            <span data-i18n="ctaExplore"></span>
+                            <svg class="w-5 h-5 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                        <a href="#about" class="bg-white hover:bg-sky-50 text-slate-800 font-bold px-8 py-3.5 rounded-xl border border-sky-200 shadow-sm transition-all" data-i18n="ctaFounder"></a>
+                    </div>
                 </div>
-            </div>
-            <div class="lg:col-span-5 flex justify-center">
-                <div class="relative w-full max-w-sm">
-                    <div class="absolute inset-0 bg-brand-400 rounded-3xl rotate-3 opacity-20 filter blur-xl"></div>
-                    <div class="bg-white p-3 rounded-3xl shadow-2xl border border-sky-100 relative">
-                        <img src="saleh.png.png"
-                             data-srcs="saleh.png,saleh.jpg,saleh.jpeg,saleh.webp"
-                             data-i18n-alt="heroAlt"
-                             alt=""
-                             loading="lazy" decoding="async"
-                             onerror="imgFallback(this)"
-                             class="w-full h-96 object-cover object-top rounded-2xl shadow-md">
-                        <div class="absolute bottom-6 right-6 left-6 bg-white/90 backdrop-blur-md p-4 rounded-xl border border-sky-100 shadow-lg">
-                            <h3 class="font-bold text-slate-900 text-base" data-i18n="personName"></h3>
-                            <p class="text-xs text-brand-600 font-semibold mt-0.5" data-i18n="personRole"></p>
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-sm">
+                        <div class="bg-white p-3 rounded-3xl shadow-2xl border border-sky-100 relative">
+                            <img src="saleh.png" alt="د. صالح العنزي" loading="lazy" class="w-full h-96 object-cover object-top rounded-2xl shadow-md">
+                            <div class="absolute bottom-6 right-6 left-6 bg-white/90 backdrop-blur-md p-4 rounded-xl border border-sky-100 shadow-lg">
+                                <h3 class="font-bold text-slate-900 text-base" data-i18n="personName"></h3>
+                                <p class="text-xs text-brand-600 font-semibold mt-0.5" data-i18n="personRole"></p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="about" class="py-20 bg-white border-b border-sky-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-5">
-                    <div class="relative">
-                        <div class="absolute -inset-4 bg-gradient-to-tr from-brand-100 to-sky-200 rounded-3xl -z-10 transform -rotate-2"></div>
-                        <img src="saleh.png.png"
-                             data-srcs="saleh.png,saleh.jpg,saleh.jpeg,saleh.webp"
-                             data-i18n-alt="aboutAlt"
-                             alt=""
-                             loading="lazy" decoding="async"
-                             onerror="imgFallback(this)"
-                             class="w-full h-96 object-cover object-top rounded-2xl shadow-md">
-                    </div>
-                </div>
-                <div class="lg:col-span-7 space-y-6">
-                    <span class="text-brand-600 font-bold tracking-wider uppercase text-sm bg-brand-50 px-3 py-1 rounded-lg border border-brand-100" data-i18n="aboutBadge"></span>
-                    <h2 class="text-3xl sm:text-4xl font-black text-slate-900" data-i18n="aboutTitle"></h2>
-                    <p class="text-slate-600 leading-relaxed font-medium" data-i18n="aboutText"></p>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                        <div class="bg-sky-50/60 p-4 rounded-xl border border-sky-100">
-                            <h4 class="font-bold text-brand-900 text-lg mb-1" data-i18n="visionTitle"></h4>
-                            <p class="text-xs text-slate-600 leading-relaxed" data-i18n="visionText"></p>
+        <section id="about" class="py-20 bg-white border-b border-sky-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-5">
+                        <div class="relative">
+                            <div class="absolute -inset-4 bg-gradient-to-tr from-brand-100 to-sky-200 rounded-3xl -z-10 transform -rotate-2"></div>
+                            <img src="saleh.png" alt="د. صالح العنزي" loading="lazy" class="w-full h-96 object-cover object-top rounded-2xl shadow-md">
                         </div>
-                        <div class="bg-sky-50/60 p-4 rounded-xl border border-sky-100">
-                            <h4 class="font-bold text-brand-900 text-lg mb-1" data-i18n="missionTitle"></h4>
-                            <p class="text-xs text-slate-600 leading-relaxed" data-i18n="missionText"></p>
+                    </div>
+                    <div class="lg:col-span-7 space-y-6">
+                        <span class="text-brand-600 font-bold tracking-wider uppercase text-sm bg-brand-50 px-3 py-1 rounded-lg border border-brand-100" data-i18n="aboutBadge"></span>
+                        <h2 class="text-3xl sm:text-4xl font-black text-slate-900" data-i18n="aboutTitle"></h2>
+                        <p class="text-slate-600 leading-relaxed font-medium" data-i18n="aboutText"></p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                            <div class="bg-sky-50/60 p-4 rounded-xl border border-sky-100">
+                                <h4 class="font-bold text-brand-900 text-lg mb-1" data-i18n="visionTitle"></h4>
+                                <p class="text-xs text-slate-600 leading-relaxed" data-i18n="visionText"></p>
+                            </div>
+                            <div class="bg-sky-50/60 p-4 rounded-xl border border-sky-100">
+                                <h4 class="font-bold text-brand-900 text-lg mb-1" data-i18n="missionTitle"></h4>
+                                <p class="text-xs text-slate-600 leading-relaxed" data-i18n="missionText"></p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="services" class="py-20 bg-slate-50 border-b border-sky-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="text-brand-600 font-bold uppercase text-xs bg-brand-100 px-3 py-1 rounded-lg border border-brand-200" data-i18n="servicesBadge"></span>
-                <h2 class="text-3xl font-black text-slate-900 mt-3" data-i18n="servicesTitle"></h2>
-                <p class="text-slate-600 mt-2" data-i18n="servicesDesc"></p>
-            </div>
-            <div id="servicesGrid" class="flex flex-wrap justify-center gap-5 max-w-6xl mx-auto"></div>
-        </div>
-    </section>
-
-    <section id="research" class="py-20 bg-white border-b border-sky-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="text-brand-600 font-bold uppercase text-xs bg-brand-100 px-3 py-1 rounded-lg border border-brand-200" data-i18n="fieldsBadge"></span>
-                <h2 class="text-3xl font-black text-slate-900 mt-3" data-i18n="fieldsTitle"></h2>
-                <p class="text-slate-600 mt-2" data-i18n="fieldsDesc"></p>
-            </div>
-            <div id="categoryGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                <div class="col-span-full text-center py-12 text-slate-400 font-medium" data-i18n="loadingFields"></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="tools" class="py-20 bg-slate-50 border-b border-sky-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="text-brand-600 font-bold uppercase text-xs bg-brand-100 px-3 py-1 rounded-lg border border-brand-200" data-i18n="toolsBadge"></span>
-                <h2 class="text-3xl font-black text-slate-900 mt-3" data-i18n="toolsTitle"></h2>
-                <p class="text-slate-600 mt-2" data-i18n="toolsDesc"></p>
-            </div>
-            <div id="toolsGrid" class="flex flex-wrap justify-center gap-5 max-w-6xl mx-auto"></div>
-        </div>
-    </section>
-
-    <section id="tips" class="py-20 bg-white border-b border-sky-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="text-brand-600 font-bold uppercase text-xs bg-brand-100 px-3 py-1 rounded-lg border border-brand-200" data-i18n="tipsBadge"></span>
-                <h2 class="text-3xl font-black text-slate-900 mt-3" data-i18n="tipsTitle"></h2>
-                <p class="text-slate-600 mt-2" data-i18n="tipsDesc"></p>
-            </div>
-            <div id="tipsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto"></div>
-        </div>
-    </section>
-
-    </div>
-
-    <!-- Modal: Contact Info -->
-    <div id="contactModal" role="dialog" aria-modal="true" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-sky-100 transform transition-all relative">
-            <button onclick="toggleModal('contactModal', false)" class="absolute top-5 start-5 text-slate-400 hover:text-slate-700 p-2 rounded-xl bg-sky-50 transition-all">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-            </button>
-            <div class="text-center pt-4">
-                <div class="w-16 h-16 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+        <section id="services" class="py-20 bg-slate-50 border-b border-sky-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-brand-600 font-bold uppercase text-xs bg-brand-100 px-3 py-1 rounded-lg border border-brand-200" data-i18n="servicesBadge"></span>
+                    <h2 class="text-3xl font-black text-slate-900 mt-3" data-i18n="servicesTitle"></h2>
+                    <p class="text-slate-600 mt-2" data-i18n="servicesDesc"></p>
                 </div>
-                <h3 class="text-2xl font-black text-slate-900 mb-2" data-i18n="contactTitle"></h3>
-                <p class="text-sm text-slate-500 mb-6" data-i18n="contactDesc"></p>
-                
-                <div class="space-y-4">
-                    <a href="tel:+966565361639" class="flex items-center justify-between p-4 bg-slate-50 border border-sky-100 rounded-xl hover:border-brand-400 hover:bg-sky-50 transition-all group">
-                        <div class="flex items-center gap-3">
-                            <div class="text-brand-600"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg></div>
-                            <span class="font-bold text-slate-700" dir="ltr">+966 56 536 1639</span>
-                        </div>
-                        <span class="text-xs font-bold text-brand-600 group-hover:underline" data-i18n="callBtn">اتصال</span>
-                    </a>
-                    <a href="mailto:sallleh1819@gmail.com" class="flex items-center justify-between p-4 bg-slate-50 border border-sky-100 rounded-xl hover:border-brand-400 hover:bg-sky-50 transition-all group">
-                        <div class="flex items-center gap-3">
-                            <div class="text-brand-600"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></div>
-                            <span class="font-bold text-slate-700 text-sm" dir="ltr">sallleh1819@gmail.com</span>
-                        </div>
-                        <span class="text-xs font-bold text-brand-600 group-hover:underline" data-i18n="emailBtn">إرسال</span>
-                    </a>
+                <div id="servicesGrid" class="flex flex-wrap justify-center gap-5 max-w-6xl mx-auto"></div>
+            </div>
+        </section>
+
+        <section id="research" class="py-20 bg-white border-b border-sky-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-brand-600 font-bold uppercase text-xs bg-brand-100 px-3 py-1 rounded-lg border border-brand-200" data-i18n="fieldsBadge"></span>
+                    <h2 class="text-3xl font-black text-slate-900 mt-3" data-i18n="fieldsTitle"></h2>
+                    <p class="text-slate-600 mt-2" data-i18n="fieldsDesc"></p>
+                </div>
+                <div id="categoryGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    <div class="col-span-full text-center py-12 text-slate-400 font-medium" data-i18n="loadingFields"></div>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- Modal: Courses -->
-    <div id="coursesModal" role="dialog" aria-modal="true" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-sky-100 transform transition-all relative max-h-[90vh] overflow-y-auto">
-            <button onclick="toggleModal('coursesModal', false)" class="absolute top-5 start-5 text-slate-400 hover:text-slate-700 p-2 rounded-xl bg-sky-50 transition-all z-10">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-            </button>
-            <div class="flex items-center gap-3 mb-6 border-b border-sky-100 pb-4">
-                <div class="w-12 h-12 rounded-2xl bg-brand-600 text-white flex items-center justify-center font-black text-lg shadow-md shadow-brand-500/20">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+        <section id="tools" class="py-20 bg-slate-50 border-b border-sky-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-brand-600 font-bold uppercase text-xs bg-brand-100 px-3 py-1 rounded-lg border border-brand-200" data-i18n="toolsBadge"></span>
+                    <h2 class="text-3xl font-black text-slate-900 mt-3" data-i18n="toolsTitle"></h2>
+                    <p class="text-slate-600 mt-2" data-i18n="toolsDesc"></p>
                 </div>
-                <h3 class="text-2xl font-black text-slate-900" data-i18n="coursesTitle"></h3>
+                <div id="toolsGrid" class="flex flex-wrap justify-center gap-5 max-w-6xl mx-auto"></div>
             </div>
-            
-            <div class="space-y-4">
-                <a href="https://www.youtube.com/results?search_query=python+course" target="_blank" rel="noopener" class="flex items-start gap-4 p-4 rounded-2xl border border-sky-100 hover:border-red-300 hover:shadow-md transition-all group bg-slate-50">
-                    <div class="w-12 h-12 shrink-0 rounded-xl bg-red-100 text-red-600 flex items-center justify-center">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-slate-900 text-lg group-hover:text-red-600 transition-colors" data-i18n="coursePython"></h4>
-                        <p class="text-sm text-slate-500 mt-1" data-i18n="coursePythonDesc"></p>
-                    </div>
-                </a>
+        </section>
 
-                <a href="https://www.youtube.com/results?search_query=power+bi+course" target="_blank" rel="noopener" class="flex items-start gap-4 p-4 rounded-2xl border border-sky-100 hover:border-yellow-400 hover:shadow-md transition-all group bg-slate-50">
-                    <div class="w-12 h-12 shrink-0 rounded-xl bg-yellow-100 text-yellow-600 flex items-center justify-center">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-slate-900 text-lg group-hover:text-yellow-600 transition-colors" data-i18n="coursePowerBI"></h4>
-                        <p class="text-sm text-slate-500 mt-1" data-i18n="coursePowerBIDesc"></p>
-                    </div>
-                </a>
-
-                <a href="https://www.youtube.com/results?search_query=database+course" target="_blank" rel="noopener" class="flex items-start gap-4 p-4 rounded-2xl border border-sky-100 hover:border-emerald-400 hover:shadow-md transition-all group bg-slate-50">
-                    <div class="w-12 h-12 shrink-0 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path></svg>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors" data-i18n="courseDB"></h4>
-                        <p class="text-sm text-slate-500 mt-1" data-i18n="courseDBDesc"></p>
-                    </div>
-                </a>
-            </div>
-            <div class="mt-8 text-center">
-                <p class="text-xs text-slate-400" data-i18n="courseNote"></p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal: Tips -->
-    <div id="tipModal" role="dialog" aria-modal="true" aria-labelledby="tipModalTitle" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl border border-sky-100 transform transition-all relative">
-            <button id="closeTipModal" class="absolute top-5 start-5 text-slate-400 hover:text-slate-700 p-2 rounded-xl bg-sky-50 transition-all">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-            </button>
-            <div class="flex items-center gap-3 mb-4">
-                <div id="tipModalNum" class="w-12 h-12 rounded-2xl bg-brand-600 text-white flex items-center justify-center font-black text-lg shadow-md shadow-brand-500/20"></div>
-                <h3 id="tipModalTitle" class="text-xl sm:text-2xl font-black text-slate-900 leading-snug"></h3>
-            </div>
-            <div class="space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed border-t border-sky-100 pt-4">
-                <div>
-                    <h4 class="font-bold text-brand-900 mb-1 text-xs uppercase tracking-wider" data-i18n="tipDetailLabel">التفاصيل والمنهجية:</h4>
-                    <p id="tipModalDesc"></p>
+        <section id="tips" class="py-20 bg-white border-b border-sky-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-brand-600 font-bold uppercase text-xs bg-brand-100 px-3 py-1 rounded-lg border border-brand-200" data-i18n="tipsBadge"></span>
+                    <h2 class="text-3xl font-black text-slate-900 mt-3" data-i18n="tipsTitle"></h2>
+                    <p class="text-slate-600 mt-2" data-i18n="tipsDesc"></p>
                 </div>
-                <div class="bg-sky-50/70 p-4 rounded-2xl border border-sky-100">
-                    <h4 class="font-bold text-brand-700 mb-1 text-xs uppercase tracking-wider flex items-center gap-1.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <span data-i18n="tipExampleLabel">مثال عملي:</span>
-                    </h4>
-                    <p id="tipModalExample" class="text-xs sm:text-sm text-slate-700 font-medium"></p>
-                </div>
+                <div id="tipsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto"></div>
             </div>
-            <div class="mt-6 flex justify-end">
-                <button id="closeTipModalBtn" class="bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs px-6 py-2.5 rounded-xl transition-all shadow-md shadow-brand-500/20" data-i18n="closeBtn"></button>
-            </div>
-        </div>
+        </section>
     </div>
 
     <div id="catView" class="hidden">
         <section class="py-12 bg-slate-50 min-h-[70vh]">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <a href="#research" class="inline-flex items-center gap-2 text-sm font-bold text-brand-700 hover:text-brand-900 mb-6">
+                <a href="/" class="inline-flex items-center gap-2 text-sm font-bold text-brand-700 hover:text-brand-900 mb-6">
                     <svg class="w-4 h-4 ltr:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                     <span data-i18n="back"></span>
                 </a>
@@ -316,13 +221,10 @@
                 <div class="bg-white p-4 sm:p-6 rounded-2xl shadow-sm border border-sky-100 mb-6 space-y-3">
                     <div class="flex flex-col sm:flex-row gap-3">
                         <div class="relative w-full sm:flex-1">
-                            <label for="searchInput" class="sr-only" data-i18n="srSearch"></label>
-                            <input type="text" id="searchInput" data-i18n-ph="searchPh"
-                                   class="w-full bg-slate-50 border border-sky-200 rounded-xl ps-11 pe-4 py-3 text-sm focus:outline-none focus:border-brand-500 focus:bg-white transition-all">
+                            <input type="text" id="searchInput" data-i18n-ph="searchPh" class="w-full bg-slate-50 border border-sky-200 rounded-xl ps-11 pe-4 py-3 text-sm focus:outline-none focus:border-brand-500 focus:bg-white transition-all">
                             <svg class="w-5 h-5 text-slate-400 absolute start-3.5 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                         </div>
                         <div>
-                            <label for="sortSelect" class="sr-only" data-i18n="srSort"></label>
                             <select id="sortSelect" class="w-full sm:w-auto bg-slate-50 border border-sky-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500">
                                 <option value="sheet" data-i18n="sortDefault"></option>
                                 <option value="newest" data-i18n="sortNewest"></option>
@@ -340,7 +242,7 @@
     <div id="dataView" class="hidden">
         <section class="py-12 bg-slate-50 min-h-[70vh]">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <a href="#research" class="inline-flex items-center gap-2 text-sm font-bold text-emerald-700 hover:text-emerald-900 mb-6">
+                <a href="/" class="inline-flex items-center gap-2 text-sm font-bold text-emerald-700 hover:text-emerald-900 mb-6">
                     <svg class="w-4 h-4 ltr:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                     <span data-i18n="back"></span>
                 </a>
@@ -353,9 +255,7 @@
                 </div>
                 <div class="bg-white p-4 sm:p-6 rounded-2xl shadow-sm border border-emerald-100 mb-6 space-y-4">
                     <div class="relative w-full">
-                        <label for="dataSearch" class="sr-only" data-i18n="srSearch"></label>
-                        <input type="text" id="dataSearch" data-i18n-ph="dataSearchPh"
-                               class="w-full bg-slate-50 border border-emerald-200 rounded-xl ps-11 pe-4 py-3 text-sm focus:outline-none focus:border-emerald-500 focus:bg-white transition-all">
+                        <input type="text" id="dataSearch" data-i18n-ph="dataSearchPh" class="w-full bg-slate-50 border border-emerald-200 rounded-xl ps-11 pe-4 py-3 text-sm focus:outline-none focus:border-emerald-500 focus:bg-white transition-all">
                         <svg class="w-5 h-5 text-slate-400 absolute start-3.5 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                     </div>
                     <div id="dataChips" class="flex flex-wrap gap-2"></div>
@@ -366,12 +266,209 @@
         </section>
     </div>
 
+    <div id="paperView" class="hidden">
+        <section class="py-12 bg-slate-50 min-h-[70vh]">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <a id="paperBackLink" href="/" class="inline-flex items-center gap-2 text-sm font-bold text-brand-700 hover:text-brand-900 mb-6">
+                    <svg class="w-4 h-4 ltr:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    <span data-i18n="back"></span>
+                </a>
+                <article class="bg-white rounded-3xl shadow-sm border border-sky-100 p-6 sm:p-10">
+                    <div class="flex flex-wrap items-center gap-3 mb-4">
+                        <a id="paperCat" href="#" class="bg-brand-50 text-brand-700 px-3 py-1 rounded-md border border-brand-100 text-xs font-bold hover:bg-brand-100 transition"></a>
+                        <span id="paperYear" class="text-slate-500 text-xs font-bold"></span>
+                    </div>
+                    <h1 id="paperTitle" class="text-3xl sm:text-4xl font-black text-slate-900 leading-tight mb-3" dir="auto"></h1>
+                    <p id="paperAuthors" class="text-slate-500 font-medium mb-6" dir="auto"></p>
+                    <div class="bg-sky-50 border-s-4 border-brand-500 p-5 rounded-lg mb-6">
+                        <h2 class="text-lg font-bold text-brand-900 mb-2" data-i18n="paperSummaryLabel"></h2>
+                        <p id="paperSummary" class="text-slate-700 leading-relaxed" dir="auto"></p>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <a id="paperPdfBtn" href="#" target="_blank" rel="noopener noreferrer" class="bg-brand-600 hover:bg-brand-700 text-white font-bold px-6 py-3 rounded-xl inline-flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                            <span data-i18n="openPdf"></span>
+                        </a>
+                        <a id="paperPageBtn" href="#" target="_blank" rel="noopener noreferrer" class="bg-white hover:bg-sky-50 text-brand-700 font-bold px-6 py-3 rounded-xl border border-sky-200 inline-flex items-center gap-2">
+                            <span data-i18n="viewPaper"></span>
+                        </a>
+                        <a href="/report" class="bg-white hover:bg-red-50 text-red-600 font-bold px-6 py-3 rounded-xl border border-red-200 inline-flex items-center gap-2 ms-auto">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                            <span data-i18n="reportError"></span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
+
+    <div id="methodologyView" class="hidden">
+        <section class="py-12 bg-slate-50 min-h-[70vh]">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <a href="/" class="inline-flex items-center gap-2 text-sm font-bold text-brand-700 hover:text-brand-900 mb-6">
+                    <svg class="w-4 h-4 ltr:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    <span data-i18n="back"></span>
+                </a>
+                <article class="bg-white rounded-3xl shadow-sm border border-sky-100 p-6 sm:p-10 space-y-5 text-slate-700 leading-relaxed">
+                    <h1 class="text-3xl font-black text-slate-900" data-i18n="methodologyTitle"></h1>
+                    <p data-i18n="methodologyIntro"></p>
+                    <div class="bg-sky-50 border-s-4 border-brand-500 p-5 rounded-lg space-y-2">
+                        <h2 class="text-lg font-bold text-brand-900" data-i18n="methodologyStepsTitle"></h2>
+                        <ol class="list-decimal ps-5 space-y-2 text-sm">
+                            <li data-i18n="methodologyStep1"></li>
+                            <li data-i18n="methodologyStep2"></li>
+                            <li data-i18n="methodologyStep3"></li>
+                            <li data-i18n="methodologyStep4"></li>
+                        </ol>
+                    </div>
+                    <div class="bg-amber-50 border-s-4 border-amber-400 p-5 rounded-lg">
+                        <h2 class="text-lg font-bold text-amber-900 mb-1" data-i18n="methodologyAiTitle"></h2>
+                        <p class="text-sm" data-i18n="methodologyAiText"></p>
+                    </div>
+                    <p class="text-sm text-slate-500" data-i18n="methodologyContact"></p>
+                </article>
+            </div>
+        </section>
+    </div>
+
+    <div id="reportView" class="hidden">
+        <section class="py-12 bg-slate-50 min-h-[70vh]">
+            <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+                <a href="/" class="inline-flex items-center gap-2 text-sm font-bold text-brand-700 hover:text-brand-900 mb-6">
+                    <svg class="w-4 h-4 ltr:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    <span data-i18n="back"></span>
+                </a>
+                <article class="bg-white rounded-3xl shadow-sm border border-sky-100 p-6 sm:p-10 space-y-5">
+                    <h1 class="text-3xl font-black text-slate-900" data-i18n="reportTitle"></h1>
+                    <p class="text-slate-600" data-i18n="reportIntro"></p>
+                    <form id="reportForm" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-1" data-i18n="reportFieldPage"></label>
+                            <input type="text" id="reportPage" class="w-full bg-slate-50 border border-sky-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-1" data-i18n="reportFieldMsg"></label>
+                            <textarea id="reportMsg" rows="5" class="w-full bg-slate-50 border border-sky-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500"></textarea>
+                        </div>
+                        <button type="submit" class="bg-brand-600 hover:bg-brand-700 text-white font-bold px-8 py-3 rounded-xl" data-i18n="reportSubmit"></button>
+                    </form>
+                    <p class="text-xs text-slate-400" data-i18n="reportNote"></p>
+                </article>
+            </div>
+        </section>
+    </div>
+
     </main>
+
+    <div id="contactModal" role="dialog" aria-modal="true" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-sky-100 relative">
+            <button onclick="toggleModal('contactModal', false)" class="absolute top-5 start-5 text-slate-400 hover:text-slate-700 p-2 rounded-xl bg-sky-50">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <div class="text-center pt-4">
+                <div class="w-16 h-16 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                </div>
+                <h3 class="text-2xl font-black text-slate-900 mb-2" data-i18n="contactTitle"></h3>
+                <p class="text-sm text-slate-500 mb-6" data-i18n="contactDesc"></p>
+                <div class="space-y-4">
+                    <a href="mailto:sallleh1819@gmail.com?subject=استشارة%20تقنية" class="flex items-center justify-between p-4 bg-slate-50 border border-sky-100 rounded-xl hover:border-brand-400 hover:bg-sky-50 transition-all group">
+                        <div class="flex items-center gap-3">
+                            <div class="text-brand-600"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></div>
+                            <span class="font-bold text-slate-700 text-sm" dir="ltr">sallleh1819@gmail.com</span>
+                        </div>
+                        <span class="text-xs font-bold text-brand-600 group-hover:underline" data-i18n="emailBtn"></span>
+                    </a>
+                    <a href="/report" class="flex items-center justify-between p-4 bg-slate-50 border border-sky-100 rounded-xl hover:border-red-300 hover:bg-red-50 transition-all group">
+                        <div class="flex items-center gap-3">
+                            <div class="text-red-600"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg></div>
+                            <span class="font-bold text-slate-700 text-sm" data-i18n="reportError"></span>
+                        </div>
+                        <span class="text-xs font-bold text-red-600 group-hover:underline">↗</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="coursesModal" role="dialog" aria-modal="true" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-sky-100 relative max-h-[90vh] overflow-y-auto">
+            <button onclick="toggleModal('coursesModal', false)" class="absolute top-5 start-5 text-slate-400 hover:text-slate-700 p-2 rounded-xl bg-sky-50 z-10">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <div class="flex items-center gap-3 mb-6 border-b border-sky-100 pb-4">
+                <div class="w-12 h-12 rounded-2xl bg-brand-600 text-white flex items-center justify-center font-black text-lg shadow-md">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+                </div>
+                <h3 class="text-2xl font-black text-slate-900" data-i18n="coursesTitle"></h3>
+            </div>
+            <div class="space-y-4">
+                <a href="https://www.youtube.com/results?search_query=python+course" target="_blank" rel="noopener" class="flex items-start gap-4 p-4 rounded-2xl border border-sky-100 hover:border-red-300 hover:shadow-md transition-all group bg-slate-50">
+                    <div class="w-12 h-12 shrink-0 rounded-xl bg-red-100 text-red-600 flex items-center justify-center">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-lg group-hover:text-red-600 transition-colors" data-i18n="coursePython"></h4>
+                        <p class="text-sm text-slate-500 mt-1" data-i18n="coursePythonDesc"></p>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/results?search_query=power+bi+course" target="_blank" rel="noopener" class="flex items-start gap-4 p-4 rounded-2xl border border-sky-100 hover:border-yellow-400 hover:shadow-md transition-all group bg-slate-50">
+                    <div class="w-12 h-12 shrink-0 rounded-xl bg-yellow-100 text-yellow-600 flex items-center justify-center">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-lg group-hover:text-yellow-600 transition-colors" data-i18n="coursePowerBI"></h4>
+                        <p class="text-sm text-slate-500 mt-1" data-i18n="coursePowerBIDesc"></p>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/results?search_query=database+course" target="_blank" rel="noopener" class="flex items-start gap-4 p-4 rounded-2xl border border-sky-100 hover:border-emerald-400 hover:shadow-md transition-all group bg-slate-50">
+                    <div class="w-12 h-12 shrink-0 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors" data-i18n="courseDB"></h4>
+                        <p class="text-sm text-slate-500 mt-1" data-i18n="courseDBDesc"></p>
+                    </div>
+                </a>
+            </div>
+            <div class="mt-8 text-center">
+                <p class="text-xs text-slate-400" data-i18n="courseNote"></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="tipModal" role="dialog" aria-modal="true" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl border border-sky-100 relative">
+            <button id="closeTipModal" class="absolute top-5 start-5 text-slate-400 hover:text-slate-700 p-2 rounded-xl bg-sky-50">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <div class="flex items-center gap-3 mb-4">
+                <div id="tipModalNum" class="w-12 h-12 rounded-2xl bg-brand-600 text-white flex items-center justify-center font-black text-lg"></div>
+                <h3 id="tipModalTitle" class="text-xl sm:text-2xl font-black text-slate-900 leading-snug"></h3>
+            </div>
+            <div class="space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed border-t border-sky-100 pt-4">
+                <div>
+                    <h4 class="font-bold text-brand-900 mb-1 text-xs uppercase tracking-wider" data-i18n="tipDetailLabel"></h4>
+                    <p id="tipModalDesc"></p>
+                </div>
+                <div class="bg-sky-50/70 p-4 rounded-2xl border border-sky-100">
+                    <h4 class="font-bold text-brand-700 mb-1 text-xs uppercase tracking-wider flex items-center gap-1.5">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span data-i18n="tipExampleLabel"></span>
+                    </h4>
+                    <p id="tipModalExample" class="text-xs sm:text-sm text-slate-700 font-medium"></p>
+                </div>
+            </div>
+            <div class="mt-6 flex justify-end">
+                <button id="closeTipModalBtn" class="bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs px-6 py-2.5 rounded-xl transition-all shadow-md" data-i18n="closeBtn"></button>
+            </div>
+        </div>
+    </div>
 
     <footer class="bg-white border-t border-sky-100 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-start">
             <div>
-                <span class="text-lg font-black text-brand-700" dir="auto" data-i18n="siteName"></span>
+                <span class="text-lg font-black text-brand-700" data-i18n="siteName"></span>
                 <p class="text-xs text-slate-500 mt-1" data-i18n="footerRights"></p>
                 <p class="text-xs text-slate-400 mt-1" data-i18n="footerNote"></p>
             </div>
@@ -380,98 +477,83 @@
     </footer>
 
     <script>
-        console.log("LoboTech Version: Final - 50+ Papers Database");
-
         const ALL = 'كل الأوراق';
+        const SITE = 'https://sallleh1819.vercel.app';
 
         const STR = {
             ar: {
-                siteName: 'لوبو تيك',
-                langBtn: 'English', tagline: 'للأبحاث والاستشارات التقنية',
+                siteName: 'لوبو تيك', langBtn: 'English', tagline: 'للأبحاث والاستشارات التقنية',
                 navAbout: 'عن المؤسس', navFields: 'المجالات العلمية', navTools: 'أدوات الباحث', navServices: 'الخدمات', navTips: 'نصائح بحثية',
                 servicesBadge: 'الخدمات', servicesTitle: 'كيف يمكنني مساعدتك', servicesDesc: 'خدمات استشارية وبحثية في الذكاء الاصطناعي والتقنية.',
-                tipsBadge: 'نصائح بحثية', tipsTitle: 'نصائح تساعدك على قراءة الأوراق العلمية', tipsDesc: 'خطوات عملية توفر وقتك وتحسّن فهمك عند التعامل مع الأبحاث. (انقر على أي نصيحة لعرض التفاصيل والأمثلة)',
+                tipsBadge: 'نصائح بحثية', tipsTitle: 'نصائح تساعدك على قراءة الأوراق العلمية', tipsDesc: 'خطوات عملية توفر وقتك وتحسّن فهمك عند التعامل مع الأبحاث.',
                 tipDetailLabel: 'التفاصيل والشرح:', tipExampleLabel: 'مثال عملي وتطبيق:', closeBtn: 'إغلاق',
-                footerTools: 'الأدوات', toolsBadge: 'أدوات الباحث', toolsTitle: 'أدوات تدعم رحلتك البحثية', toolsDesc: 'مواقع وأدوات شائعة يعتمد عليها الباحثون في البحث عن الأوراق وإدارة المراجع وكتابة الأبحاث.', visitTool: 'زيارة الأداة',
-                menu: 'القائمة', badge: 'منصة تقنية متخصصة',
-                heroTitle: 'نصائح، أبحاث، ورؤى تقنية <span class="text-brand-600">تصنع المستقبل</span>',
-                heroDesc: 'دليل عربي لأهم الأوراق العلمية في الذكاء الاصطناعي والتقنية، بملخصات مبسطة وروابط مباشرة إلى المصادر الأصلية، بإشراف خبير تقني متخصص.',
+                toolsBadge: 'أدوات الباحث', toolsTitle: 'أدوات تدعم رحلتك البحثية', toolsDesc: 'مواقع وأدوات شائعة يعتمد عليها الباحثون.',
+                badge: 'منصة تقنية متخصصة', heroTitle: 'نصائح، أبحاث، ورؤى تقنية <span class="text-brand-600">تصنع المستقبل</span>',
+                heroDesc: 'دليل عربي لأهم الأوراق العلمية في الذكاء الاصطناعي والتقنية، بملخصات مبسطة وروابط مباشرة إلى المصادر الأصلية.',
                 ctaExplore: 'استكشف المجالات', ctaFounder: 'تعرف على المؤسس',
                 personName: 'د. صالح العنزي', personRole: 'خبير استشارات تقنية وأبحاث ذكاء اصطناعي',
-                heroAlt: 'د. صالح العنزي', aboutAlt: 'د. صالح العنزي - المؤسس',
-                aboutBadge: 'عن المؤسس والخبير', 
-                aboutTitle: 'شغف بالابتكار التقني وقيادة التحول الرقمي',
-                aboutText: 'مساحة تقنية تجمع بين البحث العلمي والخبرة التطبيقية. بصفتي متخصصًا وباحثًا في تكنولوجيا المعلومات والبرمجيات المتقدمة وأنظمة الذكاء الاصطناعي، أسست هذه المنصة لتوثيق الأبحاث التقنية، وتحليل أحدث الاتجاهات، وتقديم نصائح ورؤى موثوقة مبنية على أسس علمية وتجارب عملية دقيقة. وتهدف المنصة إلى تمكين المختصين والمهتمين من فهم التقنيات المتقدمة واتخاذ قرارات أكثر وعيًا، عبر محتوى واضح وعملي يجمع بين العمق المعرفي والتطبيق الواقعي.',
+                aboutBadge: 'عن المؤسس والخبير', aboutTitle: 'شغف بالابتكار التقني وقيادة التحول الرقمي',
+                aboutText: 'مساحة تقنية تجمع بين البحث العلمي والخبرة التطبيقية. بصفتي متخصصًا وباحثًا في تكنولوجيا المعلومات والبرمجيات المتقدمة وأنظمة الذكاء الاصطناعي، أسست هذه المنصة لتوثيق الأبحاث التقنية، وتحليل أحدث الاتجاهات، وتقديم نصائح ورؤى موثوقة مبنية على أسس علمية وتجارب عملية دقيقة.',
                 visionTitle: 'الرؤية', visionText: 'بناء محتوى عربي تقني متقدم وعالي الجودة ينافس المعايير العالمية.',
                 missionTitle: 'الرسالة', missionText: 'تمكين المهندسين والمطورين ورواد الأعمال بأحدث الأبحاث والاستشارات الدقيقة.',
                 fieldsBadge: 'دليل الأوراق العلمية', fieldsTitle: 'تصفّح الأوراق حسب المجال', fieldsDesc: 'اختر مجالاً لتصل إلى أوراقه العلمية، بملخصات عربية وروابط مباشرة إلى المصادر الأصلية.',
-                loadingFields: 'جارٍ تحميل المجالات...', back: 'العودة إلى المجالات',
-                srSearch: 'بحث', srSort: 'الترتيب', searchPh: 'ابحث بالعنوان أو المؤلف أو الموضوع...',
-                sortDefault: 'الترتيب الافتراضي', sortNewest: 'الأحدث أولاً', sortOldest: 'الأقدم أولاً',
-                dataTitle: 'مصادر البيانات المفتوحة', dataSearchPh: 'ابحث عن موقع بيانات...',
+                loadingFields: 'جارٍ تحميل المجالات...', back: 'العودة للرئيسية',
+                searchPh: 'ابحث بالعنوان أو المؤلف...', sortDefault: 'الافتراضي', sortNewest: 'الأحدث أولاً', sortOldest: 'الأقدم أولاً',
+                dataTitle: 'مصادر البيانات المفتوحة', dataSearchPh: 'ابحث عن موقع بيانات...', dataAll: 'الكل',
                 footerRights: 'جميع الحقوق محفوظة © 2026', footerNote: 'الأوراق المعروضة ملك لأصحابها ولناشريها، والروابط تقود إلى المصادر الأصلية.',
-                footerFields: 'المجالات', allPapers: 'كل الأوراق', general: 'عام', dataAll: 'الكل',
+                footerFields: 'المجالات', allPapers: 'كل الأوراق', general: 'عام',
                 nPapers: n => n + ' ورقة', nSites: n => n + ' موقع', nInField: n => n + ' ورقة في هذا المجال',
-                showing: (x, y) => 'عرض ' + x + ' من ' + y + ' ورقة',
-                showingSites: (x, y) => 'عرض ' + x + ' من ' + y + ' موقع',
-                dataSubtitle: n => n + ' موقع لمصادر البيانات المفتوحة',
-                loadingPapers: 'جارٍ تحميل الأوراق...', noPapers: 'لا توجد أوراق في هذا المجال حالياً.', noResults: 'لا توجد نتائج مطابقة لبحثك.',
-                viewPaper: 'عرض الورقة', openPdf: 'فتح PDF', noLink: 'الرابط غير متاح', visitSite: 'زيارة الموقع',
-                titleHome: "لوبو تيك | LoboTech | دليل الأوراق العلمية والتقنية",
-                metaDesc: 'منصة لوبو تيك (LoboTech) - دليل عربي للأوراق العلمية في الذكاء الاصطناعي والتقنية، مع ملخصات عربية وروابط مباشرة إلى المصادر الأصلية.',
-                
-                contactTitle: 'تواصل معي للاستشارة', contactDesc: 'يسعدني مساعدتك في مشروعك أو استشارتك التقنية. تواصل معي مباشرة عبر:',
-                callBtn: 'اتصال', emailBtn: 'إرسال',
-                coursesTitle: 'الدورات التدريبية', 
-                coursePython: 'دورة بايثون (Python)', coursePythonDesc: 'تعلم البرمجة من الصفر وتحليل البيانات باستخدام بايثون.',
+                showing: (x, y) => 'عرض ' + x + ' من ' + y + ' ورقة', showingSites: (x, y) => 'عرض ' + x + ' من ' + y + ' موقع',
+                dataSubtitle: n => n + ' موقع لمصادر البيانات المفتوحة', loadingPapers: 'جارٍ تحميل الأوراق...', noPapers: 'لا توجد أوراق في هذا المجال حالياً.', noResults: 'لا توجد نتائج مطابقة لبحثك.',
+                viewPaper: 'عرض الورقة', openPdf: 'فتح PDF', visitSite: 'زيارة الموقع',
+                contactTitle: 'تواصل معي للاستشارة', contactDesc: 'يسعدني مساعدتك في مشروعك أو استشارتك التقنية. تواصل معي عبر:', emailBtn: 'إرسال',
+                coursesTitle: 'الدورات التدريبية', coursePython: 'دورة بايثون (Python)', coursePythonDesc: 'تعلم البرمجة من الصفر وتحليل البيانات باستخدام بايثون.',
                 coursePowerBI: 'دورة باور بي آي (Power BI)', coursePowerBIDesc: 'احترف تحليل البيانات وبناء لوحات المعلومات التفاعلية.',
-                courseDB: 'دورة قواعد البيانات (Databases)', courseDBDesc: 'فهم تصميم قواعد البيانات ولغة SQL للتعامل مع البيانات.',
-                courseNote: 'انقر على أي دورة للانتقال إلى محتواها على قناة اليوتيوب.'
+                courseDB: 'دورة قواعد البيانات (Databases)', courseDBDesc: 'فهم تصميم قواعد البيانات ولغة SQL للتعامل مع البيانات.', courseNote: 'انقر على أي دورة للانتقال إلى محتواها على قناة اليوتيوب.',
+                paperSummaryLabel: 'ملخص عربي', reportError: 'أبلغ عن خطأ',
+                methodologyTitle: 'منهجية التلخيص', methodologyIntro: 'نلتزم في LoboTech بعرض ملخصات دقيقة وموثوقة للأوراق العلمية، مع الإشارة إلى المصادر الأصلية دائماً. هذه الصفحة توضح كيف نعمل.',
+                methodologyStepsTitle: 'الخطوات التي نتبعها:', methodologyStep1: 'نختار الأوراق بناءً على تأثيرها العلمي وحداثتها وصلتها بالمجال.', methodologyStep2: 'نقرأ الورقة كاملة ونستخرج المشكلة والفكرة والنتيجة والقيود.', methodologyStep3: 'نكتب ملخصاً عربياً مبسطاً مع الحفاظ على الدقة العلمية.', methodologyStep4: 'نراجع الملخص يدوياً قبل النشر، ونراجع الروابط للتأكد من صحتها.',
+                methodologyAiTitle: 'بخصوص استخدام أدوات الذكاء الاصطناعي', methodologyAiText: 'قد نستخدم أدوات ذكاء اصطناعي في صياغة أولية أو مساعدة في الترجمة، لكن كل ملخص يخضع لمراجعة بشرية قبل النشر. نتحمل مسؤولية المحتوى النهائي.',
+                methodologyContact: 'هل وجدت خطأ أو لديك ملاحظة؟ استخدم صفحة "أبلغ عن خطأ".',
+                reportTitle: 'أبلغ عن خطأ', reportIntro: 'وجدت خطأ في ملخص أو رابط لا يعمل أو معلومة غير دقيقة؟ ساعدنا في التصحيح.',
+                reportFieldPage: 'الصفحة أو الورقة التي بها الخطأ', reportFieldMsg: 'تفاصيل الخطأ', reportSubmit: 'إرسال البلاغ عبر البريد', reportNote: 'سيتم فتح تطبيق البريد لديك مع محتوى البلاغ معبأ. لا نحتفظ بأي بيانات على الموقع.'
             },
             en: {
-                siteName: 'LoboTech',
-                langBtn: 'العربية', tagline: 'Research & Tech Consulting',
+                siteName: 'LoboTech', langBtn: 'العربية', tagline: 'Research & Tech Consulting',
                 navAbout: 'About', navFields: 'Research Fields', navTools: 'Researcher Tools', navServices: 'Services', navTips: 'Research Tips',
                 servicesBadge: 'Services', servicesTitle: 'How I can help', servicesDesc: 'Consulting and research services in AI and technology.',
-                tipsBadge: 'Research tips', tipsTitle: 'Tips for reading research papers', tipsDesc: 'Practical steps that save time and deepen your understanding when working with research.',
+                tipsBadge: 'Research tips', tipsTitle: 'Tips for reading research papers', tipsDesc: 'Practical steps that save time and deepen your understanding.',
                 tipDetailLabel: 'Details & methodology:', tipExampleLabel: 'Practical example:', closeBtn: 'Close',
-                footerTools: 'Tools', toolsBadge: 'Researcher tools', toolsTitle: 'Tools to support your research journey', toolsDesc: 'Popular sites and tools researchers rely on for finding papers, managing references and writing up their work.', visitTool: 'Visit tool',
-                menu: 'Menu', badge: 'A specialized tech platform',
-                heroTitle: 'Tips, research and tech insights that <span class="text-brand-600">shape the future</span>',
-                heroDesc: 'A guide to the most important research papers in AI and technology, with simplified summaries and direct links to the original sources, curated by a specialist tech expert.',
+                toolsBadge: 'Researcher tools', toolsTitle: 'Tools to support your research journey', toolsDesc: 'Popular sites and tools researchers rely on.',
+                badge: 'A specialized tech platform', heroTitle: 'Tips, research and tech insights that <span class="text-brand-600">shape the future</span>',
+                heroDesc: 'A guide to the most important research papers in AI and technology, with simplified summaries and direct links to the original sources.',
                 ctaExplore: 'Explore fields', ctaFounder: 'Meet the founder',
                 personName: 'Dr. Saleh Al-Enezi', personRole: 'Tech consulting and AI research expert',
-                heroAlt: 'Dr. Saleh Al-Enezi', aboutAlt: 'Dr. Saleh Al-Enezi - Founder',
-                aboutBadge: 'About the founder', 
-                aboutTitle: 'Passionate about tech innovation and leading digital transformation',
-                aboutText: 'A tech space combining scientific research and applied experience. As a specialist and researcher in information technology, advanced software, and AI systems, I founded this platform to document technical research, analyze the latest trends, and provide reliable tips and insights based on scientific foundations and accurate practical experiences. The platform aims to empower specialists and enthusiasts to understand advanced technologies and make more informed decisions through clear and practical content that combines deep knowledge with real-world application.',
+                aboutBadge: 'About the founder', aboutTitle: 'Passionate about tech innovation and leading digital transformation',
+                aboutText: 'A tech space combining scientific research and applied experience. As a specialist and researcher in information technology, advanced software, and AI systems, I founded this platform to document technical research, analyze the latest trends, and provide reliable tips and insights.',
                 visionTitle: 'Vision', visionText: 'Building advanced, high-quality Arabic tech content that competes with global standards.',
                 missionTitle: 'Mission', missionText: 'Empowering engineers, developers and entrepreneurs with the latest research and accurate consulting.',
-                fieldsBadge: 'Research Papers Directory', fieldsTitle: 'Browse papers by field', fieldsDesc: 'Pick a field to reach its research papers, with concise summaries and direct links to the original sources.',
-                loadingFields: 'Loading fields...', back: 'Back to fields',
-                srSearch: 'Search', srSort: 'Sort', searchPh: 'Search by title, author or topic...',
-                sortDefault: 'Default order', sortNewest: 'Newest first', sortOldest: 'Oldest first',
-                dataTitle: 'Open Data Sources', dataSearchPh: 'Search for a data site...',
-                footerRights: 'All rights reserved © 2026', footerNote: 'Papers shown belong to their authors and publishers; links lead to the original sources.',
-                footerFields: 'Fields', allPapers: 'All papers', general: 'General', dataAll: 'All',
-                nPapers: n => n + (n === 1 ? ' paper' : ' papers'),
-                nSites: n => n + (n === 1 ? ' site' : ' sites'),
-                nInField: n => n + (n === 1 ? ' paper in this field' : ' papers in this field'),
-                showing: (x, y) => 'Showing ' + x + ' of ' + y + ' papers',
-                showingSites: (x, y) => 'Showing ' + x + ' of ' + y + ' sites',
-                dataSubtitle: n => n + ' open data sources',
-                loadingPapers: 'Loading papers...', noPapers: 'There are no papers in this field yet.', noResults: 'No results match your search.',
-                viewPaper: 'View paper', openPdf: 'Open PDF', noLink: 'Link unavailable', visitSite: 'Visit site',
-                titleHome: "LoboTech | Research Papers & Tech Directory",
-                metaDesc: 'LoboTech - A directory of research papers in AI and technology, with simplified summaries and direct links to the original sources.',
-                
-                contactTitle: 'Contact Me for Consulting', contactDesc: 'I would be happy to help with your project or technical consultation. Reach out directly via:',
-                callBtn: 'Call', emailBtn: 'Email',
-                coursesTitle: 'Training Courses',
-                coursePython: 'Python Course', coursePythonDesc: 'Learn programming from scratch and analyze data using Python.',
+                fieldsBadge: 'Research Papers Directory', fieldsTitle: 'Browse papers by field', fieldsDesc: 'Pick a field to reach its research papers, with concise summaries and direct links.',
+                loadingFields: 'Loading fields...', back: 'Back to Home',
+                searchPh: 'Search by title, author...', sortDefault: 'Default order', sortNewest: 'Newest first', sortOldest: 'Oldest first',
+                dataTitle: 'Open Data Sources', dataSearchPh: 'Search for a data site...', dataAll: 'All',
+                footerRights: 'All rights reserved © 2026', footerNote: 'Papers shown belong to their authors and publishers.',
+                footerFields: 'Fields', allPapers: 'All papers', general: 'General',
+                nPapers: n => n + (n === 1 ? ' paper' : ' papers'), nSites: n => n + (n === 1 ? ' site' : ' sites'), nInField: n => n + (n === 1 ? ' paper in this field' : ' papers in this field'),
+                showing: (x, y) => 'Showing ' + x + ' of ' + y + ' papers', showingSites: (x, y) => 'Showing ' + x + ' of ' + y + ' sites',
+                dataSubtitle: n => n + ' open data sources', loadingPapers: 'Loading papers...', noPapers: 'There are no papers in this field yet.', noResults: 'No results match your search.',
+                viewPaper: 'View paper', openPdf: 'Open PDF', visitSite: 'Visit site',
+                contactTitle: 'Contact Me for Consulting', contactDesc: 'I would be happy to help with your project or technical consultation. Reach out via:', emailBtn: 'Email',
+                coursesTitle: 'Training Courses', coursePython: 'Python Course', coursePythonDesc: 'Learn programming from scratch and analyze data using Python.',
                 coursePowerBI: 'Power BI Course', coursePowerBIDesc: 'Master data analysis and build interactive dashboards.',
-                courseDB: 'Databases Course', courseDBDesc: 'Understand database design and SQL to handle data effectively.',
-                courseNote: 'Click any course to go to its content on the YouTube channel.'
+                courseDB: 'Databases Course', courseDBDesc: 'Understand database design and SQL.', courseNote: 'Click any course to go to its content on YouTube.',
+                paperSummaryLabel: 'English summary', reportError: 'Report error',
+                methodologyTitle: 'Our summary methodology', methodologyIntro: 'At LoboTech we commit to accurate and reliable summaries of research papers, always citing the original sources.',
+                methodologyStepsTitle: 'Our steps:', methodologyStep1: 'We select papers based on scientific impact, recency, and relevance.', methodologyStep2: 'We read the full paper and extract problem, idea, results, and limitations.', methodologyStep3: 'We write a clear summary preserving scientific accuracy.', methodologyStep4: 'Each summary is manually reviewed before publication.',
+                methodologyAiTitle: 'On the use of AI tools', methodologyAiText: 'We may use AI tools for initial drafting or translation help, but every summary is human-reviewed before publication.',
+                methodologyContact: 'Found an error or have a note? Use the "Report error" page.',
+                reportTitle: 'Report an error', reportIntro: 'Found an error in a summary, a broken link, or inaccurate info? Help us fix it.',
+                reportFieldPage: 'Page or paper with the error', reportFieldMsg: 'Details of the error', reportSubmit: 'Send report via email', reportNote: 'Your email client will open with the report prefilled.'
             }
         };
 
@@ -484,103 +566,101 @@
         }
 
         const CAT_EN_BUILTIN = {
-            'الذكاء الاصطناعي': 'Artificial Intelligence',
-            'رؤية حاسوبية': 'Computer Vision',
-            'التعلم العميق': 'Deep Learning',
-            'هندسة البرمجيات': 'Software Engineering',
-            'علم البيانات': 'Data Science',
-            'إنترنت الأشياء': 'Internet of Things',
-            'الأمن السيبراني': 'Cybersecurity',
-            'الأنظمة الذكية': 'Intelligent Systems',
-            'عام': 'General'
+            'الذكاء الاصطناعي': 'Artificial Intelligence', 'رؤية حاسوبية': 'Computer Vision', 'التعلم العميق': 'Deep Learning',
+            'هندسة البرمجيات': 'Software Engineering', 'علم البيانات': 'Data Science', 'إنترنت الأشياء': 'Internet of Things',
+            'الأمن السيبراني': 'Cybersecurity', 'الأنظمة الذكية': 'Intelligent Systems', 'عام': 'General'
         };
         let catEnFromSheet = {};
-        const warnedCats = new Set();
 
         function label(cat) {
             if (cat === ALL) return t('allPapers');
-            if (lang === 'en') {
-                const en = catEnFromSheet[cat] || CAT_EN_BUILTIN[cat];
-                if (!en && !warnedCats.has(cat)) {
-                    warnedCats.add(cat);
-                    console.warn('[i18n] No English label for category:', cat);
-                }
-                return en || cat;
-            }
+            if (lang === 'en') return catEnFromSheet[cat] || CAT_EN_BUILTIN[cat] || cat;
             return cat;
         }
 
-        // =========================================================
-        // قاعدة البيانات الضخمة (أكثر من 50 ورقة علمية)
-        // =========================================================
+        function slugify(str) {
+            return String(str || '').toLowerCase().replace(/['"()]/g, '').replace(/[^\p{L}\p{N}\s-]/gu, '').trim().replace(/\s+/g, '-').replace(/-+/g, '-');
+        }
+        function paperSlug(p) { return p.slug || slugify(p.title); }
+        function catSlug(cat) {
+            if (cat === ALL) return 'all';
+            return slugify(catEnFromSheet[cat] || CAT_EN_BUILTIN[cat] || cat);
+        }
+        function catFromSlug(slug) {
+            if (slug === 'all') return ALL;
+            for (const cat in CAT_EN_BUILTIN) if (slugify(CAT_EN_BUILTIN[cat]) === slug) return cat;
+            return ALL;
+        }
+
         const MY_PAPERS = [
-            // === قسم الذكاء الاصطناعي (AI) ===
-            { title: 'Attention Is All You Need', authors: 'Ashish Vaswani et al.', year: '2017', category: 'الذكاء الاصطناعي', category_en: 'Artificial Intelligence', summary: 'تقدّم معمارية Transformer التي تعتمد على آلية الانتباه وحدها بدل الشبكات المتكررة، وأصبحت الأساس لمعظم نماذج اللغة الحديثة.', summary_en: 'Introduces the Transformer architecture, which relies solely on attention instead of recurrent networks and became the foundation of most modern language models.', page_url: 'https://arxiv.org/abs/1706.03762', pdf_url: 'https://arxiv.org/pdf/1706.03762' },
-            { title: 'BERT: Pre-training of Deep Bidirectional Transformers', authors: 'Jacob Devlin et al.', year: '2018', category: 'الذكاء الاصطناعي', category_en: 'Artificial Intelligence', summary: 'يقدّم BERT كنموذج يتدرب مسبقاً على فهم السياق من الاتجاهين، محققاً نتائج متقدمة وقت صدوره.', summary_en: 'Presents BERT, a model pre-trained to understand context from both directions, achieving state-of-the-art results at the time.', page_url: 'https://arxiv.org/abs/1810.04805', pdf_url: 'https://arxiv.org/pdf/1810.04805' },
-            { title: 'Language Models are Few-Shot Learners (GPT-3)', authors: 'Tom B. Brown et al.', year: '2020', category: 'الذكاء الاصطناعي', category_en: 'Artificial Intelligence', summary: 'تُظهر أن تكبير النموذج اللغوي (GPT-3) يمكّنه من أداء مهام جديدة بعدد قليل من الأمثلة دون إعادة تدريب.', summary_en: 'Shows that scaling up a language model (GPT-3) lets it perform new tasks from just a few examples without retraining.', page_url: 'https://arxiv.org/abs/2005.14165', pdf_url: 'https://arxiv.org/pdf/2005.14165' },
-            { title: 'Chain-of-Thought Prompting Elicits Reasoning', authors: 'Jason Wei et al.', year: '2022', category: 'الذكاء الاصطناعي', category_en: 'Artificial Intelligence', summary: 'تبيّن أن دفع النموذج إلى عرض خطوات تفكيره قبل الجواب يحسّن أداءه في مسائل الاستدلال والحساب.', summary_en: 'Shows that prompting a model to lay out its reasoning steps before answering improves performance on reasoning problems.', page_url: 'https://arxiv.org/abs/2201.11903', pdf_url: 'https://arxiv.org/pdf/2201.11903' },
-            { title: 'LoRA: Low-Rank Adaptation of Large Language Models', authors: 'Edward J. Hu et al.', year: '2021', category: 'الذكاء الاصطناعي', category_en: 'Artificial Intelligence', summary: 'تقترح طريقة لضبط النماذج الكبيرة بتدريب عدد صغير جداً من المعاملات بدل تعديل كل المعاملات، مما يوفر التكلفة.', summary_en: 'Proposes fine-tuning large models by training only a very small number of added parameters, saving memory and cost.', page_url: 'https://arxiv.org/abs/2106.09685', pdf_url: 'https://arxiv.org/pdf/2106.09685' },
-            { title: 'Retrieval-Augmented Generation (RAG)', authors: 'Patrick Lewis et al.', year: '2020', category: 'الذكاء الاصطناعي', category_en: 'Artificial Intelligence', summary: 'تجمع بين نموذج لغوي ومكوّن استرجاع من مصادر خارجية، لتحسين دقة الإجابات في المهام المعرفية.', summary_en: 'Combines a language model with a retrieval component from external sources, improving accuracy on knowledge-intensive tasks.', page_url: 'https://arxiv.org/abs/2005.11401', pdf_url: 'https://arxiv.org/pdf/2005.11401' },
-            { title: 'Scaling Laws for Neural Language Models', authors: 'Jared Kaplan et al.', year: '2020', category: 'الذكاء الاصطناعي', category_en: 'Artificial Intelligence', summary: 'تدرس كيف يتحسن أداء نماذج اللغة مع زيادة حجم النموذج والبيانات والحوسبة، وتصف علاقات تقريبية بينها.', summary_en: 'Studies how language model performance improves with more model size, data and compute.', page_url: 'https://arxiv.org/abs/2001.08361', pdf_url: 'https://arxiv.org/pdf/2001.08361' },
-            { title: 'Training language models to follow instructions (InstructGPT)', authors: 'Long Ouyang et al.', year: '2022', category: 'الذكاء الاصطناعي', category_en: 'Artificial Intelligence', summary: 'تستخدم التعلم من التغذية الراجعة البشرية (RLHF) لجعل النماذج اللغوية تتبع تعليمات المستخدم بدقة وأمان أكبر.', summary_en: 'Uses Reinforcement Learning from Human Feedback (RLHF) to make language models follow user instructions more accurately and safely.', page_url: 'https://arxiv.org/abs/2203.02155', pdf_url: 'https://arxiv.org/pdf/2203.02155' },
+            { title: 'Attention Is All You Need', authors: 'Ashish Vaswani et al.', year: '2017', category: 'الذكاء الاصطناعي', category_en: 'Artificial Intelligence', summary: 'تقدّم معمارية Transformer التي تعتمد على آلية الانتباه وحدها بدل الشبكات المتكررة، وأصبحت الأساس لمعظم نماذج اللغة الحديثة.', page_url: 'https://arxiv.org/abs/1706.03762', pdf_url: 'https://arxiv.org/pdf/1706.03762' },
+            { title: 'BERT: Pre-training of Deep Bidirectional Transformers', authors: 'Jacob Devlin et al.', year: '2018', category: 'الذكاء الاصطناعي', category_en: 'Artificial Intelligence', summary: 'يقدّم BERT كنموذج يتدرب مسبقاً على فهم السياق من الاتجاهين، محققاً نتائج متقدمة وقت صدوره.', page_url: 'https://arxiv.org/abs/1810.04805', pdf_url: 'https://arxiv.org/pdf/1810.04805' },
+            { title: 'Language Models are Few-Shot Learners (GPT-3)', authors: 'Tom B. Brown et al.', year: '2020', category: 'الذكاء الاصطناعي', category_en: 'Artificial Intelligence', summary: 'تُظهر أن تكبير النموذج اللغوي (GPT-3) يمكّنه من أداء مهام جديدة بعدد قليل من الأمثلة دون إعادة تدريب.', page_url: 'https://arxiv.org/abs/2005.14165', pdf_url: 'https://arxiv.org/pdf/2005.14165' },
+            { title: 'Chain-of-Thought Prompting Elicits Reasoning', authors: 'Jason Wei et al.', year: '2022', category: 'الذكاء الاصطناعي', category_en: 'Artificial Intelligence', summary: 'تبيّن أن دفع النموذج إلى عرض خطوات تفكيره قبل الجواب يحسّن أداءه في مسائل الاستدلال والحساب.', page_url: 'https://arxiv.org/abs/2201.11903', pdf_url: 'https://arxiv.org/pdf/2201.11903' },
+            { title: 'LoRA: Low-Rank Adaptation of Large Language Models', authors: 'Edward J. Hu et al.', year: '2021', category: 'الذكاء الاصطناعي', category_en: 'Artificial Intelligence', summary: 'تقترح طريقة لضبط النماذج الكبيرة بتدريب عدد صغير جداً من المعاملات بدل تعديل كل المعاملات، مما يوفر التكلفة.', page_url: 'https://arxiv.org/abs/2106.09685', pdf_url: 'https://arxiv.org/pdf/2106.09685' },
+            { title: 'Retrieval-Augmented Generation (RAG)', authors: 'Patrick Lewis et al.', year: '2020', category: 'الذكاء الاصطناعي', category_en: 'Artificial Intelligence', summary: 'تجمع بين نموذج لغوي ومكوّن استرجاع من مصادر خارجية، لتحسين دقة الإجابات في المهام المعرفية.', page_url: 'https://arxiv.org/abs/2005.11401', pdf_url: 'https://arxiv.org/pdf/2005.11401' },
+            { title: 'Scaling Laws for Neural Language Models', authors: 'Jared Kaplan et al.', year: '2020', category: 'الذكاء الاصطناعي', category_en: 'Artificial Intelligence', summary: 'تدرس كيف يتحسن أداء نماذج اللغة مع زيادة حجم النموذج والبيانات والحوسبة، وتصف علاقات تقريبية بينها.', page_url: 'https://arxiv.org/abs/2001.08361', pdf_url: 'https://arxiv.org/pdf/2001.08361' },
+            { title: 'Training language models to follow instructions (InstructGPT)', authors: 'Long Ouyang et al.', year: '2022', category: 'الذكاء الاصطناعي', category_en: 'Artificial Intelligence', summary: 'تستخدم التعلم من التغذية الراجعة البشرية (RLHF) لجعل النماذج اللغوية تتبع تعليمات المستخدم بدقة وأمان أكبر.', page_url: 'https://arxiv.org/abs/2203.02155', pdf_url: 'https://arxiv.org/pdf/2203.02155' },
+            { title: 'Deep Residual Learning for Image Recognition (ResNet)', authors: 'Kaiming He et al.', year: '2015', category: 'رؤية حاسوبية', category_en: 'Computer Vision', summary: 'تقترح الشبكات المتبقية (ResNet) التي تسمح بتدريب شبكات عميقة جداً عبر وصلات تخطٍّ تسهّل انتقال المعلومات.', page_url: 'https://arxiv.org/abs/1512.03385', pdf_url: 'https://arxiv.org/pdf/1512.03385' },
+            { title: 'An Image is Worth 16x16 Words (ViT)', authors: 'Alexey Dosovitskiy et al.', year: '2020', category: 'رؤية حاسوبية', category_en: 'Computer Vision', summary: 'تطبّق بنية Transformer على الصور بتقسيمها إلى رقع صغيرة (ViT)، وتنافس الشبكات الالتفافية.', page_url: 'https://arxiv.org/abs/2010.11929', pdf_url: 'https://arxiv.org/pdf/2010.11929' },
+            { title: 'You Only Look Once (YOLO)', authors: 'Joseph Redmon et al.', year: '2015', category: 'رؤية حاسوبية', category_en: 'Computer Vision', summary: 'تقدم خوارزمية YOLO التي تعالج كشف الأجسام كمسألة انحدار واحدة، مما يجعلها فائقة السرعة ومناسبة للعمل في الوقت الفعلي.', page_url: 'https://arxiv.org/abs/1506.02640', pdf_url: 'https://arxiv.org/pdf/1506.02640' },
+            { title: 'Segment Anything', authors: 'Alexander Kirillov et al.', year: '2023', category: 'رؤية حاسوبية', category_en: 'Computer Vision', summary: 'نموذج SAM القادر على تقسيم (Segment) أي كائن في أي صورة بدقة عالية، باستخدام نقرات بسيطة أو نصوص.', page_url: 'https://arxiv.org/abs/2304.02643', pdf_url: 'https://arxiv.org/pdf/2304.02643' },
+            { title: 'Faster R-CNN: Towards Real-Time Object Detection', authors: 'Shaoqing Ren et al.', year: '2015', category: 'رؤية حاسوبية', category_en: 'Computer Vision', summary: 'تقدم شبكة اقتراح المناطق (RPN) التي تدمج اقتراح المناطق مع التصنيف في شبكة واحدة، مما يسرع كشف الأجسام.', page_url: 'https://arxiv.org/abs/1506.01497', pdf_url: 'https://arxiv.org/pdf/1506.01497' },
+            { title: 'Mask R-CNN', authors: 'Kaiming He et al.', year: '2017', category: 'رؤية حاسوبية', category_en: 'Computer Vision', summary: 'توسع Faster R-CNN بإضافة فرع لتوقع أقنعة التقسيم (Masks) لكل كائن، مما يتيح التقسيم الدقيق في وقت واحد.', page_url: 'https://arxiv.org/abs/1703.06870', pdf_url: 'https://arxiv.org/pdf/1703.06870' },
+            { title: 'ImageNet Classification with Deep Convolutional Neural Networks (AlexNet)', authors: 'Alex Krizhevsky et al.', year: '2012', category: 'رؤية حاسوبية', category_en: 'Computer Vision', summary: 'الورقة التي أشعلت ثورة التعلم العميق في الرؤية الحاسوبية، محققة قفزة هائلة في دقة تصنيف الصور.', page_url: 'https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html', pdf_url: 'https://papers.nips.cc/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf' },
+            { title: 'Learning Transferable Visual Models From Natural Language Supervision (CLIP)', authors: 'Alec Radford et al.', year: '2021', category: 'رؤية حاسوبية', category_en: 'Computer Vision', summary: 'نموذج CLIP يربط بين النصوص والصور، مما يتيح تصنيف الصور بناءً على أوصاف نصية حرة.', page_url: 'https://arxiv.org/abs/2103.00020', pdf_url: 'https://arxiv.org/pdf/2103.00020' },
+            { title: 'Generative Adversarial Networks (GANs)', authors: 'Ian J. Goodfellow et al.', year: '2014', category: 'التعلم العميق', category_en: 'Deep Learning', summary: 'تقدّم فكرة الشبكات التوليدية التنافسية: نموذجان يتنافسان، أحدهما يولّد بيانات والآخر يميّز الحقيقي من المزيف.', page_url: 'https://arxiv.org/abs/1406.2661', pdf_url: 'https://arxiv.org/pdf/1406.2661' },
+            { title: 'Denoising Diffusion Probabilistic Models (DDPM)', authors: 'Jonathan Ho et al.', year: '2020', category: 'التعلم العميق', category_en: 'Deep Learning', summary: 'تقدم نماذج الانتشار التي تتعلم توليد الصور عبر إضافة ضوضاء تدريجية ثم تعلم إزالتها، وهي الأساس لـ Midjourney.', page_url: 'https://arxiv.org/abs/2006.11239', pdf_url: 'https://arxiv.org/pdf/2006.11239' },
+            { title: 'High-Resolution Image Synthesis with Latent Diffusion Models', authors: 'Robin Rombach et al.', year: '2022', category: 'التعلم العميق', category_en: 'Deep Learning', summary: 'تطبق نماذج الانتشار في الفضاء الكامن (Latent Space)، مما يقلل التكلفة الحاسوبية ويمكّن من توليد صور عالية الدقة بسرعة (Stable Diffusion).', page_url: 'https://arxiv.org/abs/2112.10752', pdf_url: 'https://arxiv.org/pdf/2112.10752' },
+            { title: 'Auto-Encoding Variational Bayes (VAE)', authors: 'Diederik P. Kingma, Max Welling', year: '2013', category: 'التعلم العميق', category_en: 'Deep Learning', summary: 'تقدم المشفر التلقائي المتغير (VAE)، وهو نموذج توليدي قوي يعتمد على الاستدلال التقريبي والشبكات العصبية.', page_url: 'https://arxiv.org/abs/1312.6114', pdf_url: 'https://arxiv.org/pdf/1312.6114' },
+            { title: 'Adam: A Method for Stochastic Optimization', authors: 'Diederik P. Kingma, Jimmy Ba', year: '2014', category: 'التعلم العميق', category_en: 'Deep Learning', summary: 'تقدم خوارزمية Adam للمحسّنات (Optimizer) التي أصبحت الأكثر استخداماً في تدريب شبكات التعلم العميق لسرعتها وكفاءتها.', page_url: 'https://arxiv.org/abs/1412.6980', pdf_url: 'https://arxiv.org/pdf/1412.6980' },
+            { title: 'Dropout: A Simple Way to Prevent Neural Networks from Overfitting', authors: 'Nitish Srivastava et al.', year: '2014', category: 'التعلم العميق', category_en: 'Deep Learning', summary: 'تقترح تقنية Dropout التي تقوم بإسقاط وحدات عصبية عشوائية أثناء التدريب لمنع الإفراط في التخصيص (Overfitting).', page_url: 'https://jmlr.org/papers/v15/srivastava14a.html', pdf_url: 'https://jmlr.org/papers/volume15/srivastava14a/srivastava14a.pdf' },
+            { title: 'Batch Normalization', authors: 'Sergey Ioffe, Christian Szegedy', year: '2015', category: 'التعلم العميق', category_en: 'Deep Learning', summary: 'تقترح تقنية تطبيع الدفعات (Batch Norm) التي تسرع تدريب الشبكات العميقة جداً وتزيد من استقرارها.', page_url: 'https://arxiv.org/abs/1502.03167', pdf_url: 'https://arxiv.org/pdf/1502.03167' },
+            { title: 'Sequence to Sequence Learning with Neural Networks', authors: 'Ilya Sutskever et al.', year: '2014', category: 'التعلم العميق', category_en: 'Deep Learning', summary: 'تقدم بنية Seq2Seq التي تستخدم شبكات LSTM لتحويل تسلسل إلى آخر، وهي الأساس في الترجمة الآلية.', page_url: 'https://arxiv.org/abs/1409.3215', pdf_url: 'https://arxiv.org/pdf/1409.3215' },
+            { title: 'No Silver Bullet: Essence and Accidents of Software Engineering', authors: 'Frederick P. Brooks Jr.', year: '1986', category: 'هندسة البرمجيات', category_en: 'Software Engineering', summary: 'ورقة تاريخية تناقش لماذا لا توجد تقنية سحرية واحدة يمكنها زيادة إنتاجية البرمجيات بعشرة أضعاف، وتركز على التعقيد الجوهري.', page_url: 'https://ieeexplore.ieee.org/document/1663532', pdf_url: 'https://ieeexplore.ieee.org/document/1663532' },
+            { title: 'Microservices: A Definition of This New Architectural Term', authors: 'James Lewis, Martin Fowler', year: '2014', category: 'هندسة البرمجيات', category_en: 'Software Engineering', summary: 'الورقة التأسيسية التي عرفت بنية الخدمات المصغرة (Microservices) وكيف تتفوق على البنية المتجانسة (Monolithic).', page_url: 'https://martinfowler.com/articles/microservices.html', pdf_url: 'https://martinfowler.com/articles/microservices.html' },
+            { title: 'Continuous Integration: Improving Software Quality', authors: 'Martin Fowler', year: '2006', category: 'هندسة البرمجيات', category_en: 'Software Engineering', summary: 'يشرح مفهوم التكامل المستمر (CI) وأهميته في تقليل مخاطر التطوير وضمان جودة الكود عبر الدمج المتكرر.', page_url: 'https://martinfowler.com/articles/continuousIntegration.html', pdf_url: 'https://martinfowler.com/articles/continuousIntegration.html' },
+            { title: 'Evaluating Large Language Models Trained on Code (Codex)', authors: 'Mark Chen et al.', year: '2021', category: 'هندسة البرمجيات', category_en: 'Software Engineering', summary: 'الورقة التي قدمت نموذج Codex (المحرك وراء GitHub Copilot)، والتي تظهر قدرة الذكاء الاصطناعي على كتابة الأكواد البرمجية.', page_url: 'https://arxiv.org/abs/2107.03374', pdf_url: 'https://arxiv.org/pdf/2107.03374' },
+            { title: 'A Survey of Software Refactoring', authors: 'Tom Mens, Tom Tourwé', year: '2004', category: 'هندسة البرمجيات', category_en: 'Software Engineering', summary: 'مراجعة شاملة لتقنيات إعادة الهيكلة (Refactoring) وكيفية تحسين تصميم الكود دون تغيير سلوكه الخارجي.', page_url: 'https://ieeexplore.ieee.org/document/1265817', pdf_url: 'https://ieeexplore.ieee.org/document/1265817' },
+            { title: 'Agile Software Development: The Cooperative Game', authors: 'Alistair Cockburn', year: '2001', category: 'هندسة البرمجيات', category_en: 'Software Engineering', summary: 'من أوائل الكتب التي وضعت أسس منهجية التطوير الرشيقة (Agile) والتركيز على التفاعل البشري بدلاً من العمليات الجامدة.', page_url: 'https://www.pearson.com/store/p/agile-software-development-the-cooperative-game/P100000864533', pdf_url: 'https://www.pearson.com/store/p/agile-software-development-the-cooperative-game/P100000864533' },
+            { title: 'Design Patterns: Elements of Reusable Object-Oriented Software', authors: 'Erich Gamma et al.', year: '1994', category: 'هندسة البرمجيات', category_en: 'Software Engineering', summary: 'كتاب "عصابة الأربعة" (Gang of Four) الذي وضع أنماط التصميم (Design Patterns) التي يستخدمها كل مهندس برمجيات اليوم.', page_url: 'https://www.pearson.com/store/p/design-patterns-elements-of-reusable-object-oriented-software/P100002196633', pdf_url: 'https://www.pearson.com/store/p/design-patterns-elements-of-reusable-object-oriented-software/P100002196633' },
+            { title: 'XGBoost: A Scalable Tree Boosting System', authors: 'Tianqi Chen, Carlos Guestrin', year: '2016', category: 'علم البيانات', category_en: 'Data Science', summary: 'يقدم خوارزمية XGBoost التي أصبحت الأداة الأقوى في مسابقات علم البيانات للتعامل مع البيانات الجدولية.', page_url: 'https://arxiv.org/abs/1603.02754', pdf_url: 'https://arxiv.org/pdf/1603.02754' },
+            { title: 'Random Forests', authors: 'Leo Breiman', year: '2001', category: 'علم البيانات', category_en: 'Data Science', summary: 'تقدم خوارزمية الغابات العشوائية التي تجمع بين أشجار القرار المتعددة لتحقيق دقة عالية في التصنيف والانحدار.', page_url: 'https://link.springer.com/article/10.1023/A:1010933404324', pdf_url: 'https://link.springer.com/article/10.1023/A:1010933404324' },
+            { title: 'A Survey on Data Mining', authors: 'Usama Fayyad et al.', year: '1996', category: 'علم البيانات', category_en: 'Data Science', summary: 'واحدة من أوائل وأشهر الأوراق التي عرفت علم استخراج البيانات (Data Mining) وكيفية تحويل البيانات الخام إلى معرفة.', page_url: 'https://dl.acm.org/doi/10.1145/240455.240465', pdf_url: 'https://dl.acm.org/doi/10.1145/240455.240465' },
+            { title: 'MapReduce: Simplified Data Processing on Large Clusters', authors: 'Jeffrey Dean, Sanjay Ghemawat', year: '2004', category: 'علم البيانات', category_en: 'Data Science', summary: 'نموذج برمجي من جوجل لمعالجة البيانات الضخمة (Big Data) بشكل متوازي على آلاف الخوادم.', page_url: 'https://dl.acm.org/doi/10.5555/1251254.1251264', pdf_url: 'https://dl.acm.org/doi/10.5555/1251254.1251264' },
+            { title: 't-SNE: Visualizing Data using t-SNE', authors: 'Laurens van der Maaten, Geoffrey Hinton', year: '2008', category: 'علم البيانات', category_en: 'Data Science', summary: 'تقنية لتقليل الأبعاد (Dimensionality Reduction) تستخدم لتصور البيانات المعقدة عالية الأبعاد في مساحة ثنائية أو ثلاثية.', page_url: 'https://jmlr.org/papers/v9/vandermaaten08a.html', pdf_url: 'https://jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf' },
+            { title: 'Internet of Things: A Survey on Enabling Technologies', authors: 'Ala Al-Fuqaha et al.', year: '2015', category: 'إنترنت الأشياء', category_en: 'Internet of Things', summary: 'دراسة شاملة تستعرض التقنيات الممكنة لإنترنت الأشياء (IoT)، والبروتوكولات المستخدمة، والتطبيقات الواقعية.', page_url: 'https://ieeexplore.ieee.org/document/7123563', pdf_url: 'https://ieeexplore.ieee.org/document/7123563' },
+            { title: 'Edge Computing: Vision and Challenges', authors: 'Weisong Shi et al.', year: '2016', category: 'إنترنت الأشياء', category_en: 'Internet of Things', summary: 'تقدم فكرة الحوسبة الطرفية (Edge Computing) كبديل للحوسبة السحابية لتقليل التأخير ومعالجة بيانات إنترنت الأشياء محلياً.', page_url: 'https://ieeexplore.ieee.org/document/7488250', pdf_url: 'https://ieeexplore.ieee.org/document/7488250' },
+            { title: 'A Survey on Internet of Things: Architecture and Applications', authors: 'Luigi Atzori et al.', year: '2010', category: 'إنترنت الأشياء', category_en: 'Internet of Things', summary: 'من أوائل الأوراق التي وضعت المعمارية الأساسية لإنترنت الأشياء وكيف ستغير حياتنا اليومية.', page_url: 'https://www.sciencedirect.com/science/article/abs/pii/S1389128610001568', pdf_url: 'https://www.sciencedirect.com/science/article/abs/pii/S1389128610001568' },
+            { title: 'LoRaWAN: A Low Power Wide Area Network Protocol', authors: 'Ferran Adelantado et al.', year: '2017', category: 'إنترنت الأشياء', category_en: 'Internet of Things', summary: 'يشرح بروتوكول LoRaWAN المصمم للأجهزة التي تستهلك طاقة منخفضة جداً وتحتاج لنقل بيانات لمسافات طويلة.', page_url: 'https://ieeexplore.ieee.org/document/7937285', pdf_url: 'https://ieeexplore.ieee.org/document/7937285' },
+            { title: 'Security in Internet of Things: A Survey', authors: 'Yosra Ben Saied et al.', year: '2017', category: 'إنترنت الأشياء', category_en: 'Internet of Things', summary: 'يستعرض التحديات الأمنية التي تواجه أجهزة إنترنت الأشياء وكيفية حمايتها من الاختراق.', page_url: 'https://www.sciencedirect.com/science/article/abs/pii/S0140366416304419', pdf_url: 'https://www.sciencedirect.com/science/article/abs/pii/S0140366416304419' },
+            { title: 'A Survey of Deep Learning Methods for Cyber Security', authors: 'Douglas Berman et al.', year: '2019', category: 'الأمن السيبراني', category_en: 'Cybersecurity', summary: 'يستعرض كيف يمكن استخدام تقنيات التعلم العميق في تعزيز الأمن السيبراني، مثل اكتشاف التسلل وتحليل البرمجيات الخبيثة.', page_url: 'https://arxiv.org/abs/1906.11731', pdf_url: 'https://arxiv.org/pdf/1906.11731' },
+            { title: 'A Survey on Blockchain Security', authors: 'Xiaoqi Li et al.', year: '2017', category: 'الأمن السيبراني', category_en: 'Cybersecurity', summary: 'مراجعة شاملة للثغرات الأمنية في تقنية البلوكشين (Blockchain) والعقود الذكية (Smart Contracts).', page_url: 'https://arxiv.org/abs/1708.08093', pdf_url: 'https://arxiv.org/pdf/1708.08093' },
+            { title: 'Intrusion Detection System: A Comprehensive Review', authors: 'Hung-Jen Liao et al.', year: '2013', category: 'الأمن السيبراني', category_en: 'Cybersecurity', summary: 'دراسة تستعرض أنظمة كشف التسلل (IDS) وتقنيات تعلم الآلة المستخدمة لاكتشاف الهجمات على الشبكات.', page_url: 'https://www.sciencedirect.com/science/article/abs/pii/S1084804512001944', pdf_url: 'https://www.sciencedirect.com/science/article/abs/pii/S1084804512001944' },
+            { title: 'Adversarial Machine Learning at Scale', authors: 'Alexey Kurakin et al.', year: '2016', category: 'الأمن السيبراني', category_en: 'Cybersecurity', summary: 'تستكشف كيفية خداع نماذج التعلم العميق باستخدام "أمثلة خصوم" (Adversarial Examples) وكيفية حماية النماذج من ذلك.', page_url: 'https://arxiv.org/abs/1611.01236', pdf_url: 'https://arxiv.org/pdf/1611.01236' },
+            { title: 'The Tangled Web of Password Reuse', authors: 'Anupam Das et al.', year: '2014', category: 'الأمن السيبراني', category_en: 'Cybersecurity', summary: 'ورقة بحثية تسلط الضوء على مخاطر إعادة استخدام كلمات المرور وكيف يمكن للمهاجمين استغلالها.', page_url: 'https://www.ndss-symposium.org/ndss2014/programme/the-tangled-web-of-password-reuse/', pdf_url: 'https://www.ndss-symposium.org/wp-content/uploads/2017/09/03_2.pdf' },
+            { title: 'Mastering the game of Go with deep neural networks and tree search (AlphaGo)', authors: 'David Silver et al.', year: '2016', category: 'الأنظمة الذكية', category_en: 'Intelligent Systems', summary: 'يقدم AlphaGo الذي هزم بطل العالم في لعبة Go، باستخدام الشبكات العصبية العميقة والبحث الشجري.', page_url: 'https://www.nature.com/articles/nature16961', pdf_url: 'https://www.nature.com/articles/nature16961.pdf' },
+            { title: 'Human-level control through deep reinforcement learning (DQN)', authors: 'Volodymyr Mnih et al.', year: '2015', category: 'الأنظمة الذكية', category_en: 'Intelligent Systems', summary: 'تقدم DeepMind شبكة DQN التي تجمع بين التعلم العميق والتعلم المعزز لتتفوق على البشر في ألعاب أتاري.', page_url: 'https://www.nature.com/articles/nature14236', pdf_url: 'https://www.nature.com/articles/nature14236.pdf' },
+            { title: 'A Survey of Multi-Agent Reinforcement Learning', authors: 'Kaiqing Zhang et al.', year: '2019', category: 'الأنظمة الذكية', category_en: 'Intelligent Systems', summary: 'ورقة مراجعة تشرح كيفية تعلم الأنظمة الذكية (مثل الروبوتات) التعاون أو التنافس معاً.', page_url: 'https://arxiv.org/abs/1911.10635', pdf_url: 'https://arxiv.org/pdf/1911.10635' },
+            { title: 'Autonomous Driving: A Survey', authors: 'Ekrem Yurtsever et al.', year: '2020', category: 'الأنظمة الذكية', category_en: 'Intelligent Systems', summary: 'مراجعة شاملة لتقنيات السيارات ذاتية القيادة، بما في ذلك الاستشعار، الإدراك، واتخاذ القرار.', page_url: 'https://ieeexplore.ieee.org/document/9085937', pdf_url: 'https://ieeexplore.ieee.org/document/9085937' },
+            { title: 'Swarm Robotics: A Review from the Swarm Engineering Perspective', authors: 'Levent Bayındır', year: '2016', category: 'الأنظمة الذكية', category_en: 'Intelligent Systems', summary: 'يستعرض كيفية تصميم أسراب من الروبوتات (Swarm Robotics) للعمل معاً لإنجاز مهام معقدة.', page_url: 'https://link.springer.com/article/10.1007/s11721-016-0121-6', pdf_url: 'https://link.springer.com/article/10.1007/s11721-016-0121-6' },
+            { title: 'A Survey on Deep Learning for Autonomous Vehicles', authors: 'Sorin Grigorescu et al.', year: '2020', category: 'الأنظمة الذكية', category_en: 'Intelligent Systems', summary: 'يستكشف كيف يطبق التعلم العميق في المركبات ذاتية القيادة لتحسين الإدراك واتخاذ القرار.', page_url: 'https://arxiv.org/abs/1909.04462', pdf_url: 'https://arxiv.org/pdf/1909.04462' }
+        ];
 
-            // === قسم رؤية حاسوبية (CV) ===
-            { title: 'Deep Residual Learning for Image Recognition (ResNet)', authors: 'Kaiming He et al.', year: '2015', category: 'رؤية حاسوبية', category_en: 'Computer Vision', summary: 'تقترح الشبكات المتبقية (ResNet) التي تسمح بتدريب شبكات عميقة جداً عبر وصلات تخطٍّ تسهّل انتقال المعلومات.', summary_en: 'Proposes residual networks (ResNet), which make it possible to train very deep networks using skip connections.', page_url: 'https://arxiv.org/abs/1512.03385', pdf_url: 'https://arxiv.org/pdf/1512.03385' },
-            { title: 'An Image is Worth 16x16 Words (ViT)', authors: 'Alexey Dosovitskiy et al.', year: '2020', category: 'رؤية حاسوبية', category_en: 'Computer Vision', summary: 'تطبّق بنية Transformer على الصور بتقسيمها إلى رقع صغيرة (ViT)، وتنافس الشبكات الالتفافية.', summary_en: 'Applies the Transformer architecture to images by splitting them into small patches (ViT).', page_url: 'https://arxiv.org/abs/2010.11929', pdf_url: 'https://arxiv.org/pdf/2010.11929' },
-            { title: 'You Only Look Once (YOLO)', authors: 'Joseph Redmon et al.', year: '2015', category: 'رؤية حاسوبية', category_en: 'Computer Vision', summary: 'تقدم خوارزمية YOLO التي تعالج كشف الأجسام كمسألة انحدار واحدة، مما يجعلها فائقة السرعة ومناسبة للعمل في الوقت الفعلي.', summary_en: 'Introduces YOLO, which frames object detection as a single regression problem, making it extremely fast for real-time applications.', page_url: 'https://arxiv.org/abs/1506.02640', pdf_url: 'https://arxiv.org/pdf/1506.02640' },
-            { title: 'Segment Anything', authors: 'Alexander Kirillov et al.', year: '2023', category: 'رؤية حاسوبية', category_en: 'Computer Vision', summary: 'نموذج SAM القادر على تقسيم (Segment) أي كائن في أي صورة بدقة عالية، باستخدام نقرات بسيطة أو نصوص.', summary_en: 'SAM is a model capable of segmenting any object in any image with high precision using simple clicks or text.', page_url: 'https://arxiv.org/abs/2304.02643', pdf_url: 'https://arxiv.org/pdf/2304.02643' },
-            { title: 'Faster R-CNN: Towards Real-Time Object Detection', authors: 'Shaoqing Ren et al.', year: '2015', category: 'رؤية حاسوبية', category_en: 'Computer Vision', summary: 'تقدم شبكة اقتراح المناطق (RPN) التي تدمج اقتراح المناطق مع التصنيف في شبكة واحدة، مما يسرع كشف الأجسام.', summary_en: 'Introduces Region Proposal Network (RPN) that integrates region proposals with classification into a single network.', page_url: 'https://arxiv.org/abs/1506.01497', pdf_url: 'https://arxiv.org/pdf/1506.01497' },
-            { title: 'Mask R-CNN', authors: 'Kaiming He et al.', year: '2017', category: 'رؤية حاسوبية', category_en: 'Computer Vision', summary: 'توسع Faster R-CNN بإضافة فرع لتوقع أقنعة التقسيم (Masks) لكل كائن، مما يتيح التقسيم الدقيق في وقت واحد.', summary_en: 'Extends Faster R-CNN by adding a branch for predicting segmentation masks for each object.', page_url: 'https://arxiv.org/abs/1703.06870', pdf_url: 'https://arxiv.org/pdf/1703.06870' },
-            { title: 'ImageNet Classification with Deep Convolutional Neural Networks (AlexNet)', authors: 'Alex Krizhevsky et al.', year: '2012', category: 'رؤية حاسوبية', category_en: 'Computer Vision', summary: 'الورقة التي أشعلت ثورة التعلم العميق في الرؤية الحاسوبية، محققة قفزة هائلة في دقة تصنيف الصور.', summary_en: 'The paper that ignited the deep learning revolution in computer vision, achieving a massive leap in image classification accuracy.', page_url: 'https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html', pdf_url: 'https://papers.nips.cc/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf' },
-            { title: 'Learning Transferable Visual Models From Natural Language Supervision (CLIP)', authors: 'Alec Radford et al.', year: '2021', category: 'رؤية حاسوبية', category_en: 'Computer Vision', summary: 'نموذج CLIP يربط بين النصوص والصور، مما يتيح تصنيف الصور بناءً على أوصاف نصية حرة.', summary_en: 'CLIP connects text and images, enabling zero-shot image classification based on free-form text descriptions.', page_url: 'https://arxiv.org/abs/2103.00020', pdf_url: 'https://arxiv.org/pdf/2103.00020' },
-
-            // === قسم التعلم العميق (DL) ===
-            { title: 'Generative Adversarial Networks (GANs)', authors: 'Ian J. Goodfellow et al.', year: '2014', category: 'التعلم العميق', category_en: 'Deep Learning', summary: 'تقدّم فكرة الشبكات التوليدية التنافسية: نموذجان يتنافسان، أحدهما يولّد بيانات والآخر يميّز الحقيقي من المزيف.', summary_en: 'Introduces generative adversarial networks: two models compete, one generating data and the other telling real from fake.', page_url: 'https://arxiv.org/abs/1406.2661', pdf_url: 'https://arxiv.org/pdf/1406.2661' },
-            { title: 'Denoising Diffusion Probabilistic Models (DDPM)', authors: 'Jonathan Ho et al.', year: '2020', category: 'التعلم العميق', category_en: 'Deep Learning', summary: 'تقدم نماذج الانتشار التي تتعلم توليد الصور عبر إضافة ضوضاء تدريجية ثم تعلم إزالتها، وهي الأساس لـ Midjourney.', summary_en: 'Introduces Diffusion Models, which learn to generate images by adding gradual noise and then learning to reverse it.', page_url: 'https://arxiv.org/abs/2006.11239', pdf_url: 'https://arxiv.org/pdf/2006.11239' },
-            { title: 'High-Resolution Image Synthesis with Latent Diffusion Models', authors: 'Robin Rombach et al.', year: '2022', category: 'التعلم العميق', category_en: 'Deep Learning', summary: 'تطبق نماذج الانتشار في الفضاء الكامن (Latent Space)، مما يقلل التكلفة الحاسوبية ويمكّن من توليد صور عالية الدقة بسرعة (Stable Diffusion).', summary_en: 'Applies diffusion models in the latent space, drastically reducing computational cost and enabling fast high-resolution image generation.', page_url: 'https://arxiv.org/abs/2112.10752', pdf_url: 'https://arxiv.org/pdf/2112.10752' },
-            { title: 'Auto-Encoding Variational Bayes (VAE)', authors: 'Diederik P. Kingma, Max Welling', year: '2013', category: 'التعلم العميق', category_en: 'Deep Learning', summary: 'تقدم المشفر التلقائي المتغير (VAE)، وهو نموذج توليدي قوي يعتمد على الاستدلال التقريبي والشبكات العصبية.', summary_en: 'Introduces Variational Autoencoders (VAE), a powerful generative model based on approximate inference and neural networks.', page_url: 'https://arxiv.org/abs/1312.6114', pdf_url: 'https://arxiv.org/pdf/1312.6114' },
-            { title: 'Adam: A Method for Stochastic Optimization', authors: 'Diederik P. Kingma, Jimmy Ba', year: '2014', category: 'التعلم العميق', category_en: 'Deep Learning', summary: 'تقدم خوارزمية Adam للمحسّنات (Optimizer) التي أصبحت الأكثر استخداماً في تدريب شبكات التعلم العميق لسرعتها وكفاءتها.', summary_en: 'Introduces the Adam optimizer, which became the most widely used algorithm for training deep learning networks.', page_url: 'https://arxiv.org/abs/1412.6980', pdf_url: 'https://arxiv.org/pdf/1412.6980' },
-            { title: 'Dropout: A Simple Way to Prevent Neural Networks from Overfitting', authors: 'Nitish Srivastava et al.', year: '2014', category: 'التعلم العميق', category_en: 'Deep Learning', summary: 'تقترح تقنية Dropout التي تقوم بإسقاط وحدات عصبية عشوائية أثناء التدريب لمنع الإفراط في التخصيص (Overfitting).', summary_en: 'Proposes Dropout, a technique that randomly drops neural units during training to prevent overfitting.', page_url: 'https://jmlr.org/papers/v15/srivastava14a.html', pdf_url: 'https://jmlr.org/papers/volume15/srivastava14a/srivastava14a.pdf' },
-            { title: 'Batch Normalization', authors: 'Sergey Ioffe, Christian Szegedy', year: '2015', category: 'التعلم العميق', category_en: 'Deep Learning', summary: 'تقترح تقنية تطبيع الدفعات (Batch Norm) التي تسرع تدريب الشبكات العميقة جداً وتزيد من استقرارها.', summary_en: 'Proposes Batch Normalization, which speeds up the training of very deep networks and increases stability.', page_url: 'https://arxiv.org/abs/1502.03167', pdf_url: 'https://arxiv.org/pdf/1502.03167' },
-            { title: 'Sequence to Sequence Learning with Neural Networks', authors: 'Ilya Sutskever et al.', year: '2014', category: 'التعلم العميق', category_en: 'Deep Learning', summary: 'تقدم بنية Seq2Seq التي تستخدم شبكات LSTM لتحويل تسلسل إلى آخر، وهي الأساس في الترجمة الآلية.', summary_en: 'Introduces the Seq2Seq architecture using LSTM networks to transform one sequence to another, foundational for machine translation.', page_url: 'https://arxiv.org/abs/1409.3215', pdf_url: 'https://arxiv.org/pdf/1409.3215' },
-
-            // === قسم هندسة البرمجيات (SE) ===
-            { title: 'No Silver Bullet: Essence and Accidents of Software Engineering', authors: 'Frederick P. Brooks Jr.', year: '1986', category: 'هندسة البرمجيات', category_en: 'Software Engineering', summary: 'ورقة تاريخية تناقش لماذا لا توجد تقنية سحرية واحدة يمكنها زيادة إنتاجية البرمجيات بعشرة أضعاف، وتركز على التعقيد الجوهري.', summary_en: 'A historic paper discussing why there is no single magic technique to increase software productivity tenfold, focusing on essential complexity.', page_url: 'https://ieeexplore.ieee.org/document/1663532', pdf_url: 'https://ieeexplore.ieee.org/document/1663532' },
-            { title: 'Microservices: A Definition of This New Architectural Term', authors: 'James Lewis, Martin Fowler', year: '2014', category: 'هندسة البرمجيات', category_en: 'Software Engineering', summary: 'الورقة التأسيسية التي عرفت بنية الخدمات المصغرة (Microservices) وكيف تتفوق على البنية المتجانسة (Monolithic).', summary_en: 'The foundational paper that defined the Microservices architecture and how it outperforms Monolithic architecture.', page_url: 'https://martinfowler.com/articles/microservices.html', pdf_url: 'https://martinfowler.com/articles/microservices.html' },
-            { title: 'Continuous Integration: Improving Software Quality', authors: 'Martin Fowler', year: '2006', category: 'هندسة البرمجيات', category_en: 'Software Engineering', summary: 'يشرح مفهوم التكامل المستمر (CI) وأهميته في تقليل مخاطر التطوير وضمان جودة الكود عبر الدمج المتكرر.', summary_en: 'Explains the concept of Continuous Integration (CI) and its importance in reducing development risks and ensuring code quality.', page_url: 'https://martinfowler.com/articles/continuousIntegration.html', pdf_url: 'https://martinfowler.com/articles/continuousIntegration.html' },
-            { title: 'Evaluating Large Language Models Trained on Code (Codex)', authors: 'Mark Chen et al.', year: '2021', category: 'هندسة البرمجيات', category_en: 'Software Engineering', summary: 'الورقة التي قدمت نموذج Codex (المحرك وراء GitHub Copilot)، والتي تظهر قدرة الذكاء الاصطناعي على كتابة الأكواد البرمجية.', summary_en: 'The paper that introduced Codex (the engine behind GitHub Copilot), demonstrating AI ability to write programming code.', page_url: 'https://arxiv.org/abs/2107.03374', pdf_url: 'https://arxiv.org/pdf/2107.03374' },
-            { title: 'A Survey of Software Refactoring', authors: 'Tom Mens, Tom Tourwé', year: '2004', category: 'هندسة البرمجيات', category_en: 'Software Engineering', summary: 'مراجعة شاملة لتقنيات إعادة الهيكلة (Refactoring) وكيفية تحسين تصميم الكود دون تغيير سلوكه الخارجي.', summary_en: 'A comprehensive review of refactoring techniques and how to improve code design without changing its external behavior.', page_url: 'https://ieeexplore.ieee.org/document/1265817', pdf_url: 'https://ieeexplore.ieee.org/document/1265817' },
-            { title: 'Agile Software Development: The Cooperative Game', authors: 'Alistair Cockburn', year: '2001', category: 'هندسة البرمجيات', category_en: 'Software Engineering', summary: 'من أوائل الكتب التي وضعت أسس منهجية التطوير الرشيقة (Agile) والتركيز على التفاعل البشري بدلاً من العمليات الجامدة.', summary_en: 'One of the first books to lay the foundations of Agile development, focusing on human interaction rather than rigid processes.', page_url: 'https://www.pearson.com/store/p/agile-software-development-the-cooperative-game/P100000864533', pdf_url: 'https://www.pearson.com/store/p/agile-software-development-the-cooperative-game/P100000864533' },
-            { title: 'Design Patterns: Elements of Reusable Object-Oriented Software', authors: 'Erich Gamma et al.', year: '1994', category: 'هندسة البرمجيات', category_en: 'Software Engineering', summary: 'كتاب "عصابة الأربعة" (Gang of Four) الذي وضع أنماط التصميم (Design Patterns) التي يستخدمها كل مهندس برمجيات اليوم.', summary_en: 'The Gang of Four book that established Design Patterns used by every software engineer today.', page_url: 'https://www.pearson.com/store/p/design-patterns-elements-of-reusable-object-oriented-software/P100002196633', pdf_url: 'https://www.pearson.com/store/p/design-patterns-elements-of-reusable-object-oriented-software/P100002196633' },
-
-            // === قسم علم البيانات (DS) ===
-            { title: 'XGBoost: A Scalable Tree Boosting System', authors: 'Tianqi Chen, Carlos Guestrin', year: '2016', category: 'علم البيانات', category_en: 'Data Science', summary: 'يقدم خوارزمية XGBoost التي أصبحت الأداة الأقوى في مسابقات علم البيانات للتعامل مع البيانات الجدولية.', summary_en: 'Introduces XGBoost, which became the most powerful tool in data science competitions for handling tabular data.', page_url: 'https://arxiv.org/abs/1603.02754', pdf_url: 'https://arxiv.org/pdf/1603.02754' },
-            { title: 'Random Forests', authors: 'Leo Breiman', year: '2001', category: 'علم البيانات', category_en: 'Data Science', summary: 'تقدم خوارزمية الغابات العشوائية التي تجمع بين أشجار القرار المتعددة لتحقيق دقة عالية في التصنيف والانحدار.', summary_en: 'Introduces Random Forests, which combine multiple decision trees to achieve high accuracy in classification and regression.', page_url: 'https://link.springer.com/article/10.1023/A:1010933404324', pdf_url: 'https://link.springer.com/article/10.1023/A:1010933404324' },
-            { title: 'A Survey on Data Mining', authors: 'Usama Fayyad et al.', year: '1996', category: 'علم البيانات', category_en: 'Data Science', summary: 'واحدة من أوائل وأشهر الأوراق التي عرفت علم استخراج البيانات (Data Mining) وكيفية تحويل البيانات الخام إلى معرفة.', summary_en: 'One of the earliest and most famous papers defining Data Mining and how to turn raw data into knowledge.', page_url: 'https://dl.acm.org/doi/10.1145/240455.240465', pdf_url: 'https://dl.acm.org/doi/10.1145/240455.240465' },
-            { title: 'MapReduce: Simplified Data Processing on Large Clusters', authors: 'Jeffrey Dean, Sanjay Ghemawat', year: '2004', category: 'علم البيانات', category_en: 'Data Science', summary: 'نموذج برمجي من جوجل لمعالجة البيانات الضخمة (Big Data) بشكل متوازي على آلاف الخوادم.', summary_en: 'A programming model from Google for parallel processing of Big Data across thousands of servers.', page_url: 'https://dl.acm.org/doi/10.5555/1251254.1251264', pdf_url: 'https://dl.acm.org/doi/10.5555/1251254.1251264' },
-            { title: 't-SNE: Visualizing Data using t-SNE', authors: 'Laurens van der Maaten, Geoffrey Hinton', year: '2008', category: 'علم البيانات', category_en: 'Data Science', summary: 'تقنية لتقليل الأبعاد (Dimensionality Reduction) تستخدم لتصور البيانات المعقدة عالية الأبعاد في مساحة ثنائية أو ثلاثية.', summary_en: 'A dimensionality reduction technique used to visualize complex high-dimensional data in 2D or 3D space.', page_url: 'https://jmlr.org/papers/v9/vandermaaten08a.html', pdf_url: 'https://jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf' },
-
-            // === قسم إنترنت الأشياء (IoT) ===
-            { title: 'Internet of Things: A Survey on Enabling Technologies', authors: 'Ala Al-Fuqaha et al.', year: '2015', category: 'إنترنت الأشياء', category_en: 'Internet of Things', summary: 'دراسة شاملة تستعرض التقنيات الممكنة لإنترنت الأشياء (IoT)، والبروتوكولات المستخدمة، والتطبيقات الواقعية.', summary_en: 'A comprehensive survey reviewing enabling technologies for IoT, the protocols used, and real-world applications.', page_url: 'https://ieeexplore.ieee.org/document/7123563', pdf_url: 'https://ieeexplore.ieee.org/document/7123563' },
-            { title: 'Edge Computing: Vision and Challenges', authors: 'Weisong Shi et al.', year: '2016', category: 'إنترنت الأشياء', category_en: 'Internet of Things', summary: 'تقدم فكرة الحوسبة الطرفية (Edge Computing) كبديل للحوسبة السحابية لتقليل التأخير ومعالجة بيانات إنترنت الأشياء محلياً.', summary_en: 'Introduces Edge Computing as an alternative to cloud computing to reduce latency and process IoT data locally.', page_url: 'https://ieeexplore.ieee.org/document/7488250', pdf_url: 'https://ieeexplore.ieee.org/document/7488250' },
-            { title: 'A Survey on Internet of Things: Architecture and Applications', authors: 'Luigi Atzori et al.', year: '2010', category: 'إنترنت الأشياء', category_en: 'Internet of Things', summary: 'من أوائل الأوراق التي وضعت المعمارية الأساسية لإنترنت الأشياء وكيف ستغير حياتنا اليومية.', summary_en: 'One of the first papers establishing the foundational architecture of IoT and how it will change daily life.', page_url: 'https://www.sciencedirect.com/science/article/abs/pii/S1389128610001568', pdf_url: 'https://www.sciencedirect.com/science/article/abs/pii/S1389128610001568' },
-            { title: 'LoRaWAN: A Low Power Wide Area Network Protocol', authors: 'Ferran Adelantado et al.', year: '2017', category: 'إنترنت الأشياء', category_en: 'Internet of Things', summary: 'يشرح بروتوكول LoRaWAN المصمم للأجهزة التي تستهلك طاقة منخفضة جداً وتحتاج لنقل بيانات لمسافات طويلة.', summary_en: 'Explains the LoRaWAN protocol designed for devices that consume very low power and need to transmit data over long distances.', page_url: 'https://ieeexplore.ieee.org/document/7937285', pdf_url: 'https://ieeexplore.ieee.org/document/7937285' },
-            { title: 'Security in Internet of Things: A Survey', authors: 'Yosra Ben Saied et al.', year: '2017', category: 'إنترنت الأشياء', category_en: 'Internet of Things', summary: 'يستعرض التحديات الأمنية التي تواجه أجهزة إنترنت الأشياء وكيفية حمايتها من الاختراق.', summary_en: 'Reviews the security challenges facing IoT devices and how to protect them from hacking.', page_url: 'https://www.sciencedirect.com/science/article/abs/pii/S0140366416304419', pdf_url: 'https://www.sciencedirect.com/science/article/abs/pii/S0140366416304419' },
-
-            // === قسم الأمن السيبراني (Cybersecurity) ===
-            { title: 'A Survey of Deep Learning Methods for Cyber Security', authors: 'Douglas Berman et al.', year: '2019', category: 'الأمن السيبراني', category_en: 'Cybersecurity', summary: 'يستعرض كيف يمكن استخدام تقنيات التعلم العميق في تعزيز الأمن السيبراني، مثل اكتشاف التسلل وتحليل البرمجيات الخبيثة.', summary_en: 'Reviews how deep learning techniques can be used to enhance cybersecurity, such as intrusion detection and malware analysis.', page_url: 'https://arxiv.org/abs/1906.11731', pdf_url: 'https://arxiv.org/pdf/1906.11731' },
-            { title: 'A Survey on Blockchain Security', authors: 'Xiaoqi Li et al.', year: '2017', category: 'الأمن السيبراني', category_en: 'Cybersecurity', summary: 'مراجعة شاملة للثغرات الأمنية في تقنية البلوكشين (Blockchain) والعقود الذكية (Smart Contracts).', summary_en: 'A comprehensive review of security vulnerabilities in Blockchain technology and Smart Contracts.', page_url: 'https://arxiv.org/abs/1708.08093', pdf_url: 'https://arxiv.org/pdf/1708.08093' },
-            { title: 'Intrusion Detection System: A Comprehensive Review', authors: 'Hung-Jen Liao et al.', year: '2013', category: 'الأمن السيبراني', category_en: 'Cybersecurity', summary: 'دراسة تستعرض أنظمة كشف التسلل (IDS) وتقنيات تعلم الآلة المستخدمة لاكتشاف الهجمات على الشبكات.', summary_en: 'A study reviewing Intrusion Detection Systems (IDS) and machine learning techniques used to detect network attacks.', page_url: 'https://www.sciencedirect.com/science/article/abs/pii/S1084804512001944', pdf_url: 'https://www.sciencedirect.com/science/article/abs/pii/S1084804512001944' },
-            { title: 'Adversarial Machine Learning at Scale', authors: 'Alexey Kurakin et al.', year: '2016', category: 'الأمن السيبراني', category_en: 'Cybersecurity', summary: 'تستكشف كيفية خداع نماذج التعلم العميق باستخدام "أمثلة خصوم" (Adversarial Examples) وكيفية حماية النماذج من ذلك.', summary_en: 'Explores how to fool deep learning models using "Adversarial Examples" and how to protect models from this.', page_url: 'https://arxiv.org/abs/1611.01236', pdf_url: 'https://arxiv.org/pdf/1611.01236' },
-            { title: 'The Tangled Web of Password Reuse', authors: 'Anupam Das et al.', year: '2014', category: 'الأمن السيبراني', category_en: 'Cybersecurity', summary: 'ورقة بحثية تسلط الضوء على مخاطر إعادة استخدام كلمات المرور وكيف يمكن للمهاجمين استغلالها.', summary_en: 'A research paper highlighting the risks of password reuse and how attackers can exploit it.', page_url: 'https://www.ndss-symposium.org/ndss2014/programme/the-tangled-web-of-password-reuse/', pdf_url: 'https://www.ndss-symposium.org/wp-content/uploads/2017/09/03_2.pdf' },
-
-            // === قسم الأنظمة الذكية (Intelligent Systems) ===
-            { title: 'Mastering the game of Go with deep neural networks and tree search (AlphaGo)', authors: 'David Silver et al.', year: '2016', category: 'الأنظمة الذكية', category_en: 'Intelligent Systems', summary: 'يقدم AlphaGo الذي هزم بطل العالم في لعبة Go، باستخدام الشبكات العصبية العميقة والبحث الشجري.', summary_en: 'Introduces AlphaGo, which defeated the world champion in Go using deep neural networks and tree search.', page_url: 'https://www.nature.com/articles/nature16961', pdf_url: 'https://www.nature.com/articles/nature16961.pdf' },
-            { title: 'Human-level control through deep reinforcement learning (DQN)', authors: 'Volodymyr Mnih et al.', year: '2015', category: 'الأنظمة الذكية', category_en: 'Intelligent Systems', summary: 'تقدم DeepMind شبكة DQN التي تجمع بين التعلم العميق والتعلم المعزز لتتفوق على البشر في ألعاب أتاري.', summary_en: 'DeepMind presents DQN, combining deep learning and reinforcement learning to surpass humans in playing classic Atari games.', page_url: 'https://www.nature.com/articles/nature14236', pdf_url: 'https://www.nature.com/articles/nature14236.pdf' },
-            { title: 'A Survey of Multi-Agent Reinforcement Learning', authors: 'Kaiqing Zhang et al.', year: '2019', category: 'الأنظمة الذكية', category_en: 'Intelligent Systems', summary: 'ورقة مراجعة تشرح كيفية تعلم الأنظمة الذكية (مثل الروبوتات) التعاون أو التنافس معاً.', summary_en: 'A survey explaining how intelligent systems (like robots) learn to cooperate or compete using multi-agent reinforcement learning.', page_url: 'https://arxiv.org/abs/1911.10635', pdf_url: 'https://arxiv.org/pdf/1911.10635' },
-            { title: 'Autonomous Driving: A Survey', authors: 'Ekrem Yurtsever et al.', year: '2020', category: 'الأنظمة الذكية', category_en: 'Intelligent Systems', summary: 'مراجعة شاملة لتقنيات السيارات ذاتية القيادة، بما في ذلك الاستشعار، الإدراك، واتخاذ القرار.', summary_en: 'A comprehensive review of self-driving car technologies, including sensing, perception, and decision making.', page_url: 'https://ieeexplore.ieee.org/document/9085937', pdf_url: 'https://ieeexplore.ieee.org/document/9085937' },
-            { title: 'Swarm Robotics: A Review from the Swarm Engineering Perspective', authors: 'Levent Bayındır', year: '2016', category: 'الأنظمة الذكية', category_en: 'Intelligent Systems', summary: 'يستعرض كيفية تصميم أسراب من الروبوتات (Swarm Robotics) للعمل معاً لإنجاز مهام معقدة.', summary_en: 'Reviews how to design swarms of robots (Swarm Robotics) to work together to accomplish complex tasks.', page_url: 'https://link.springer.com/article/10.1007/s11721-016-0121-6', pdf_url: 'https://link.springer.com/article/10.1007/s11721-016-0121-6' },
-            { title: 'A Survey on Deep Learning for Autonomous Vehicles', authors: 'Sorin Grigorescu et al.', year: '2020', category: 'الأنظمة الذكية', category_en: 'Intelligent Systems', summary: 'يستكشف كيف يطبق التعلم العميق في المركبات ذاتية القيادة لتحسين الإدراك واتخاذ القرار.', summary_en: 'Explores how deep learning is applied in autonomous vehicles to improve perception and decision making.', page_url: 'https://arxiv.org/abs/1909.04462', pdf_url: 'https://arxiv.org/pdf/1909.04462' },
+        const DATA_TYPES = { ml: { ar: 'تعلم آلة', en: 'Machine Learning' }, repo: { ar: 'أبحاث ومستودعات', en: 'Research & Repositories' }, gov: { ar: 'حكومية ودولية', en: 'Government & International' } };
+        const DATA_SITES = [
+            { name: 'Kaggle Datasets', type: 'ml', url: 'https://www.kaggle.com/datasets', desc: 'منصة تضم آلاف مجموعات البيانات والدفاتر البرمجية ومسابقات علم البيانات، ومناسبة للتعلم والتجريب.' },
+            { name: 'Hugging Face Datasets', type: 'ml', url: 'https://huggingface.co/datasets', desc: 'مجموعات بيانات جاهزة للاستخدام في تدريب نماذج اللغة والرؤية والصوت، مع مكتبة برمجية لتحميلها بسهولة.' },
+            { name: 'UCI Machine Learning Repository', type: 'ml', url: 'https://archive.ics.uci.edu', desc: 'من أقدم المستودعات وأكثرها استخداماً في أبحاث التعلم الآلي والتدريس الجامعي.' },
+            { name: 'OpenML', type: 'ml', url: 'https://www.openml.org', desc: 'منصة مفتوحة لمشاركة مجموعات البيانات والتجارب ومقارنة أداء النماذج بشكل قابل للتكرار.' },
+            { name: 'Google Dataset Search', type: 'repo', url: 'https://datasetsearch.research.google.com', desc: 'محرك بحث يجمع مجموعات البيانات من آلاف المواقع حول العالم في مكان واحد.' },
+            { name: 'Zenodo', type: 'repo', url: 'https://zenodo.org', desc: 'مستودع مفتوح لحفظ البيانات والأبحاث ومشاركتها، ويمنح كل مادة معرّفاً دائماً (DOI) يسهل الاستشهاد به.' },
+            { name: 'AWS Open Data Registry', type: 'repo', url: 'https://registry.opendata.aws', desc: 'سجل لمجموعات بيانات ضخمة ومفتوحة مستضافة على خدمات أمازون السحابية.' },
+            { name: 'Our World in Data', type: 'repo', url: 'https://ourworldindata.org', desc: 'بيانات ورسوم بيانية تفاعلية عن قضايا العالم مثل الصحة والطاقة والتعليم، قابلة للتحميل.' },
+            { name: 'World Bank Open Data', type: 'gov', url: 'https://data.worldbank.org', desc: 'بيانات اقتصادية وتنموية لدول العالم من البنك الدولي، تغطي مؤشرات عديدة عبر سنوات طويلة.' },
+            { name: 'UN Data', type: 'gov', url: 'https://data.un.org', desc: 'إحصاءات رسمية من الأمم المتحدة ومنظماتها في مجالات السكان والتعليم والبيئة وغيرها.' },
+            { name: 'Data.gov', type: 'gov', url: 'https://data.gov', desc: 'البوابة الرسمية للبيانات الحكومية المفتوحة في الولايات المتحدة.' },
+            { name: 'المنصة الوطنية للبيانات المفتوحة (السعودية)', type: 'gov', url: 'https://open.data.gov.sa', desc: 'بوابة رسمية تنشر فيها الجهات الحكومية السعودية مجموعات بياناتها بصيغ مفتوحة قابلة للمعالجة.' }
         ];
 
         const ICONS = {
@@ -615,40 +695,10 @@
             return 'doc';
         }
 
-        function iconSvg(cat, size) {
-            return '<svg class="' + size + '" fill="none" stroke="currentColor" viewBox="0 0 24 24">' + ICONS[iconKey(cat)] + '</svg>';
-        }
-
-        function imgFallback(img) {
-            const list = (img.dataset.srcs || '').split(',').filter(Boolean);
-            const i = parseInt(img.dataset.try || '0', 10);
-            if (i < list.length) {
-                img.dataset.try = String(i + 1);
-                img.src = list[i];
-            } else {
-                img.onerror = null;
-                img.src = 'https://placehold.co/500x600/e0f2fe/0284c7?text=Expert';
-            }
-        }
-
-        function safeUrl(u) {
-            try {
-                const url = new URL(String(u || '').trim());
-                return (url.protocol === 'https:' || url.protocol === 'http:') ? url.href : '';
-            } catch (e) { return ''; }
-        }
-
-        function paperSummary(p) {
-            return (lang === 'en' && p.summary_en) ? p.summary_en : (p.summary || '');
-        }
-
-        function debounce(fn, ms) {
-            let t;
-            return function (...args) {
-                clearTimeout(t);
-                t = setTimeout(() => fn.apply(this, args), ms);
-            };
-        }
+        function iconSvg(cat, size) { return '<svg class="' + size + '" fill="none" stroke="currentColor" viewBox="0 0 24 24">' + ICONS[iconKey(cat)] + '</svg>'; }
+        function safeUrl(u) { try { const url = new URL(String(u || '').trim()); return (url.protocol === 'https:' || url.protocol === 'http:') ? url.href : ''; } catch (e) { return ''; } }
+        function paperSummary(p) { return (lang === 'en' && p.summary_en) ? p.summary_en : (p.summary || ''); }
+        function debounce(fn, ms) { let t; return function (...args) { clearTimeout(t); t = setTimeout(() => fn.apply(this, args), ms); }; }
 
         let papers = [];
         let loaded = false;
@@ -658,621 +708,361 @@
         const homeView = document.getElementById('homeView');
         const catView = document.getElementById('catView');
         const dataView = document.getElementById('dataView');
+        const paperView = document.getElementById('paperView');
+        const methodologyView = document.getElementById('methodologyView');
+        const reportView = document.getElementById('reportView');
+        
         const categoryGrid = document.getElementById('categoryGrid');
         const grid = document.getElementById('papersGrid');
         const countEl = document.getElementById('resultCount');
         const searchInput = document.getElementById('searchInput');
         const sortSelect = document.getElementById('sortSelect');
 
-        function catHref(cat) { return '#/c/' + encodeURIComponent(cat); }
-
-        function updateTitle() {
-            if (view === 'cat') document.title = label(currentCat) + " | LoboTech";
-            else if (view === 'data') document.title = t('dataTitle') + " | LoboTech";
-            else document.title = t('titleHome');
-        }
-
-        function updateCategoryHeader() {
-            if (!currentCat) return;
-            const titleEl = document.getElementById('catTitle');
-            if (titleEl) titleEl.textContent = label(currentCat);
-            const subEl = document.getElementById('catSubtitle');
-            if (subEl) {
-                if (loaded) {
-                    const base = papers.filter(p =>
-                        currentCat === ALL || (p.category || 'عام') === currentCat
-                    );
-                    subEl.textContent = t('nInField', base.length);
-                } else {
-                    subEl.textContent = '';
-                }
-            }
-        }
-
         function applyLang() {
             const html = document.documentElement;
-            html.lang = lang;
-            html.dir = lang === 'ar' ? 'rtl' : 'ltr';
-
+            html.lang = lang; html.dir = lang === 'ar' ? 'rtl' : 'ltr';
             document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t(el.dataset.i18n); });
             document.querySelectorAll('[data-i18n-html]').forEach(el => { el.innerHTML = t(el.dataset.i18nHtml); });
             document.querySelectorAll('[data-i18n-ph]').forEach(el => { el.placeholder = t(el.dataset.i18nPh); });
-            document.querySelectorAll('[data-i18n-aria]').forEach(el => { el.setAttribute('aria-label', t(el.dataset.i18nAria)); });
-            document.querySelectorAll('[data-i18n-alt]').forEach(el => { el.alt = t(el.dataset.i18nAlt); });
-
-            const meta = document.querySelector('meta[name="description"]');
-            if (meta) meta.setAttribute('content', t('metaDesc'));
             document.getElementById('langBtn').textContent = t('langBtn');
-
             updateCategoryHeader();
-            updateTitle();
+            refreshView();
         }
 
         function refreshView() {
-            renderNav();
-            renderServices();
-            renderTips();
-            renderTools();
+            renderNav(); renderServices(); renderTips(); renderTools();
             if (loaded) renderCategoryTiles();
-            if (view === 'cat') {
-                updateCategoryHeader();
-                if (loaded) renderCategoryPapers();
-                else {
-                    grid.innerHTML = '<div class="col-span-full text-center py-12 text-slate-400 font-medium">' + t('loadingPapers') + '</div>';
-                    countEl.textContent = '';
-                }
-            }
+            if (view === 'cat') { updateCategoryHeader(); if (loaded) renderCategoryPapers(); }
             if (view === 'data') { renderDataChips(); renderDataSites(); }
-            updateTitle();
+            if (view === 'paper') { showPaper(location.pathname.replace('/papers/', '')); }
+        }
+
+        function setMeta(attr, name, content) {
+            let el = document.head.querySelector(`meta[${attr}="${name}"]`);
+            if (!el) { el = document.createElement('meta'); el.setAttribute(attr, name); document.head.appendChild(el); }
+            el.setAttribute('content', content);
+        }
+        function setCanonical(url) {
+            let el = document.head.querySelector('link[rel="canonical"]');
+            if (!el) { el = document.createElement('link'); el.rel = 'canonical'; document.head.appendChild(el); }
+            el.href = url;
+        }
+        function updateMetaForView({ title, desc, canonical, ogType, jsonld }) {
+            document.title = title;
+            setMeta('name', 'description', desc);
+            setMeta('property', 'og:title', title);
+            setMeta('property', 'og:description', desc);
+            setMeta('property', 'og:url', canonical);
+            setMeta('property', 'og:type', ogType || 'website');
+            setCanonical(canonical);
+            document.getElementById('jsonld-view').textContent = JSON.stringify(jsonld || {});
         }
 
         function renderCategoryTiles() {
             categoryGrid.innerHTML = '';
             const counts = {};
-            papers.forEach(p => {
-                const c = p.category || 'عام';
-                counts[c] = (counts[c] || 0) + 1;
-            });
+            papers.forEach(p => { const c = p.category || 'عام'; counts[c] = (counts[c] || 0) + 1; });
             const cats = [ALL, ...Object.keys(counts)];
 
             cats.forEach(cat => {
                 const n = cat === ALL ? papers.length : counts[cat];
                 const a = document.createElement('a');
-                a.href = catHref(cat);
-                a.className = 'group bg-white rounded-2xl p-4 shadow-sm border border-sky-100 hover:shadow-xl hover:border-brand-300 hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-4';
-                const ico = document.createElement('div');
-                ico.className = 'w-12 h-12 shrink-0 rounded-xl bg-gradient-to-tr from-brand-600 to-sky-400 text-white flex items-center justify-center shadow-md shadow-brand-500/20';
-                ico.innerHTML = iconSvg(cat, 'w-6 h-6');
-                const info = document.createElement('div');
-                info.className = 'flex-1 min-w-0';
-                const name = document.createElement('h3');
-                name.className = 'font-bold text-slate-900 text-base group-hover:text-brand-600 transition-colors';
-                name.textContent = label(cat);
-                const cnt = document.createElement('p');
-                cnt.className = 'text-xs text-slate-500 mt-0.5';
-                cnt.textContent = t('nPapers', n);
-                info.append(name, cnt);
-                const arrow = document.createElement('span');
-                arrow.className = 'text-slate-300 group-hover:text-brand-600 transition-colors';
-                arrow.innerHTML = '<svg class="w-5 h-5 ltr:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>';
-                a.append(ico, info, arrow);
+                a.href = '/category/' + catSlug(cat);
+                a.className = 'group bg-white rounded-2xl p-4 shadow-sm border border-sky-100 hover:shadow-xl hover:border-brand-300 hover:-translate-y-0.5 transition-all flex items-center gap-4';
+                a.innerHTML = `<div class="w-12 h-12 shrink-0 rounded-xl bg-gradient-to-tr from-brand-600 to-sky-400 text-white flex items-center justify-center">${iconSvg(cat, 'w-6 h-6')}</div>
+                               <div class="flex-1 min-w-0"><h3 class="font-bold text-slate-900 group-hover:text-brand-600">${label(cat)}</h3><p class="text-xs text-slate-500 mt-0.5">${t('nPapers', n)}</p></div>
+                               <span class="text-slate-300 group-hover:text-brand-600"><svg class="w-5 h-5 ltr:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg></span>`;
                 categoryGrid.appendChild(a);
             });
 
             const d = document.createElement('a');
-            d.href = '#/data';
-            d.className = 'group bg-white rounded-2xl p-4 shadow-sm border border-emerald-100 hover:shadow-xl hover:border-emerald-300 hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-4';
-            const dIco = document.createElement('div');
-            dIco.className = 'w-12 h-12 shrink-0 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-400 text-white flex items-center justify-center shadow-md shadow-emerald-500/20';
-            dIco.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">' + ICONS.database + '</svg>';
-            const dInfo = document.createElement('div');
-            dInfo.className = 'flex-1 min-w-0';
-            const dName = document.createElement('h3');
-            dName.className = 'font-bold text-slate-900 text-base group-hover:text-emerald-600 transition-colors';
-            dName.textContent = t('dataTitle');
-            const dCnt = document.createElement('p');
-            dCnt.className = 'text-xs text-slate-500 mt-0.5';
-            dCnt.textContent = t('nSites', DATA_SITES.length);
-            dInfo.append(dName, dCnt);
-            const dArrow = document.createElement('span');
-            dArrow.className = 'text-slate-300 group-hover:text-emerald-600 transition-colors';
-            dArrow.innerHTML = '<svg class="w-5 h-5 ltr:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>';
-            d.append(dIco, dInfo, dArrow);
+            d.href = '/data';
+            d.className = 'group bg-white rounded-2xl p-4 shadow-sm border border-emerald-100 hover:shadow-xl hover:border-emerald-300 hover:-translate-y-0.5 transition-all flex items-center gap-4';
+            d.innerHTML = `<div class="w-12 h-12 shrink-0 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-400 text-white flex items-center justify-center"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">${ICONS.database}</svg></div>
+                           <div class="flex-1 min-w-0"><h3 class="font-bold text-slate-900 group-hover:text-emerald-600">${t('dataTitle')}</h3><p class="text-xs text-slate-500 mt-0.5">${t('nSites', DATA_SITES.length)}</p></div>
+                           <span class="text-slate-300 group-hover:text-emerald-600"><svg class="w-5 h-5 ltr:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg></span>`;
             categoryGrid.appendChild(d);
-        }
-
-        function makeLink(href, text, primary) {
-            const a = document.createElement('a');
-            a.href = href; a.target = '_blank'; a.rel = 'noopener noreferrer'; a.textContent = text;
-            a.className = primary
-                ? 'bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs px-4 py-2 rounded-lg transition-all'
-                : 'bg-white hover:bg-sky-50 text-brand-700 font-bold text-xs px-4 py-2 rounded-lg border border-sky-200 transition-all';
-            return a;
         }
 
         function renderCategoryPapers() {
             const base = papers.filter(p => currentCat === ALL || (p.category || 'عام') === currentCat);
             const q = searchInput.value.trim().toLowerCase();
-            let list = base.filter(p =>
-                !q || [p.title, p.authors, p.category, p.category_en, p.summary, p.summary_en, p.year].join(' ').toLowerCase().includes(q)
-            );
-            const sort = sortSelect.value;
-            if (sort === 'newest') list = list.slice().sort((a, b) => (parseInt(b.year) || 0) - (parseInt(a.year) || 0));
-            if (sort === 'oldest') list = list.slice().sort((a, b) => (parseInt(a.year) || 9999) - (parseInt(b.year) || 9999));
+            let list = base.filter(p => !q || [p.title, p.authors, p.category, p.summary, p.year].join(' ').toLowerCase().includes(q));
+            if (sortSelect.value === 'newest') list.sort((a, b) => (parseInt(b.year) || 0) - (parseInt(a.year) || 0));
+            if (sortSelect.value === 'oldest') list.sort((a, b) => (parseInt(a.year) || 9999) - (parseInt(b.year) || 9999));
 
             updateCategoryHeader();
             countEl.textContent = t('showing', list.length, base.length);
             grid.innerHTML = '';
-
-            if (list.length === 0) {
-                const d = document.createElement('div');
-                d.className = 'col-span-full text-center py-12 text-slate-400 font-medium';
-                d.textContent = base.length === 0 ? t('noPapers') : t('noResults');
-                grid.appendChild(d);
-                return;
-            }
+            if (list.length === 0) { grid.innerHTML = `<div class="col-span-full text-center py-12 text-slate-400">${base.length === 0 ? t('noPapers') : t('noResults')}</div>`; return; }
 
             list.forEach(p => {
                 const card = document.createElement('article');
-                card.className = 'bg-white rounded-2xl shadow-sm border border-sky-100 hover:shadow-xl hover:border-brand-300 transition-all duration-300 flex flex-col justify-between overflow-hidden';
-                const body = document.createElement('div');
-                body.className = 'p-6 space-y-3';
-                const meta = document.createElement('div');
-                meta.className = 'flex items-center justify-between text-xs font-bold text-brand-600';
-                const cat = document.createElement('span');
-                cat.className = 'bg-brand-50 px-3 py-1 rounded-md border border-brand-100';
-                cat.textContent = label(p.category || 'عام');
-                const yr = document.createElement('span');
-                yr.textContent = p.year || '';
-                meta.append(cat, yr);
-                const h3 = document.createElement('h3');
-                h3.className = 'text-lg font-bold text-slate-900 leading-snug text-start';
-                h3.dir = 'auto'; h3.textContent = p.title;
-                const au = document.createElement('p');
-                au.className = 'text-xs text-slate-500 font-medium text-start';
-                au.dir = 'auto'; au.textContent = p.authors || '';
-                const sm = document.createElement('p');
-                sm.className = 'text-slate-600 text-sm leading-relaxed line-clamp-5';
-                sm.textContent = paperSummary(p);
-                body.append(meta, h3, au, sm);
-                const footer = document.createElement('div');
-                footer.className = 'px-6 py-4 bg-sky-50/50 border-t border-sky-50 flex flex-wrap items-center gap-2';
-                const page = safeUrl(p.page_url), pdf = safeUrl(p.pdf_url);
-                if (page) footer.appendChild(makeLink(page, t('viewPaper'), true));
-                if (pdf) footer.appendChild(makeLink(pdf, t('openPdf'), false));
-                if (!page && !pdf) {
-                    const s = document.createElement('span');
-                    s.className = 'text-xs text-slate-400';
-                    s.textContent = t('noLink');
-                    footer.appendChild(s);
-                }
-                card.append(body, footer);
+                card.className = 'bg-white rounded-2xl shadow-sm border border-sky-100 hover:shadow-xl hover:border-brand-300 flex flex-col justify-between overflow-hidden';
+                card.innerHTML = `
+                    <div class="p-6 space-y-3">
+                        <div class="flex items-center justify-between text-xs font-bold text-brand-600">
+                            <span class="bg-brand-50 px-3 py-1 rounded-md border border-brand-100">${label(p.category || 'عام')}</span>
+                            <span>${p.year || ''}</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 leading-snug" dir="auto">${p.title}</h3>
+                        <p class="text-xs text-slate-500 font-medium" dir="auto">${p.authors || ''}</p>
+                        <p class="text-slate-600 text-sm leading-relaxed line-clamp-5" dir="auto">${paperSummary(p)}</p>
+                    </div>
+                    <div class="px-6 py-4 bg-sky-50/50 border-t border-sky-50 flex flex-wrap items-center gap-2">
+                        <a href="/papers/${paperSlug(p)}" class="bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs px-4 py-2 rounded-lg transition-all">${t('viewPaper')}</a>
+                        ${safeUrl(p.pdf_url) ? `<a href="${safeUrl(p.pdf_url)}" target="_blank" rel="noopener" class="bg-white hover:bg-sky-50 text-brand-700 font-bold text-xs px-4 py-2 rounded-lg border border-sky-200">${t('openPdf')}</a>` : ''}
+                    </div>`;
                 grid.appendChild(card);
             });
         }
 
-        const DATA_TYPES = {
-            ml:   { ar: 'تعلم آلة', en: 'Machine Learning' },
-            repo: { ar: 'أبحاث ومستودعات', en: 'Research & Repositories' },
-            gov:  { ar: 'حكومية ودولية', en: 'Government & International' }
-        };
+        function updateCategoryHeader() {
+            if (!currentCat) return;
+            document.getElementById('catTitle').textContent = label(currentCat);
+            document.getElementById('catSubtitle').textContent = loaded ? t('nInField', papers.filter(p => currentCat === ALL || (p.category || 'عام') === currentCat).length) : '';
+        }
 
-        const DATA_SITES = [
-            { name: 'Kaggle Datasets', type: 'ml', url: 'https://www.kaggle.com/datasets', desc: 'منصة تضم آلاف مجموعات البيانات والدفاتر البرمجية ومسابقات علم البيانات، ومناسبة للتعلم والتجريب.', desc_en: 'A platform hosting thousands of datasets, notebooks and data science competitions, great for learning and experimenting.' },
-            { name: 'Hugging Face Datasets', type: 'ml', url: 'https://huggingface.co/datasets', desc: 'مجموعات بيانات جاهزة للاستخدام في تدريب نماذج اللغة والرؤية والصوت، مع مكتبة برمجية لتحميلها بسهولة.', desc_en: 'Ready-to-use datasets for training language, vision and audio models, with a library to load them easily.' },
-            { name: 'UCI Machine Learning Repository', type: 'ml', url: 'https://archive.ics.uci.edu', desc: 'من أقدم المستودعات وأكثرها استخداماً في أبحاث التعلم الآلي والتدريس الجامعي.', desc_en: 'One of the oldest and most widely used repositories for machine learning research and university teaching.' },
-            { name: 'OpenML', type: 'ml', url: 'https://www.openml.org', desc: 'منصة مفتوحة لمشاركة مجموعات البيانات والتجارب ومقارنة أداء النماذج بشكل قابل للتكرار.', desc_en: 'An open platform for sharing datasets and experiments and comparing model performance reproducibly.' },
-            { name: 'Google Dataset Search', type: 'repo', url: 'https://datasetsearch.research.google.com', desc: 'محرك بحث يجمع مجموعات البيانات من آلاف المواقع حول العالم في مكان واحد.', desc_en: 'A search engine that gathers datasets from thousands of sites across the web in one place.' },
-            { name: 'Zenodo', type: 'repo', url: 'https://zenodo.org', desc: 'مستودع مفتوح لحفظ البيانات والأبحاث ومشاركتها، ويمنح كل مادة معرّفاً دائماً (DOI) يسهل الاستشهاد به.', desc_en: 'An open repository for storing and sharing data and research, giving each item a permanent DOI that is easy to cite.' },
-            { name: 'AWS Open Data Registry', type: 'repo', url: 'https://registry.opendata.aws', desc: 'سجل لمجموعات بيانات ضخمة ومفتوحة مستضافة على خدمات أمازون السحابية.', desc_en: "A registry of large open datasets hosted on Amazon's cloud services." },
-            { name: 'Our World in Data', type: 'repo', url: 'https://ourworldindata.org', desc: 'بيانات ورسوم بيانية تفاعلية عن قضايا العالم مثل الصحة والطاقة والتعليم، قابلة للتحميل.', desc_en: 'Interactive data and charts on global issues such as health, energy and education, available to download.' },
-            { name: 'World Bank Open Data', type: 'gov', url: 'https://data.worldbank.org', desc: 'بيانات اقتصادية وتنموية لدول العالم من البنك الدولي، تغطي مؤشرات عديدة عبر سنوات طويلة.', desc_en: 'Economic and development data for countries around the world from the World Bank, covering many indicators over long periods.' },
-            { name: 'UN Data', type: 'gov', url: 'https://data.un.org', desc: 'إحصاءات رسمية من الأمم المتحدة ومنظماتها في مجالات السكان والتعليم والبيئة وغيرها.', desc_en: 'Official statistics from the United Nations and its agencies on population, education, the environment and more.' },
-            { name: 'Data.gov', type: 'gov', url: 'https://data.gov', desc: 'البوابة الرسمية للبيانات الحكومية المفتوحة في الولايات المتحدة.', desc_en: 'The official portal for open U.S. government data.' },
-            { name: 'المنصة الوطنية للبيانات المفتوحة (السعودية)', name_en: 'Saudi National Open Data Platform', type: 'gov', url: 'https://open.data.gov.sa', desc: 'بوابة رسمية تنشر فيها الجهات الحكومية السعودية مجموعات بياناتها بصيغ مفتوحة قابلة للمعالجة.', desc_en: 'The official portal where Saudi government entities publish their datasets in open, machine-readable formats.' }
-        ];
+        function showPaper(slug) {
+            const p = papers.find(x => paperSlug(x) === slug);
+            if (!p) { showHome(); return; }
+            view = 'paper';
+            [homeView, catView, dataView, methodologyView, reportView].forEach(v => v.classList.add('hidden'));
+            paperView.classList.remove('hidden');
+            
+            document.getElementById('paperTitle').textContent = p.title;
+            document.getElementById('paperAuthors').textContent = p.authors || '';
+            document.getElementById('paperYear').textContent = p.year || '';
+            document.getElementById('paperSummary').textContent = paperSummary(p);
+            
+            const catEl = document.getElementById('paperCat');
+            catEl.textContent = label(p.category || 'عام'); catEl.href = '/category/' + catSlug(p.category || 'عام');
+            document.getElementById('paperBackLink').href = '/category/' + catSlug(p.category || 'عام');
+            
+            const pdfBtn = document.getElementById('paperPdfBtn');
+            const pageBtn = document.getElementById('paperPageBtn');
+            pdfBtn.style.display = p.pdf_url ? '' : 'none'; if (p.pdf_url) pdfBtn.href = p.pdf_url;
+            pageBtn.style.display = p.page_url ? '' : 'none'; if (p.page_url) pageBtn.href = p.page_url;
 
+            updateMetaForView({
+                title: p.title + ' | LoboTech', desc: paperSummary(p).slice(0, 160),
+                canonical: SITE + '/papers/' + slug, ogType: 'article',
+                jsonld: { "@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": p.title, "author": [{"@type":"Person", "name": p.authors}], "datePublished": p.year, "abstract": paperSummary(p), "url": SITE + '/papers/' + slug }
+            });
+            window.scrollTo(0, 0);
+        }
+
+        function showMethodology() {
+            view = 'methodology';
+            [homeView, catView, dataView, paperView, reportView].forEach(v => v.classList.add('hidden'));
+            methodologyView.classList.remove('hidden');
+            updateMetaForView({ title: 'منهجية التلخيص | LoboTech', desc: 'كيف نختار الأوراق ونلخصها ونتحقق من دقتها.', canonical: SITE + '/methodology' });
+            window.scrollTo(0, 0);
+        }
+
+        function showReport() {
+            view = 'report';
+            [homeView, catView, dataView, paperView, methodologyView].forEach(v => v.classList.add('hidden'));
+            reportView.classList.remove('hidden');
+            updateMetaForView({ title: 'أبلغ عن خطأ | LoboTech', desc: 'ساعدنا في تصحيح أي خطأ.', canonical: SITE + '/report' });
+            window.scrollTo(0, 0);
+        }
+
+        function showData() {
+            view = 'data';
+            [homeView, catView, paperView, methodologyView, reportView].forEach(v => v.classList.add('hidden'));
+            dataView.classList.remove('hidden');
+            document.getElementById('dataIcon').innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">' + ICONS.database + '</svg>';
+            dataSearch.value = ''; dataType = 'all'; renderDataChips(); renderDataSites();
+            updateMetaForView({ title: 'مصادر البيانات المفتوحة | LoboTech', desc: 'دليل مصادر البيانات المفتوحة للمشاريع التقنية.', canonical: SITE + '/data' });
+            window.scrollTo(0, 0);
+        }
+
+        function showCategory(cat) {
+            view = 'cat'; currentCat = cat;
+            [homeView, dataView, paperView, methodologyView, reportView].forEach(v => v.classList.add('hidden'));
+            catView.classList.remove('hidden');
+            document.getElementById('catIcon').innerHTML = iconSvg(cat, 'w-6 h-6');
+            searchInput.value = ''; sortSelect.value = 'sheet';
+            if (loaded) renderCategoryPapers(); else grid.innerHTML = `<div class="col-span-full text-center py-12 text-slate-400">${t('loadingPapers')}</div>`;
+            updateMetaForView({ title: label(cat) + " | LoboTech", desc: t('fieldsDesc'), canonical: SITE + '/category/' + catSlug(cat) });
+            window.scrollTo(0, 0);
+        }
+
+        function showHome() {
+            view = 'home';
+            [catView, dataView, paperView, methodologyView, reportView].forEach(v => v.classList.add('hidden'));
+            homeView.classList.remove('hidden');
+            updateMetaForView({ title: 'لوبو تيك | LoboTech — ملخصات أوراق الذكاء الاصطناعي بالعربي', desc: 'دليل عربي لأهم الأوراق العلمية في الذكاء الاصطناعي.', canonical: SITE + '/' });
+        }
+
+        function route() {
+            const path = location.pathname.replace(/\/+$/, '') || '/';
+            if (path === '/data') return showData();
+            if (path === '/methodology') return showMethodology();
+            if (path === '/report') return showReport();
+            if (path.indexOf('/papers/') === 0) return showPaper(decodeURIComponent(path.slice(8)));
+            if (path.indexOf('/category/') === 0) return showCategory(catFromSlug(decodeURIComponent(path.slice(10))));
+            showHome();
+        }
+
+        document.addEventListener('click', e => {
+            const a = e.target.closest && e.target.closest('a[href^="/"]');
+            if (!a || a.target === '_blank' || a.hasAttribute('download')) return;
+            e.preventDefault();
+            history.pushState(null, '', a.getAttribute('href'));
+            route();
+            document.getElementById('mobileMenu').classList.add('hidden');
+        });
+
+        const DATA_TYPES_KEYS = { ml: 'تعلم آلة', repo: 'أبحاث ومستودعات', gov: 'حكومية ودولية' };
         let dataType = 'all';
         const dataSearch = document.getElementById('dataSearch');
         const dataGrid = document.getElementById('dataGrid');
         const dataChips = document.getElementById('dataChips');
         const dataCount = document.getElementById('dataCount');
 
-        function typeLabel(k) { return k === 'all' ? t('dataAll') : DATA_TYPES[k][lang]; }
-
         function renderDataChips() {
-            const keys = ['all', ...Object.keys(DATA_TYPES).filter(k => DATA_SITES.some(s => s.type === k))];
             dataChips.innerHTML = '';
-            keys.forEach(k => {
+            ['all', ...Object.keys(DATA_TYPES_KEYS)].forEach(k => {
                 const b = document.createElement('button');
-                b.type = 'button';
-                b.textContent = typeLabel(k);
-                b.className = 'px-4 py-1.5 rounded-full text-xs font-bold border transition-all ' +
-                    (k === dataType ? 'bg-emerald-600 text-white border-emerald-600'
-                                    : 'bg-white text-slate-600 border-emerald-200 hover:border-emerald-500 hover:text-emerald-700');
-                b.addEventListener('click', () => { dataType = k; renderDataChips(); renderDataSites(); });
+                b.type = 'button'; b.textContent = k === 'all' ? t('dataAll') : DATA_TYPES_KEYS[k];
+                b.className = `px-4 py-1.5 rounded-full text-xs font-bold border transition-all ${k === dataType ? 'bg-emerald-600 text-white border-emerald-600' : 'bg-white text-slate-600 border-emerald-200 hover:border-emerald-500'}`;
+                b.onclick = () => { dataType = k; renderDataChips(); renderDataSites(); };
                 dataChips.appendChild(b);
             });
         }
 
         function renderDataSites() {
             const q = dataSearch.value.trim().toLowerCase();
-            const list = DATA_SITES.filter(s =>
-                (dataType === 'all' || s.type === dataType) &&
-                (!q || [s.name, s.name_en, DATA_TYPES[s.type].ar, DATA_TYPES[s.type].en, s.desc, s.desc_en].join(' ').toLowerCase().includes(q))
-            );
+            const list = DATA_SITES.filter(s => (dataType === 'all' || s.type === dataType) && (!q || [s.name, s.desc].join(' ').toLowerCase().includes(q)));
             document.getElementById('dataSubtitle').textContent = t('dataSubtitle', DATA_SITES.length);
             dataCount.textContent = t('showingSites', list.length, DATA_SITES.length);
-            dataGrid.innerHTML = '';
-
-            if (list.length === 0) {
-                const e = document.createElement('div');
-                e.className = 'col-span-full text-center py-12 text-slate-400 font-medium';
-                e.textContent = t('noResults');
-                dataGrid.appendChild(e);
-                return;
-            }
-
+            dataGrid.innerHTML = list.length === 0 ? `<div class="col-span-full text-center py-12 text-slate-400">${t('noResults')}</div>` : '';
+            
             list.forEach(s => {
                 const href = safeUrl(s.url);
                 const card = document.createElement(href ? 'a' : 'article');
-                if (href) { card.href = href; card.target = '_blank'; card.rel = 'noopener noreferrer'; }
-                card.className = 'bg-white rounded-2xl shadow-sm border border-emerald-100 hover:shadow-xl hover:border-emerald-300 transition-all duration-300 flex flex-col justify-between overflow-hidden';
-                const body = document.createElement('div');
-                body.className = 'p-6 space-y-3';
-                const tag = document.createElement('span');
-                tag.className = 'inline-block bg-emerald-50 text-emerald-700 text-xs font-bold px-3 py-1 rounded-md border border-emerald-100';
-                tag.textContent = typeLabel(s.type);
-                const h3 = document.createElement('h3');
-                h3.className = 'text-lg font-bold text-slate-900 leading-snug text-start';
-                h3.dir = 'auto';
-                h3.textContent = (lang === 'en' && s.name_en) ? s.name_en : s.name;
-                const p = document.createElement('p');
-                p.className = 'text-slate-600 text-sm leading-relaxed';
-                p.textContent = (lang === 'en' && s.desc_en) ? s.desc_en : s.desc;
-                body.append(tag, h3, p);
-                const footer = document.createElement('div');
-                footer.className = 'px-6 py-4 bg-emerald-50/50 border-t border-emerald-50';
-                if (href) {
-                    const a = document.createElement('span');
-                    a.textContent = t('visitSite');
-                    a.className = 'inline-block bg-emerald-600 text-white font-bold text-xs px-4 py-2 rounded-lg';
-                    footer.appendChild(a);
-                }
-                card.append(body, footer);
+                if (href) { card.href = href; card.target = '_blank'; }
+                card.className = 'bg-white rounded-2xl shadow-sm border border-emerald-100 hover:shadow-xl transition-all flex flex-col justify-between overflow-hidden';
+                card.innerHTML = `<div class="p-6 space-y-3"><span class="inline-block bg-emerald-50 text-emerald-700 text-xs font-bold px-3 py-1 rounded-md border border-emerald-100">${DATA_TYPES_KEYS[s.type]}</span><h3 class="text-lg font-bold text-slate-900 leading-snug">${s.name}</h3><p class="text-slate-600 text-sm leading-relaxed">${s.desc}</p></div><div class="px-6 py-4 bg-emerald-50/50 border-t border-emerald-50">${href ? `<span class="inline-block bg-emerald-600 text-white font-bold text-xs px-4 py-2 rounded-lg">${t('visitSite')}</span>` : ''}</div>`;
                 dataGrid.appendChild(card);
             });
         }
 
-        const NAV = [
-            { id: 'about',    key: 'navAbout' },
-            { id: 'services', key: 'navServices' },
-            { id: 'research', key: 'navFields' },
-            { id: 'tools',    key: 'navTools' },
-            { id: 'tips',     key: 'navTips' }
-        ];
-
+        const NAV = [{ id: 'about', key: 'navAbout' }, { id: 'services', key: 'navServices' }, { id: 'research', key: 'navFields' }, { id: 'tools', key: 'navTools' }, { id: 'tips', key: 'navTips' }];
+        
         function renderNav() {
-            const boxes = [
-                [document.getElementById('navLinks'), 'hover:text-brand-600 transition-colors'],
-                [document.getElementById('mobileMenu'), 'mobile-link block px-3 py-2.5 rounded-lg hover:bg-sky-50'],
-                [document.getElementById('footerLinks'), 'hover:text-brand-600']
-            ];
-            boxes.forEach(([box, cls]) => {
+            [document.getElementById('navLinks'), document.getElementById('mobileMenu'), document.getElementById('footerLinks')].forEach(box => {
                 box.innerHTML = '';
                 NAV.forEach(n => {
                     const a = document.createElement('a');
-                    a.href = '#' + n.id;
-                    a.className = cls;
-                    a.dataset.i18n = n.key;
+                    a.href = '/' + (view === 'home' ? '#' : '') + n.id;
+                    a.className = box.id === 'mobileMenu' ? 'mobile-link block px-3 py-2.5 rounded-lg hover:bg-sky-50' : 'hover:text-brand-600 transition-colors';
                     a.textContent = t(n.key);
+                    if(view !== 'home') a.onclick = (e) => { e.preventDefault(); history.pushState(null, '', '/'); route(); setTimeout(() => document.getElementById(n.id).scrollIntoView(), 50); }
                     box.appendChild(a);
                 });
             });
+            const extra = [{ href: '/methodology', label: 'منهجية التلخيص' }, { href: '/report', label: 'أبلغ عن خطأ' }];
+            const footerBox = document.getElementById('footerLinks');
+            extra.forEach(x => { const a = document.createElement('a'); a.href = x.href; a.textContent = x.label; a.className = 'hover:text-brand-600 text-slate-500'; footerBox.appendChild(a); });
         }
 
         function toggleModal(id, show) {
             const m = document.getElementById(id);
-            if (show) {
-                m.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-            } else {
-                m.classList.add('hidden');
-                document.body.style.overflow = '';
-            }
+            if (show) { m.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
+            else { m.classList.add('hidden'); document.body.style.overflow = ''; }
         }
 
         const SERVICES = [
-            { 
-                icon: 'phone', 
-                t: 'الاستشارة', 
-                t_en: 'Consulting', 
-                d: 'تواصل معي مباشرة للاستشارات التقنية والأكاديمية عبر الهاتف أو البريد.', 
-                d_en: 'Contact me directly for technical and academic consulting via phone or email.', 
-                action: 'contact'
-            },
-            { 
-                icon: 'pencil', 
-                t: 'المقالات', 
-                t_en: 'Articles', 
-                d: 'مقالات وأوراق علمية في الذكاء الاصطناعي والتقنية.', 
-                d_en: 'Articles and scientific papers in AI and technology.', 
-                action: 'none' 
-            },
-            { 
-                icon: 'cap', 
-                t: 'الدورات', 
-                t_en: 'Courses', 
-                d: 'دورات تدريبية في بايثون، باور بي آي، وقواعد البيانات.', 
-                d_en: 'Training courses in Python, Power BI, and Databases.', 
-                action: 'courses'
-            },
-            { 
-                icon: 'code', 
-                t: 'تحليل البيانات والبرمجة', 
-                t_en: 'Data Analysis & Programming', 
-                d: 'تحليل البيانات وبناء الحلول البرمجية المخصصة.', 
-                d_en: 'Data analysis and building custom programming solutions.', 
-                action: 'none' 
-            }
+            { icon: 'phone', t: 'الاستشارة', d: 'تواصل معي مباشرة للاستشارات التقنية والأكاديمية عبر الهاتف أو البريد.', action: 'contact' },
+            { icon: 'pencil', t: 'المقالات', d: 'مقالات وأوراق علمية في الذكاء الاصطناعي والتقنية.', action: 'none' },
+            { icon: 'cap', t: 'الدورات', d: 'دورات تدريبية في بايثون، باور بي آي، وقواعد البيانات.', action: 'courses' },
+            { icon: 'code', t: 'تحليل البيانات والبرمجة', d: 'تحليل البيانات وبناء الحلول البرمجية المخصصة.', action: 'none' }
         ];
-
-        const servicesGrid = document.getElementById('servicesGrid');
-
         function renderServices() {
-            servicesGrid.innerHTML = '';
+            const grid = document.getElementById('servicesGrid'); grid.innerHTML = '';
             SERVICES.forEach(sv => {
-                const isClickable = sv.action !== 'none';
                 const card = document.createElement('div');
-                card.className = `service-card w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(25%-0.95rem)] bg-white rounded-2xl border border-sky-100 p-6 space-y-4 ${isClickable ? 'clickable-card hover:border-brand-400' : 'hover:border-sky-200'}`;
-                
-                const ico = document.createElement('div');
-                ico.className = 'w-14 h-14 rounded-2xl bg-gradient-to-tr from-brand-600 to-sky-400 text-white flex items-center justify-center shadow-md shadow-brand-500/20';
-                ico.innerHTML = '<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">' + ICONS[sv.icon] + '</svg>';
-                
-                const h3 = document.createElement('h3');
-                h3.className = 'font-black text-slate-900 text-lg';
-                h3.textContent = (lang === 'en' && sv.t_en) ? sv.t_en : sv.t;
-                
-                const p = document.createElement('p');
-                p.className = 'text-sm text-slate-600 leading-relaxed';
-                p.textContent = (lang === 'en' && sv.d_en) ? sv.d_en : sv.d;
-                
-                card.append(ico, h3, p);
-
-                if (sv.action === 'contact') {
-                    card.addEventListener('click', () => toggleModal('contactModal', true));
-                } else if (sv.action === 'courses') {
-                    card.addEventListener('click', () => toggleModal('coursesModal', true));
-                }
-
-                servicesGrid.appendChild(card);
+                card.className = `service-card w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(25%-0.95rem)] bg-white rounded-2xl border border-sky-100 p-6 space-y-4 ${sv.action !== 'none' ? 'clickable-card hover:border-brand-400' : ''}`;
+                card.innerHTML = `<div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-brand-600 to-sky-400 text-white flex items-center justify-center"><svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">${ICONS[sv.icon]}</svg></div><h3 class="font-black text-slate-900 text-lg">${sv.t}</h3><p class="text-sm text-slate-600 leading-relaxed">${sv.d}</p>`;
+                if (sv.action === 'contact') card.onclick = () => toggleModal('contactModal', true);
+                if (sv.action === 'courses') card.onclick = () => toggleModal('coursesModal', true);
+                grid.appendChild(card);
             });
         }
 
         const TIPS = [
-            { t: 'ابدأ بالملخص والخاتمة', t_en: 'Start with the abstract and conclusion', d: 'اقرأهما أولاً لتقرر هل تستحق الورقة قراءتها كاملة قبل أن تستثمر وقتك فيها.', d_en: 'Read them first to decide whether the paper deserves a full read before you invest time in it.', detail: 'الملخص يعطيك لمحة سريعة عن المشكلة والحل والنتائج، بينما الخاتمة تلخص المساهمات الفعلية وما حققه الباحثون. قراءتهما تمكنك من تكوين صورة عامة وفلترة الأبحاث غير المرتبطة بموضوعك بدقة.', detail_en: 'The abstract gives a quick overview of the problem, solution, and results, while the conclusion summarizes actual contributions and achievements. Reading both helps you form a general picture and filter out irrelevant papers accurately.', example: 'مثال: في ورقة BERT، الملخص يوضح فوراً أنها تقدم فهماً ثنائياً للسياق وتتفوق في 11 مهمة لغوية دون الحاجة لقراءة كل المعادلات الرياضية في البداية.', example_en: 'Example: In the BERT paper, the abstract immediately shows it provides bidirectional context understanding and outperforms on 11 NLP tasks without reading all equations first.' },
-            { t: 'ابدأ بورقة مراجعة (Survey)', t_en: 'Begin with a survey paper', d: 'أوراق المراجعة ترسم لك خريطة المجال وأهم الأعمال فيه، فتفهم أين تقف كل ورقة.', d_en: 'Survey papers map out a field and its key works, so you can see where each paper fits.', detail: 'عند الدخول في مجال بحثي جديد تماماً (مثل LLMs أو رؤية الحاسب)، ابحث دائماً عن ورقة تحمل عنوان "A Survey on..." لأنها تجمع مئات الأبحاث السابقة وتصنفها ترتيبياً وتاريخياً.', detail_en: 'When entering a brand new research field (such as LLMs or Computer Vision), always look for a paper titled "A Survey on..." as it aggregates hundreds of prior works and classifies them.', example: 'مثال: بدلاً من قراءة 50 ورقة عشوائية عن توليد الصور، اقرأ ورقة مراجعة واحدة شاملة عن تاريخ وتقنيات الـ Diffusion Models.', example_en: 'Example: Instead of reading 50 random papers on image generation, read one comprehensive survey paper on the history and techniques of Diffusion Models.' },
-            { t: 'تتبّع الاستشهادات', t_en: 'Follow the citations', d: 'من صفحة الورقة في Google Scholar افتح "Cited by" لتصل إلى الأعمال الأحدث التي بُنيت عليها.', d_en: 'From the paper page on Google Scholar, open "Cited by" to reach newer work built on it.', detail: 'الاستشهادات تدلك على كيفية تطور الفكرة؛ الاستشهادات السابقة توضح الجذور التاريخية، والاستشهادات اللاحقة (Cited by) توضح الانتقادات والتحسينات الحديثة التي أضيفت على الورقة الأساسية.', detail_en: 'Citations show how an idea evolved; past citations show historical roots, while subsequent citations (Cited by) show modern critiques and improvements built upon the core paper.', example: 'مثال: عند قراءة ورقة ResNet لعام 2015، النقر على "Cited by" يظهر لك آلاف الأبحاث الحديثة التي استخدمت ResNet أو عدّلت عليها.', example_en: 'Example: When reading the 2015 ResNet paper, clicking "Cited by" shows thousands of recent papers that used or modified ResNet.' },
-            { t: 'تحقق من حالة النشر', t_en: 'Check the publication status', d: 'ميّز بين ورقة منشورة بعد تحكيم وورقة قبل النشر (preprint) لم تُراجع من محكّمين بعد.', d_en: 'Tell a peer-reviewed paper apart from a preprint that has not yet been reviewed by referees.', detail: 'الأوراق الموجودة على منصات مثل arXiv غالباً تكون مسودات أولية (Preprints) سريعة النشر ولم تخضع بعد لمراجعة الأقران الأكاديمية الصارمة، بينما الأوراق المنشورة في مؤجلات محكّمة (مثل NeurIPS أو ICML) تكون موثوقة علمياً بشكل أكبر.', detail_en: 'Papers on platforms like arXiv are often preprints that have not undergone rigorous peer review, whereas papers published in refereed venues (like NeurIPS or ICML) carry higher academic reliability.', example: 'مثال: انتبه عند اعتماد أرقام أداء من ورقة على arXiv لم تُقبل بعد في مؤتمر معتمد، فقد تتغير النتائج لاحقاً.', example_en: 'Example: Be cautious when relying on performance numbers from an unrefereed arXiv preprint, as results may change later.' },
-            { t: 'دوّن مراجعك من البداية', t_en: 'Record references from the start', d: 'استخدم أداة إدارة المراجع مثل Zotero منذ أول ورقة تقرؤها حتى لا تضيع المصادر.', d_en: 'Use a reference manager such as Zotero from the first paper you read so sources are not lost.', detail: 'جمع الأوراق دون تنظيم يؤدي إلى ضياع وقت كبير لاحقاً في البحث عن رابط أو مؤلف. أدوات مثل Zotero أو Mendeley تحفظ المقال مع ملف الـ PDF وتولد الاستشهاد بالمؤلف بضغطة زر واحدة.', detail_en: 'Collecting papers without organization wastes massive time later. Tools like Zotero or Mendeley save articles with PDFs and generate citations instantly.', example: 'مثال: حفظ ورقة Transformer مع تصنيفها في مجلد "نماذج اللغة" في Zotero مع إضافة وسم "مهم جداً" يسهل استرجاعها أثناء كتابة بحثك.', example_en: 'Example: Saving the Transformer paper in a "Language Models" folder in Zotero with a "Must Read" tag makes retrieval effortless.' },
-            { t: 'ابحث عن البيانات والشيفرة', t_en: 'Look for the data and code', d: 'إن أتاح المؤلفون بياناتهم وشيفرتهم فجرّب إعادة النتائج بنفسك، فهذا أفضل اختبار لفهمك.', d_en: 'If the authors share their data and code, try reproducing the results yourself; it is the best test of your understanding.', detail: 'القراءة وحدها لا تكفي لاكتساب المهارة التقنية. الأوراق التي ترفق روابط مستودعات GitHub أو Google Colab تتيح لك تشغيل النماذج وتغيير المعاملات (Hyperparameters) لملاحظة التأثير المباشر.', detail_en: 'Reading alone is not enough. Papers providing GitHub or Colab links let you run models and tweak hyperparameters to observe direct impact.', example: 'مثال: فتح رابط جيت هاب لورقة LoRA وتجربة تشغيل الكود المصغر على عينة بيانات بسيطة لتفهم كيف يقلل استهلاك الذاكرة.', example_en: 'Example: Opening the GitHub link for LoRA and running the code on a small dataset to understand how it reduces memory usage.' }
+            { t: 'ابدأ بالملخص والخاتمة', d: 'اقرأهما أولاً لتقرر هل تستحق الورقة قراءتها كاملة.', detail: 'الملخص يعطيك لمحة سريعة عن المشكلة والحل والنتائج، بينما الخاتمة تلخص المساهمات الفعلية.', example: 'مثال: في ورقة BERT، الملخص يوضح فوراً أنها تقدم فهماً ثنائياً للسياق.' },
+            { t: 'ابدأ بورقة مراجعة (Survey)', d: 'أوراق المراجعة ترسم لك خريطة المجال وأهم الأعمال فيه.', detail: 'عند الدخول في مجال بحثي جديد، ابحث دائماً عن ورقة تحمل عنوان "A Survey on..."', example: 'مثال: بدلاً من قراءة 50 ورقة عشوائية، اقرأ ورقة مراجعة واحدة شاملة.' },
+            { t: 'تتبّع الاستشهادات', d: 'من صفحة الورقة في Google Scholar افتح "Cited by".', detail: 'الاستشهادات تدلك على كيفية تطور الفكرة والتحسينات الحديثة.', example: 'مثال: عند قراءة ورقة ResNet، "Cited by" يظهر آلاف الأبحاث التي عدلت عليها.' },
+            { t: 'تحقق من حالة النشر', d: 'ميّز بين ورقة منشورة بعد تحكيم وورقة قبل النشر (preprint).', detail: 'الأوراق في arXiv غالباً مسودات أولية، بينما المنشورة في مؤتمرات مثل NeurIPS تكون موثوقة أكثر.', example: 'مثال: انتبه عند اعتماد أرقام أداء من ورقة على arXiv لم تُقبل بعد.' },
+            { t: 'دوّن مراجعك من البداية', d: 'استخدم أداة مثل Zotero منذ أول ورقة تقرؤها.', detail: 'جمع الأوراق دون تنظيم يؤدي إلى ضياع وقت كبير لاحقاً. Zotero يحفظ المقال مع PDF.', example: 'مثال: حفظ ورقة Transformer مع تصنيفها في مجلد "نماذج اللغة".' },
+            { t: 'ابحث عن البيانات والشيفرة', d: 'إن أتاح المؤلفون بياناتهم وشيفرتهم فجرّب إعادة النتائج بنفسك.', detail: 'القراءة وحدها لا تكفي. الأوراق التي ترفق روابط GitHub تتيح لك تشغيل النماذج وتغيير المعاملات.', example: 'مثال: فتح رابط جيت هاب لورقة LoRA وتجربة تشغيل الكود المصغر.' }
         ];
-        const tipsGrid = document.getElementById('tipsGrid');
-
         function renderTips() {
-            tipsGrid.innerHTML = '';
+            const grid = document.getElementById('tipsGrid'); grid.innerHTML = '';
             TIPS.forEach((tp, i) => {
                 const card = document.createElement('div');
-                card.className = 'bg-slate-50/70 rounded-2xl border border-sky-100 p-5 flex items-start gap-4 cursor-pointer hover:border-brand-300 hover:shadow-lg transition-all duration-300 group';
-                const num = document.createElement('div');
-                num.className = 'w-10 h-10 shrink-0 rounded-xl bg-brand-600 text-white flex items-center justify-center font-black text-sm group-hover:scale-105 transition-transform';
-                num.textContent = String(i + 1).padStart(2, '0');
-                const info = document.createElement('div');
-                info.className = 'flex-1 min-w-0';
-                const h3 = document.createElement('h3');
-                h3.className = 'font-bold text-slate-900 text-base group-hover:text-brand-600 transition-colors';
-                h3.textContent = (lang === 'en' && tp.t_en) ? tp.t_en : tp.t;
-                const p = document.createElement('p');
-                p.className = 'text-sm text-slate-600 leading-relaxed mt-1 line-clamp-2';
-                p.textContent = (lang === 'en' && tp.d_en) ? tp.d_en : tp.d;
-                const more = document.createElement('span');
-                more.className = 'inline-flex items-center gap-1 text-xs font-bold text-brand-600 mt-2';
-                more.innerHTML = (lang === 'ar' ? 'عرض التفاصيل والمثال' : 'View details & example') + ' <svg class="w-3.5 h-3.5 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>';
-                info.append(h3, p, more);
-                card.append(num, info);
-                card.addEventListener('click', () => openTipModal(i));
-                tipsGrid.appendChild(card);
+                card.className = 'bg-slate-50/70 rounded-2xl border border-sky-100 p-5 flex items-start gap-4 cursor-pointer hover:border-brand-300 hover:shadow-lg transition-all group';
+                card.innerHTML = `<div class="w-10 h-10 shrink-0 rounded-xl bg-brand-600 text-white flex items-center justify-center font-black text-sm group-hover:scale-105">${String(i + 1).padStart(2, '0')}</div><div class="flex-1 min-w-0"><h3 class="font-bold text-slate-900 text-base group-hover:text-brand-600">${tp.t}</h3><p class="text-sm text-slate-600 leading-relaxed mt-1 line-clamp-2">${tp.d}</p><span class="inline-flex items-center gap-1 text-xs font-bold text-brand-600 mt-2">عرض التفاصيل والمثال <svg class="w-3.5 h-3.5 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span></div>`;
+                card.onclick = () => {
+                    document.getElementById('tipModalNum').textContent = String(i + 1).padStart(2, '0');
+                    document.getElementById('tipModalTitle').textContent = tp.t;
+                    document.getElementById('tipModalDesc').textContent = tp.detail;
+                    document.getElementById('tipModalExample').textContent = tp.example;
+                    toggleModal('tipModal', true);
+                };
+                grid.appendChild(card);
             });
         }
-
-        const tipModal = document.getElementById('tipModal');
-        const closeTipModal = document.getElementById('closeTipModal');
-        const closeTipModalBtn = document.getElementById('closeTipModalBtn');
-        let lastFocusedEl = null;
-
-        function openTipModal(index) {
-            lastFocusedEl = document.activeElement;
-            const tp = TIPS[index];
-            document.getElementById('tipModalNum').textContent = String(index + 1).padStart(2, '0');
-            document.getElementById('tipModalTitle').textContent = (lang === 'en' && tp.t_en) ? tp.t_en : tp.t;
-            document.getElementById('tipModalDesc').textContent = (lang === 'en' && tp.detail_en) ? tp.detail_en : tp.detail;
-            document.getElementById('tipModalExample').textContent = (lang === 'en' && tp.example_en) ? tp.example_en : tp.example;
-            toggleModal('tipModal', true);
-            closeTipModalBtn.focus();
-        }
-
-        function closeTipModalFunc() {
-            toggleModal('tipModal', false);
-            if (lastFocusedEl && typeof lastFocusedEl.focus === 'function') lastFocusedEl.focus();
-            lastFocusedEl = null;
-        }
-
-        closeTipModal.addEventListener('click', closeTipModalFunc);
-        closeTipModalBtn.addEventListener('click', closeTipModalFunc);
-        tipModal.addEventListener('click', (e) => { if (e.target === tipModal) closeTipModalFunc(); });
-        
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                if (!tipModal.classList.contains('hidden')) closeTipModalFunc();
-                if (!document.getElementById('contactModal').classList.contains('hidden')) toggleModal('contactModal', false);
-                if (!document.getElementById('coursesModal').classList.contains('hidden')) toggleModal('coursesModal', false);
-            }
-        });
 
         const TOOLS = [
-            { name: 'Google Scholar', icon: 'cap', url: 'https://scholar.google.com', desc: 'محرك بحث في الأوراق العلمية والرسائل والكتب، مع عدد الاستشهادات والأوراق المرتبطة.', desc_en: 'A search engine for scholarly papers, theses and books, showing citation counts and related work.' },
-            { name: 'Semantic Scholar', icon: 'search', url: 'https://www.semanticscholar.org', desc: 'بحث أكاديمي يعتمد على الذكاء الاصطناعي، يعرض ملخصات قصيرة وأهم الأوراق المؤثرة.', desc_en: 'AI-powered academic search that shows short summaries and the most influential papers.' },
-            { name: 'arXiv', icon: 'archive', url: 'https://arxiv.org', desc: 'أرشيف مفتوح للأوراق قبل النشر في الحاسب والفيزياء والرياضيات وغيرها، ومنه تأتي أغلب أوراق الذكاء الاصطناعي.', desc_en: 'An open archive of preprints in computer science, physics, mathematics and more, where most AI papers first appear.' },
-            { name: 'Zotero', icon: 'book', url: 'https://www.zotero.org', desc: 'برنامج لإدارة المراجع: يجمع المصادر وينظمها ويولّد الاستشهادات والقوائم المرجعية.', desc_en: 'A reference manager that collects and organizes sources and generates citations and bibliographies.' },
-            { name: 'Connected Papers', icon: 'network', url: 'https://www.connectedpapers.com', desc: 'يرسم خريطة بصرية للأوراق المرتبطة بورقة معينة، لتكتشف أعمالاً قريبة من موضوعك.', desc_en: 'Draws a visual map of papers related to a given paper, helping you discover work close to your topic.' },
-            { name: 'Overleaf', icon: 'pencil', url: 'https://www.overleaf.com', desc: 'محرر LaTeX عبر المتصفح لكتابة الأوراق العلمية والتعاون عليها دون تثبيت برامج.', desc_en: 'A browser-based LaTeX editor for writing and collaborating on scientific papers without installing software.' }
+            { name: 'Google Scholar', icon: 'cap', url: 'https://scholar.google.com', desc: 'محرك بحث في الأوراق العلمية والرسائل والكتب.' },
+            { name: 'Semantic Scholar', icon: 'search', url: 'https://www.semanticscholar.org', desc: 'بحث أكاديمي يعتمد على الذكاء الاصطناعي.' },
+            { name: 'arXiv', icon: 'archive', url: 'https://arxiv.org', desc: 'أرشيف مفتوح للأوراق قبل النشر في الحاسب والفيزياء.' },
+            { name: 'Zotero', icon: 'book', url: 'https://www.zotero.org', desc: 'برنامج لإدارة المراجع وتوليد الاستشهادات.' },
+            { name: 'Connected Papers', icon: 'network', url: 'https://www.connectedpapers.com', desc: 'يرسم خريطة بصرية للأوراق المرتبطة بورقة معينة.' },
+            { name: 'Overleaf', icon: 'pencil', url: 'https://www.overleaf.com', desc: 'محرر LaTeX عبر المتصفح لكتابة الأوراق العلمية.' }
         ];
-
-        const toolsGrid = document.getElementById('toolsGrid');
-
         function renderTools() {
-            toolsGrid.innerHTML = '';
+            const grid = document.getElementById('toolsGrid'); grid.innerHTML = '';
             TOOLS.forEach(tl => {
-                const href = safeUrl(tl.url);
-                const card = document.createElement(href ? 'a' : 'div');
-                if (href) { card.href = href; card.target = '_blank'; card.rel = 'noopener noreferrer'; }
-                card.className = 'group w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.85rem)] bg-white rounded-2xl border border-sky-100 hover:border-brand-300 hover:shadow-lg transition-all duration-300 p-4 flex items-start gap-4';
-                const ico = document.createElement('div');
-                ico.className = 'w-12 h-12 shrink-0 rounded-xl bg-brand-600 text-white flex items-center justify-center';
-                ico.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">' + ICONS[tl.icon] + '</svg>';
-                const info = document.createElement('div');
-                info.className = 'min-w-0';
-                const h3 = document.createElement('h3');
-                h3.className = 'font-bold text-slate-900 text-base group-hover:text-brand-600 transition-colors';
-                h3.textContent = tl.name;
-                const p = document.createElement('p');
-                p.className = 'text-xs sm:text-sm text-slate-600 leading-relaxed mt-1';
-                p.textContent = (lang === 'en' && tl.desc_en) ? tl.desc_en : tl.desc;
-                info.append(h3, p);
-                card.append(ico, info);
-                toolsGrid.appendChild(card);
+                const card = document.createElement('a');
+                card.href = tl.url; card.target = '_blank'; card.rel = 'noopener';
+                card.className = 'group w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.85rem)] bg-white rounded-2xl border border-sky-100 hover:border-brand-300 hover:shadow-lg p-4 flex items-start gap-4';
+                card.innerHTML = `<div class="w-12 h-12 shrink-0 rounded-xl bg-brand-600 text-white flex items-center justify-center"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">${ICONS[tl.icon]}</svg></div><div class="min-w-0"><h3 class="font-bold text-slate-900 text-base group-hover:text-brand-600">${tl.name}</h3><p class="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1">${tl.desc}</p></div>`;
+                grid.appendChild(card);
             });
         }
 
-        function showHome() {
-            view = 'home';
-            catView.classList.add('hidden');
-            dataView.classList.add('hidden');
-            homeView.classList.remove('hidden');
-            updateTitle();
-        }
-
-        function showCategory(cat) {
-            view = 'cat';
-            currentCat = cat;
-            homeView.classList.add('hidden');
-            dataView.classList.add('hidden');
-            catView.classList.remove('hidden');
-            document.getElementById('catIcon').innerHTML = iconSvg(cat, 'w-6 h-6');
-            searchInput.value = '';
-            sortSelect.value = 'sheet';
-            updateCategoryHeader();
-            if (loaded) renderCategoryPapers();
-            else {
-                grid.innerHTML = '<div class="col-span-full text-center py-12 text-slate-400 font-medium">' + t('loadingPapers') + '</div>';
-                countEl.textContent = '';
-            }
-            updateTitle();
-            window.scrollTo(0, 0);
-        }
-
-        function showData() {
-            view = 'data';
-            homeView.classList.add('hidden');
-            catView.classList.add('hidden');
-            dataView.classList.remove('hidden');
-            document.getElementById('dataIcon').innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">' + ICONS.database + '</svg>';
-            dataSearch.value = '';
-            dataType = 'all';
-            renderDataChips();
-            renderDataSites();
-            updateTitle();
-            window.scrollTo(0, 0);
-        }
-
-        function route(hashArg) {
-            const h = (typeof hashArg === 'string') ? hashArg : location.hash;
-            if (h === '#/data') {
-                showData();
-            } else if (h.indexOf('#/c/') === 0) {
-                let cat = ALL;
-                try { cat = decodeURIComponent(h.slice(4)); } catch (e) {}
-                showCategory(cat);
-            } else {
-                showHome();
-                const id = h.slice(1);
-                const el = id ? document.getElementById(id) : null;
-                if (el) el.scrollIntoView();
-                else window.scrollTo(0, 0);
-            }
-        }
-
-        // دالة التحميل المضمنة
-        function loadPapers() {
-            papers = MY_PAPERS;
-            
-            catEnFromSheet = {};
-            papers.forEach(p => { if (p.category && p.category_en) catEnFromSheet[p.category] = p.category_en; });
-            loaded = true;
-            
-            renderCategoryTiles();
-            if (view === 'cat') {
-                updateCategoryHeader();
-                renderCategoryPapers();
-                updateTitle();
-            }
-        }
+        // Init
+        window.addEventListener('popstate', route);
+        document.getElementById('langBtn').onclick = () => { lang = lang === 'ar' ? 'en' : 'ar'; try { localStorage.setItem('svl_lang', lang); } catch (e) {} applyLang(); };
+        document.getElementById('menuBtn').onclick = (e) => { const open = document.getElementById('mobileMenu').classList.toggle('hidden') === false; e.currentTarget.setAttribute('aria-expanded', String(open)); };
+        document.getElementById('closeTipModal').onclick = () => toggleModal('tipModal', false);
+        document.getElementById('closeTipModalBtn').onclick = () => toggleModal('tipModal', false);
+        
+        document.getElementById('reportForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const page = document.getElementById('reportPage').value || '';
+            const msg = document.getElementById('reportMsg').value || '';
+            location.href = 'mailto:sallleh1819@gmail.com?subject=' + encodeURIComponent('بلاغ عن خطأ - LoboTech') + '&body=' + encodeURIComponent('الصفحة: ' + page + '\n\n' + msg);
+        });
 
         const debouncedRenderPapers = debounce(() => { if (loaded) renderCategoryPapers(); }, 150);
-        const debouncedRenderData   = debounce(() => renderDataSites(), 150);
-
+        const debouncedRenderData = debounce(() => renderDataSites(), 150);
         searchInput.addEventListener('input', debouncedRenderPapers);
         sortSelect.addEventListener('change', () => { if (loaded) renderCategoryPapers(); });
         dataSearch.addEventListener('input', debouncedRenderData);
 
-        window.addEventListener('hashchange', () => route());
-        window.addEventListener('popstate', () => route());
-
-        const menuBtn = document.getElementById('menuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        document.addEventListener('click', e => {
-            const a = e.target.closest && e.target.closest('a[href^="#"]');
-            if (!a) return;
-            const h = a.getAttribute('href');
-            if (!h || h === '#') return;
-            e.preventDefault();
-            try { history.pushState(null, '', h); } catch (err) {}
-            route(h);
-            mobileMenu.classList.add('hidden');
-            menuBtn.setAttribute('aria-expanded', 'false');
-        });
-
-        document.getElementById('langBtn').addEventListener('click', () => {
-            lang = lang === 'ar' ? 'en' : 'ar';
-            try { localStorage.setItem('svl_lang', lang); } catch (e) {}
-            applyLang();
-            refreshView();
-        });
-
-        menuBtn.addEventListener('click', () => {
-            const open = mobileMenu.classList.toggle('hidden') === false;
-            menuBtn.setAttribute('aria-expanded', String(open));
-        });
-
-        renderNav();
+        papers = MY_PAPERS;
+        papers.forEach(p => { if (p.category && p.category_en) catEnFromSheet[p.category] = p.category_en; });
+        loaded = true;
+        
         applyLang();
-        renderServices();
-        renderTips();
-        renderTools();
         route();
-        loadPapers();
     </script>
 </body>
 </html>

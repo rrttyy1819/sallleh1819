@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sallleh1819.vercel.app/sitemap.xml
