@@ -15,16 +15,17 @@
     <meta property="og:title" content="لوبو تيك | LoboTech — ملخصات أوراق الذكاء الاصطناعي بالعربي">
     <meta property="og:description" content="دليل عربي لأهم الأوراق العلمية في الذكاء الاصطناعي والتقنية، بملخصات مبسطة وروابط مباشرة إلى المصادر الأصلية.">
     <meta property="og:url" content="https://sallleh1819.vercel.app/">
-    <meta property="og:image" content="https://sallleh1819.vercel.app/og-image.png">
+    <meta property="og:image" content="https://sallleh1819.vercel.app/lopo.png.png">
     <meta property="og:locale" content="ar_SA">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="لوبو تيك | LoboTech">
     <meta name="twitter:description" content="ملخصات عربية لأهم أوراق الذكاء الاصطناعي والتقنية.">
-    <meta name="twitter:image" content="https://sallleh1819.vercel.app/og-image.png">
+    <meta name="twitter:image" content="https://sallleh1819.vercel.app/lopo.png.png">
 
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230284c7'/%3E%3Ctext x='50' y='68' font-size='56' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3ELT%3C/text%3E%3C/svg%3E">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="lopo.png.png">
 
     <!-- JSON-LD ثابت -->
     <script type="application/ld+json">
@@ -36,7 +37,7 @@
           "@id": "https://sallleh1819.vercel.app/#organization",
           "name": "لوبو تيك | LoboTech",
           "url": "https://sallleh1819.vercel.app/",
-          "logo": "https://sallleh1819.vercel.app/og-image.png",
+          "logo": "https://sallleh1819.vercel.app/lopo.png.png",
           "founder": { "@type": "Person", "name": "د. صالح العنزي" }
         },
         {
@@ -77,9 +78,9 @@
     <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-sky-100 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <a href="/" class="flex items-center gap-3">
-                <div class="bg-gradient-to-tr from-brand-600 to-sky-400 p-2.5 rounded-2xl text-white shadow-md">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                </div>
+                <!-- الشعار في الهيدر -->
+                <img id="siteLogo" src="lopo.png.png" alt="LoboTech Logo" class="w-14 h-14 rounded-xl object-cover shadow-md">
+                
                 <div>
                     <span class="text-xl font-black bg-gradient-to-r from-brand-700 to-sky-600 bg-clip-text text-transparent" data-i18n="siteName"></span>
                     <span class="block text-xs text-slate-500 font-medium" data-i18n="tagline"></span>
@@ -98,33 +99,25 @@
 
     <main id="top">
     <div id="homeView">
-        <section class="hero-gradient py-20 px-4 sm:px-6 lg:px-8 border-b border-sky-100 relative overflow-hidden">
-            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-                <div class="lg:col-span-7 space-y-6 text-center lg:text-start">
-                    <span class="inline-flex items-center gap-1.5 py-1.5 px-4 rounded-full text-xs font-bold bg-brand-100 text-brand-700 border border-brand-200 shadow-sm">
-                        <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
-                        <span data-i18n="badge"></span>
-                    </span>
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 leading-tight" data-i18n-html="heroTitle"></h1>
-                    <p class="text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 font-medium" data-i18n="heroDesc"></p>
-                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
-                        <a href="#research" class="bg-brand-600 hover:bg-brand-700 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg transition-all flex items-center gap-2">
-                            <span data-i18n="ctaExplore"></span>
-                            <svg class="w-5 h-5 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                        </a>
-                        <a href="#about" class="bg-white hover:bg-sky-50 text-slate-800 font-bold px-8 py-3.5 rounded-xl border border-sky-200 shadow-sm transition-all" data-i18n="ctaFounder"></a>
-                    </div>
-                </div>
-                <div class="lg:col-span-5 flex justify-center">
-                    <div class="relative w-full max-w-sm">
-                        <div class="bg-white p-3 rounded-3xl shadow-2xl border border-sky-100 relative">
-                            <img src="saleh.png.png" alt="د. صالح العنزي" loading="lazy" class="w-full h-96 object-cover object-top rounded-2xl shadow-md">
-                            <div class="absolute bottom-6 right-6 left-6 bg-white/90 backdrop-blur-md p-4 rounded-xl border border-sky-100 shadow-lg">
-                                <h3 class="font-bold text-slate-900 text-base" data-i18n="personName"></h3>
-                                <p class="text-xs text-brand-600 font-semibold mt-0.5" data-i18n="personRole"></p>
-                            </div>
-                        </div>
-                    </div>
+        <!-- القسم الأول مع الشعار كخلفية -->
+        <section class="hero-gradient py-24 px-4 sm:px-6 lg:px-8 border-b border-sky-100 relative overflow-hidden flex items-center justify-center min-h-[70vh]">
+            
+            <!-- الشعار كخلفية شفافة للقسم الأول -->
+            <img id="heroBgLogo" src="lopo.png.png" alt="Background Logo" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[450px] lg:w-[600px] opacity-[0.04] pointer-events-none select-none z-0">
+
+            <div class="max-w-4xl mx-auto text-center relative z-10 space-y-6">
+                <span class="inline-flex items-center gap-1.5 py-1.5 px-4 rounded-full text-xs font-bold bg-white/60 backdrop-blur-md text-brand-700 border border-brand-200 shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+                    <span data-i18n="badge"></span>
+                </span>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 leading-tight" data-i18n-html="heroTitle"></h1>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto font-medium" data-i18n="heroDesc"></p>
+                <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
+                    <a href="#research" class="bg-brand-600 hover:bg-brand-700 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg shadow-brand-500/30 transition-all flex items-center gap-2">
+                        <span data-i18n="ctaExplore"></span>
+                        <svg class="w-5 h-5 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                    <a href="#about" class="bg-white/80 backdrop-blur-md hover:bg-white text-slate-800 font-bold px-8 py-3.5 rounded-xl border border-sky-200 shadow-sm transition-all" data-i18n="ctaFounder"></a>
                 </div>
             </div>
         </section>
@@ -135,7 +128,7 @@
                     <div class="lg:col-span-5">
                         <div class="relative">
                             <div class="absolute -inset-4 bg-gradient-to-tr from-brand-100 to-sky-200 rounded-3xl -z-10 transform -rotate-2"></div>
-                            <img src="saleh.png.png" alt="د. صالح العنزي" loading="lazy" class="w-full h-96 object-cover object-top rounded-2xl shadow-md">
+                            <img src="saleh.png" alt="د. صالح العنزي" loading="lazy" class="w-full h-96 object-cover object-top rounded-2xl shadow-md">
                         </div>
                     </div>
                     <div class="lg:col-span-7 space-y-6">
@@ -721,6 +714,15 @@
         function applyLang() {
             const html = document.documentElement;
             html.lang = lang; html.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            
+            // تغيير الشعار في الهيدر
+            const siteLogo = document.getElementById('siteLogo');
+            if (siteLogo) siteLogo.src = lang === 'ar' ? 'lopo.png.png' : 'lopoe.png.png';
+
+            // تغيير الشعار كخلفية في القسم الأول
+            const heroBgLogo = document.getElementById('heroBgLogo');
+            if (heroBgLogo) heroBgLogo.src = lang === 'ar' ? 'lopo.png.png' : 'lopoe.png.png';
+
             document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t(el.dataset.i18n); });
             document.querySelectorAll('[data-i18n-html]').forEach(el => { el.innerHTML = t(el.dataset.i18nHtml); });
             document.querySelectorAll('[data-i18n-ph]').forEach(el => { el.placeholder = t(el.dataset.i18nPh); });
